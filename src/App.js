@@ -1,11 +1,12 @@
-import logo from './logo.svg';
+import { Box } from '@chakra-ui/react';
 import './App.css';
+import Navbar from './components/Navbar';
 
 function App() {
   return (
-    <div className="App">
-      <h1>Only navbar and allroutes folder will be here</h1>
-    </div>
+    <Box>
+      <Navbar/>
+    </Box>
   );
 }
 
