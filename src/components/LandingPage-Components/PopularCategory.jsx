@@ -75,6 +75,63 @@ const PopularCategory = () => {
             <Box display={{base:'block', sm:'block', md:'none', lg:'none', xl:'none'}}>
             <PopularCarousel/>
             </Box>
+
+
+
+
+
+
+
+
+            <Box w='95%' m='auto' mt='50px'>
+            <Grid templateColumns={{base:'repeat(1, 1fr)', sm:'repeat(3, 1fr)', md:'repeat(3, 1fr)', lg:'repeat(3, 1fr)', xl:'repeat(3, 1fr)'}} gap={3}>
+                
+                <GridItem w='100%' border='1px solid white'
+                h={{base:'550px', sm:'480px', md:'480px', lg:'620px', xl:'620px'}}
+                >
+                    <Image w='100%'
+                    h={{base:'400px', sm:'250px', md:'300px', lg:'500px', xl:'500px'}}
+                    src='https://m.media-amazon.com/images/G/01/2022/womens/WOMENS-SWEATERS-CARDIGANS-OCTOBER-TRIPTYCH-500x500.jpg' alt='add'/>
+                
+                
+                    <Text textAlign='center' fontWeight='bold.800' mt='10px' fontSize='20px'>Bundle Up: Sweaters & Cardigans</Text>
+                    <Text w='100%' textAlign='center' fontSize='18px'>These versatile layering pieces pair effortlessly with every outfit</Text>
+                    <Text textAlign='center' fontWeight='bold.100' textDecoration='underline'>SHOP WOMEN'S SWEATERS & CARDIGANS</Text>
+                
+                </GridItem>
+
+                <GridItem w='100%' border='1px solid white'
+                h={{base:'550px', sm:'480px', md:'480px', lg:'620px', xl:'620px'}}
+                >
+                    <Image w='100%'
+                    h={{base:'400px', sm:'250px', md:'300px', lg:'500px', xl:'500px'}}
+                    src='https://m.media-amazon.com/images/G/01/2022/homepage10.03/BROADCAST-SLIPPERS-NEW-ARRIVALS-OCTOBER-TRIPTYCH-500x500.jpg' alt='add'/>
+                
+                
+                    <Text textAlign='center' fontWeight='bold.800' mt='10px' fontSize='20px'>Bundle Up: Sweaters & Cardigans</Text>
+                    <Text w='100%' textAlign='center' fontSize='18px'>These versatile layering pieces pair effortlessly with every outfit</Text>
+                    <Text textAlign='center' fontWeight='bold.100' textDecoration='underline'>SHOP WOMEN'S SWEATERS & CARDIGANS</Text>
+                
+                </GridItem>
+
+                <GridItem w='100%' border='1px solid white'
+                h={{base:'550px', sm:'480px', md:'480px', lg:'620px', xl:'620px'}}
+                >
+                    <Image w='100%'
+                    h={{base:'400px', sm:'250px', md:'300px', lg:'500px', xl:'500px'}}
+                    src='https://m.media-amazon.com/images/G/01/2022/homepage10.03/HOMEPAGE-DENIM-NEW-ARRIVALS-TRIPTYCH-500x500.jpg' alt='add'/>
+                
+                
+                    <Text textAlign='center' fontWeight='bold.800' mt='10px' fontSize='20px'>Bundle Up: Sweaters & Cardigans</Text>
+                    <Text w='100%' textAlign='center' fontSize='18px'>These versatile layering pieces pair effortlessly with every outfit</Text>
+                    <Text textAlign='center' fontWeight='bold.100' textDecoration='underline'>SHOP WOMEN'S SWEATERS & CARDIGANS</Text>
+                
+                </GridItem>
+
+                
+                
+            </Grid>
+            </Box>
         </Box>
     )
 }
