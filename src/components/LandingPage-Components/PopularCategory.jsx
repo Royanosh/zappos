@@ -8,7 +8,8 @@ const PopularCategory = () => {
     return (
         <Box>
             <Text
-            mt={{base:'300px', sm:'300px', md:'10px', lg:'10px', xl:'10px'}}
+            mt={{base:'300px', sm:'300px', md:'10px', lg:'25px', xl:'25px'}}
+            fontWeight='bold' fontSize='30px' mb='20px' ml='2%'
             >Shop Popular Categories</Text>
 
 
