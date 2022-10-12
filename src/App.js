@@ -1,10 +1,10 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Products from "./pages/Products";
 
 function App() {
   return (
     <div className="App">
-      <h1>Only navbar and allroutes folder will be here</h1>
+      <Products />
     </div>
   );
 }
