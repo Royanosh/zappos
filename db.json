@@ -970,5 +970,67 @@
     "imgurl": "https://m.media-amazon.com/images/I/71Lwq2gzduL._AC_SX255_.jpg",
     "favourites": 4
   }
+],
+"Trendingbrands":[
+  {
+    "id": 1,
+    "name": "Hoka",
+    "imgurl": "https://www.zappos.com/boutiques/3377/hoka_header012722.gif"
+  },
+  {
+    "id": 2,
+    "name": "Free People",
+    "imgurl": "https://www.zappos.com/boutiques/2631/FreePeople_Header070121.jpg"
+  },
+  {
+    "id": 3,
+    "name": "On",
+    "imgurl": "https://www.zappos.com/boutiques/4033/ON_header140422.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Steve Madden",
+    "imgurl": "https://www.zappos.com/boutiques/108/stevemadden_header093013.jpg"
+  },
+  {
+    "id": 5,
+    "name": "New Balance",
+    "imgurl": "https://www.zappos.com/boutiques/179/nb_header170922.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Birkenstock",
+    "imgurl": "https://www.zappos.com/boutiques/148/birkenstock_head-010616.jpg"
+  },
+  {
+    "id": 7,
+    "name": "UGG",
+    "imgurl": "https://www.zappos.com/boutiques/184/ugg_header_092116.jpg"
+  },
+  {
+    "id": 8,
+    "name": "ASICS",
+    "imgurl": "https://www.zappos.com/boutiques/162/asics_header061206.gif"
+  },
+  {
+    "id": 9,
+    "name": "Brooks",
+    "imgurl": "https://www.zappos.com/boutiques/193/brooks_head-060116.jpg"
+  },
+  {
+    "id": 10,
+    "name": "Crocs",
+    "imgurl": "https://www.zappos.com/boutiques/775/crocs_head_042617.jpg"
+  },
+  {
+    "id": 11,
+    "name": "SOREL",
+    "imgurl": "https://www.zappos.com/boutiques/272/sorel_head_101215.jpg"
+  },
+  {
+    "id": 12,
+    "name": "The North Face",
+    "imgurl": "https://www.zappos.com/boutiques/617/THENORTHFACE_header042619.gif"
+  }
 ]
 }
