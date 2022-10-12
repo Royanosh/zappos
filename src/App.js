@@ -8,12 +8,11 @@ import WomensClothing from './pages/WomensClothing';
 function App() {
   return (
     <Box>
-      {/* <Navbar/>
-      <LandingPage/> */}
-
-      <MensClothing/>
+      <Navbar/>
+      <LandingPage/>
+       {/* <MensClothing/>
       <WomensClothing/>
-      <Product/>
+      <Product/> */}
     </Box>
   );
 }

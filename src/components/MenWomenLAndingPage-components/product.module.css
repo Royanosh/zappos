@@ -30,9 +30,9 @@
 .parent>div:last-child>div{
     display: flex;
 }
-h1{
+/* h1{
     margin-bottom: 0px;
-}
+} */
 
 .priceFlex{
     /* border: 1px solid red; */
@@ -43,12 +43,12 @@ h1{
     font-weight: 500;
     color: darkslategray;
 }
-p{
+/* p{
     font-size: 36px;
-    /* line-height: 0px; */
+    
     margin-top: 5px;
     font-weight: 600;
-}
+} */
 .ratingSpan{
     font-size: 14px;
     font-weight: 700;
