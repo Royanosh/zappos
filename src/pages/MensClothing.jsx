@@ -1,10 +1,13 @@
 
 import React, { useEffect, useState } from 'react'
+import { Navigate } from 'react-router-dom'
+import Slick from '../components/MenWomenLAndingPage-components/Slick'
 const MensClothing = () => {
    
   const [products,setProducts] = useState([]) 
   const [price,setPrice] = useState([]) 
   const [womenCloth,setWomenCloth] = useState([]) 
+  const [menCloth,setMenCloth] = useState([]) 
 
     const style = {
         div:{
@@ -15,7 +18,7 @@ const MensClothing = () => {
        
     }
     useEffect(()=>{
-      fetch(`http://localhost:3001/womenclothsPro`)
+      fetch(`http://localhost:3000/womenclothsPro`)
       .then(response => response.json())
       .then(product =>{
           setProducts(product);
@@ -30,7 +33,7 @@ const MensClothing = () => {
 
 
     useEffect(()=>{
-      fetch(`http://localhost:3001/mensPro`)
+      fetch(`http://localhost:3000/mensPro`)
       .then(response => response.json())
       .then(product =>{
           setPrice(product);
@@ -43,7 +46,7 @@ const MensClothing = () => {
     },[]);
 
     useEffect(()=>{
-      fetch(`http://localhost:3001/menscloths`)
+      fetch(`http://localhost:3000/menscloths`)
       .then(response => response.json())
       .then(product =>{
         setWomenCloth(product);
@@ -54,12 +57,32 @@ const MensClothing = () => {
         console.log(err);
       })
     },[]);
+    
+
+    useEffect(()=>{
+      fetch(`http://localhost:3000/menclothsPage`)
+      .then(response => response.json())
+      .then(product =>{
+        setMenCloth(product);
+          console.log(product);
+      })
+      .catch((err) => {
+        // setError(true)
+        console.log(err);
+      })
+    },[]);
+
+    const handleClick = (item) => {
+      localStorage.setItem("singleProduct", JSON.stringify(item));
+  
+      Navigate(`/products/women-tops/${item.id}`);
+    };
 
   return (
     <>
 
 <div style={style.div}>
-      <h1>Mens's Clothing</h1>
+      <h1 style={{fontSize:"20px"}}>Mens's Clothing</h1>
     </div>
     <div className='container'>
         <p>Home / <span> ClothingMen's</span>  / <span>Clothing</span> </p>
@@ -121,6 +144,7 @@ const MensClothing = () => {
    </div>
 
 
+
    <div className="container" style={{display:"flex"}}>
       <div>
           <div style={{width:"100%",margin:"auto",marginLeft:"20px",margin:"20px"}} >
@@ -133,30 +157,22 @@ const MensClothing = () => {
             </div>
         </div>
 
+
+{/* mens clothing three data */}
       <div>
       <div style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:"20px",width:"90%" ,marginTop:"40px"}}>
-         <div className="card" style={{width:"15rem"}}>
-          <img style={{height: "25rem"}}  src="https://m.media-amazon.com/images/I/816oM6FRuxS._AC_SX255_.jpg" className="card-img-top" alt="..."/>
-          <div className="card-body">
-            <h2 className="card-title" style={{textAlign:"center"}}>Card title</h2>
-          </div>
-        </div>
-         <div className="card" style={{width: "15rem"}}>
-          <img style={{height: "25rem"}}  src="https://m.media-amazon.com/images/I/813ORXYkvWL._AC_SX255_.jpg" className="card-img-top" alt="..."/>
-          <div className="card-body">
-            <h2 className="card-title" style={{textAlign:"center"}}>Card title</h2>
-          </div>
-        </div>
-         <div className="card" style={{width: "15rem"}}>
-          <img style={{height: "25rem"}}  src="https://m.media-amazon.com/images/I/81CKNNjY9BL._AC_SX255_.jpg" className="card-img-top" alt="..."/>
-          <div className="card-body">
-            <h2 className="card-title" style={{textAlign:"center"}}>Card title</h2>
-          </div>
-          <div className="card-body">
-            <h2 className="card-title" style={{textAlign:"center"}}>Card title</h2>
-          </div>
-        </div>
-    
+
+      {menCloth.map((womencloths) => (
+             <div key={womencloths.id} onClick={() => handleClick(womencloths)} className="card" style={{width: "14rem",cursor:"pointer"}}>
+             <img style={{height: "18rem"}}  src={womencloths.imageurl} className="card-img-top" alt="..."/>
+               <h3 className="card-title" style={{textAlign:"center",fontSize:"20px",marginTop:"5px"}}>{womencloths.brand}</h3>
+             <div className="card-body">
+               <h2 className="card-title" style={{fontSize:"20px"}}>{womencloths.desc}</h2>
+               <h4 className="card-title" style={{fontSize:"20px"}}>${womencloths.price}</h4>
+               ⭐⭐⭐⭐⭐ <span>({womencloths.ratings})</span>
+             </div>
+            </div>
+          ))}
     </div>
       </div>
    </div>
@@ -177,14 +193,14 @@ const MensClothing = () => {
     </div>
 
    
-
+{/* best sellor part */}
    <section>
    <div className='container' style={{width:"100%" , marginBottom:"40px"}} >
     <h1 style={{fontSize:"40px"}}>Best Sellor</h1>
     <div style={{display:"grid",gridTemplateColumns:"repeat(6,1fr)",gap:"20px",width:"80%" ,marginTop:"40px"}}>
 
     {womenCloth.map((women) => (
-            <div key={women.id} className="card" style={{width: "14rem",cursor:"pointer"}}>
+            <div key={women.id} onClick={() => handleClick(women)} className="card" style={{width: "14rem",cursor:"pointer"}}>
             <img style={{height: "18rem"}}  src={women.imageurl} className="card-img-top" alt="..."/>
               <h3 className="card-title" style={{textAlign:"center",fontSize:"20px",marginTop:"5px"}}>{women.brand}</h3>
             <div className="card-body">
@@ -200,86 +216,7 @@ const MensClothing = () => {
 
 {/* brand section */}
    <section>
-   <div className='container' style={{width:"100%" , marginBottom:"40px"}} >
-    <h1 style={{fontSize:"40px"}}>Trending Brands</h1>
-    <div style={{display:"grid",gridTemplateColumns:"repeat(6,1fr)",gap:"20px",width:"80%" ,marginTop:"40px"}}>
-         <div className="card" style={{width: "13rem"}}>
-          <img style={{height: "18rem"}}  src="https://bit.ly/dan-abramov" className="card-img-top" alt="..."/>
-          <div className="card-body">
-            <h2 className="card-title" style={{textAlign:"center"}}>Card title</h2>
-          </div>
-        </div>
-         <div className="card" style={{width: "13rem"}}>
-          <img style={{height: "18rem"}}  src="https://bit.ly/dan-abramov" className="card-img-top" alt="..."/>
-          <div className="card-body">
-            <h2 className="card-title" style={{textAlign:"center"}}>Card title</h2>
-          </div>
-        </div>
-         <div className="card" style={{width: "13rem"}}>
-          <img style={{height: "18rem"}}  src="https://bit.ly/dan-abramov" className="card-img-top" alt="..."/>
-          <div className="card-body">
-            <h2 className="card-title" style={{textAlign:"center"}}>Card title</h2>
-          </div>
-        </div>
-         <div className="card" style={{width: "13rem"}}>
-          <img style={{height: "18rem"}}  src="https://bit.ly/dan-abramov" className="card-img-top" alt="..."/>
-          <div className="card-body">
-            <h2 className="card-title" style={{textAlign:"center"}}>Card title</h2>
-          </div>
-        </div>
-         <div className="card" style={{width: "13rem"}}>
-          <img style={{height: "18rem"}}  src="https://bit.ly/dan-abramov" className="card-img-top" alt="..."/>
-          <div className="card-body">
-            <h2 className="card-title" style={{textAlign:"center"}}>Card title</h2>
-          </div>
-        </div>
-         <div className="card" style={{width: "13rem"}}>
-          <img style={{height: "18rem"}}  src="https://bit.ly/dan-abramov" className="card-img-top" alt="..."/>
-          <div className="card-body">
-            <h2 className="card-title" style={{textAlign:"center"}}>Card title</h2>
-          </div>
-        </div>
-    </div>
- </div><div className='container' style={{width:"100%" , marginBottom:"40px"}} >
-    <div style={{display:"grid",gridTemplateColumns:"repeat(6,1fr)",gap:"20px",width:"80%" ,marginTop:"40px"}}>
-         <div className="card" style={{width: "13rem"}}>
-          <img style={{height: "18rem"}}  src="https://bit.ly/dan-abramov" className="card-img-top" alt="..."/>
-          <div className="card-body">
-            <h2 className="card-title" style={{textAlign:"center"}}>Card title</h2>
-          </div>
-        </div>
-         <div className="card" style={{width: "13rem"}}>
-          <img style={{height: "18rem"}}  src="https://bit.ly/dan-abramov" className="card-img-top" alt="..."/>
-          <div className="card-body">
-            <h2 className="card-title" style={{textAlign:"center"}}>Card title</h2>
-          </div>
-        </div>
-         <div className="card" style={{width: "13rem"}}>
-          <img style={{height: "18rem"}}  src="https://bit.ly/dan-abramov" className="card-img-top" alt="..."/>
-          <div className="card-body">
-            <h2 className="card-title" style={{textAlign:"center"}}>Card title</h2>
-          </div>
-        </div>
-         <div className="card" style={{width: "13rem"}}>
-          <img style={{height: "18rem"}}  src="https://bit.ly/dan-abramov" className="card-img-top" alt="..."/>
-          <div className="card-body">
-            <h2 className="card-title" style={{textAlign:"center"}}>Card title</h2>
-          </div>
-        </div>
-         <div className="card" style={{width: "13rem"}}>
-          <img style={{height: "18rem"}}  src="https://bit.ly/dan-abramov" className="card-img-top" alt="..."/>
-          <div className="card-body">
-            <h2 className="card-title" style={{textAlign:"center"}}>Card title</h2>
-          </div>
-        </div>
-         <div className="card" style={{width: "13rem"}}>
-          <img style={{height: "18rem"}}  src="https://bit.ly/dan-abramov" className="card-img-top" alt="..."/>
-          <div className="card-body">
-            <h2 className="card-title" style={{textAlign:"center"}}>Card title</h2>
-          </div>
-        </div>
-    </div>
- </div>
+     <Slick/>
    </section>
     </>
   )

@@ -1,11 +1,13 @@
 
 import React, { useEffect, useState } from 'react'
-import Slick from '../components/MenWomenLAndingPage-components/Slick'
+import { Link, Navigate } from 'react-router-dom'
+import Brand from './Brand'
 const WomensClothing = () => {
    
   const [products,setProducts] = useState([]) 
   const [price,setPrice] = useState([]) 
   const [womenCloth,setWomenCloth] = useState([]) 
+  const [womenClothPro,setWomenClothPro] = useState([]) 
 
     const style = {
         div:{
@@ -16,7 +18,7 @@ const WomensClothing = () => {
        
     }
     useEffect(()=>{
-      fetch(`http://localhost:3001/womenclothsPro`)
+      fetch(`http://localhost:3000/womenclothsPro`)
       .then(response => response.json())
       .then(product =>{
           setProducts(product);
@@ -31,7 +33,7 @@ const WomensClothing = () => {
 
 
     useEffect(()=>{
-      fetch(`http://localhost:3001/pricecell`)
+      fetch(`http://localhost:3000/pricecell`)
       .then(response => response.json())
       .then(product =>{
           setPrice(product);
@@ -44,7 +46,7 @@ const WomensClothing = () => {
     },[]);
 
     useEffect(()=>{
-      fetch(`http://localhost:3001/womencloths`)
+      fetch(`http://localhost:3000/womencloths`)
       .then(response => response.json())
       .then(product =>{
         setWomenCloth(product);
@@ -55,6 +57,26 @@ const WomensClothing = () => {
         console.log(err);
       })
     },[]);
+
+
+    useEffect(()=>{
+      fetch(`http://localhost:3000/womenclothsPage`)
+      .then(response => response.json())
+      .then(product =>{
+        setWomenClothPro(product);
+          console.log(product);
+      })
+      .catch((err) => {
+        // setError(true)
+        console.log(err);
+      })
+    },[]);
+
+    const handleClick = (item) => {
+      localStorage.setItem("singleProduct", JSON.stringify(item));
+  
+      Navigate(`/products/women-tops/${item.id}`);
+    };
 
   return (
     <>
@@ -70,7 +92,7 @@ const WomensClothing = () => {
     <div style={{display:"grid",gridTemplateColumns:"repeat(6,1fr)",gap:"20px",width:"80%" ,marginTop:"40px"}}>
 
     {products.map((womencloths) => (
-            <div key={womencloths.id} className="card" style={{width: "14rem",cursor:"pointer"}}>
+            <div key={womencloths.imageurl} onClick={()=>{<div>Rajtilak patel</div>}} className="card" style={{width: "13rem",cursor:"pointer"}}>
             <img style={{height: "18rem"}}  src={womencloths.imageurl} className="card-img-top" alt="..."/>
             <div className="card-body">
               <h2 className="card-title" style={{textAlign:"center"}}>{womencloths.desc}</h2>
@@ -91,7 +113,7 @@ const WomensClothing = () => {
     </div>
 
   {/* coats and outwears */}
-    <div style={{width:"100%",margin:"auto",marginLeft:"80px",margin:"40px" , border:"2px solid red"}} >
+    <div style={{width:"100%",margin:"auto",marginLeft:"80px",margin:"40px" }} >
        <div style={{height:"250px",backgroundColor:"white", width:"350px" ,position:"absolute",marginLeft:"40px",marginTop:"30px",padding:"10px 40px"}} >
        <h1 style={{fontSize:"23px"}}>New Arrivals: Coats & Outerwear</h1>
         <h4 style= {{marginTop:"30px"}}>Complete every fall look with our most coveted picks of the season.</h4>
@@ -110,7 +132,7 @@ const WomensClothing = () => {
        <div style={{display:"grid",gridTemplateColumns:"repeat(6,1fr)",gap:"20px",width:"80%" ,marginTop:"40px"}}>
 
        {price.map((price) => (
-            <div key={price.id} className="card" style={{width: "14rem",cursor:"pointer"}}>
+            <div key={price.imageurl} className="card" style={{width: "13rem",cursor:"pointer"}}>
             <img style={{height: "18rem"}}  src={price.imageurl} className="card-img-top" alt="..."/>
             <div className="card-body">
               <h2 className="card-title" style={{textAlign:"center",fontSize:"20px"}}>{price.desc}</h2>
@@ -124,7 +146,7 @@ const WomensClothing = () => {
 {/* fall in love */}
    <div className="container" style={{display:"flex"}}>
       <div>
-          <div style={{width:"100%",margin:"auto",marginLeft:"80px",margin:"20px"}} >
+          <div style={{width:"100%",margin:"auto",marginLeft:"20px",margin:"20px"}} >
             <div style={{height:"250px",backgroundColor:"white", width:"500px",padding:"50px"}} >
             <h1 style={{fontSize:"30px"}}>Fall in Love with Free people</h1>
               <h4 style= {{marginTop:"20px",fontSize:"22px"}}>kick-start the new season with cozy-chic tops,timelwss denim, midi dresses , and si much more!</h4>
@@ -152,29 +174,22 @@ const WomensClothing = () => {
             </div>
         </div>
 
+{/* three card page */}
       <div>
       <div style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:"20px",width:"90%" ,marginTop:"40px"}}>
-         <div className="card" style={{width:"15rem"}}>
-          <img style={{height: "25rem"}}  src="https://m.media-amazon.com/images/I/81OyYKjcoiL._AC_SX255_.jpg" className="card-img-top" alt="..."/>
-          <div className="card-body">
-            <h2 className="card-title" style={{textAlign:"center"}}>Card title</h2>
-          </div>
-        </div>
-         <div className="card" style={{width: "15rem"}}>
-          <img style={{height: "25rem"}}  src="https://m.media-amazon.com/images/I/81pRNsduEbL._AC_SX255_.jpg" className="card-img-top" alt="..."/>
-          <div className="card-body">
-            <h2 className="card-title" style={{textAlign:"center"}}>Card title</h2>
-          </div>
-        </div>
-         <div className="card" style={{width: "15rem"}}>
-          <img style={{height: "25rem"}}  src="https://m.media-amazon.com/images/I/81ISmEt9prL._AC_SX255_.jpg" className="card-img-top" alt="..."/>
-          <div className="card-body">
-            <h2 className="card-title" style={{textAlign:"center"}}>Card title</h2>
-          </div>
-          <div className="card-body">
-            <h2 className="card-title" style={{textAlign:"center"}}>Card title</h2>
-          </div>
-        </div>
+
+      {womenClothPro.map((womencloths) => (
+             <div key={womencloths.imageurl} onClick={() => handleClick(womencloths)} className="card" style={{width: "14rem",cursor:"pointer"}}>
+             <img style={{height: "18rem"}}  src={womencloths.imageurl} className="card-img-top" alt="..."/>
+               <h3 className="card-title" style={{textAlign:"center",fontSize:"20px",marginTop:"5px"}}>{womencloths.brand}</h3>
+             <div className="card-body">
+               <h2 className="card-title" style={{fontSize:"20px"}}>{womencloths.desc}</h2>
+               <h4 className="card-title" style={{fontSize:"20px"}}>${womencloths.price}</h4>
+               ⭐⭐⭐⭐⭐ <span>({womencloths.ratings})</span>
+             </div>
+            </div>
+          ))}
+        
     
     </div>
       </div>
@@ -197,13 +212,14 @@ const WomensClothing = () => {
 
    
 
+{/* Best sellor part */}
    <section>
    <div className='container' style={{width:"100%" , marginBottom:"40px"}} >
     <h1 style={{fontSize:"40px"}}>Best Sellor</h1>
     <div style={{display:"grid",gridTemplateColumns:"repeat(6,1fr)",gap:"20px",width:"80%" ,marginTop:"40px"}}>
 
     {womenCloth.map((women) => (
-            <div key={women.id} className="card" style={{width: "14rem",cursor:"pointer"}}>
+            <div key={women.imageurl}  onClick={() => handleClick(women)} className="card" style={{width: "13rem",cursor:"pointer"}}>
             <img style={{height: "18rem"}}  src={women.imageurl} className="card-img-top" alt="..."/>
               <h3 className="card-title" style={{textAlign:"center",fontSize:"20px",marginTop:"5px"}}>{women.brand}</h3>
             <div className="card-body">
@@ -219,8 +235,8 @@ const WomensClothing = () => {
 
 
    <section>
-     
-     <Slick/>
+  
+    <Brand/>
 
 
    </section>
