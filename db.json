@@ -690,5 +690,192 @@
       "price": 102.38,
       "id": 16
     }
+  ],
+  "popularitems":[
+    {
+      "id": 1,
+      "name": "UGG Tasman",
+      "price": 99.95,
+      "imgurl": "https://m.media-amazon.com/images/I/816V3NbceDL._AC_SX255_.jpg",
+      "favourites": 7931 
+    },
+    {
+      "id": 2,
+      "name": "Crocs Classic Lined Clog",
+      "price": 49.95,
+      "imgurl": "https://m.media-amazon.com/images/I/81NKoInBS7L._AC_SX255_.jpg",
+      "favourites": 3881
+    },
+    {
+      "id": 3,
+      "name": "Bogs Sauvie Slip-On Boot",
+      "price": 100,
+      "imgurl": "https://m.media-amazon.com/images/I/81hRbfDNsFL._AC_SX255_.jpg",
+      "favourites": 100
+    },
+    {
+      "id": 4,
+      "name": "Circus by Sam Edelman Darielle",
+      "price": 69.30,
+      "imgurl": "https://m.media-amazon.com/images/I/71mlmcKmuAL._AC_SX255_.jpg",
+      "favourites": 852
+    },
+    {
+      "id": 5,
+      "name": "Under Armour Kids Pennant",
+      "price": 40,
+      "imgurl": "https://m.media-amazon.com/images/I/61gQaOWfwNL._AC_SX255_.jpg",
+      "favourites": 112
+    },
+    {
+      "id": 6,
+      "name": "adidas Tiro 21 Track Pants",
+      "price": 49.95,
+      "imgurl": "https://m.media-amazon.com/images/I/71m33Aqx-gL._AC_SX255_.jpg",
+      "favourites": 175
+    },
+    {
+      "id": 7,
+      "name": "SKECHERS Performance Go",
+      "price": 42.95,
+      "imgurl": "https://m.media-amazon.com/images/I/81j8xKlC2xL._AC_SX255_.jpg",
+      "favourites": 814 
+    },
+    {
+      "id": 8,
+      "name": "Under Armour Blitzing 3.0 Cap",
+      "price": 24.95,
+      "imgurl": "https://m.media-amazon.com/images/I/81dGYj+1gYL._AC_SX255_.jpg",
+      "favourites": 263
+    },
+    {
+      "id": 9,
+      "name": "Under Armour UA Ignite VI SL",
+      "price": 27.81,
+      "imgurl": "https://m.media-amazon.com/images/I/61Sz-S3DeAL._AC_SX255_.jpg",
+      "favourites": 184
+    },
+    {
+      "id": 10,
+      "name": "Under Armour Blitzing 3.0 Cap",
+      "price": 24.95,
+      "imgurl": "https://m.media-amazon.com/images/I/81ZQ8DAnwNL._AC_SX255_.jpg",
+      "favourites": 75
+    },
+    {
+      "id": 11,
+      "name": "Hanes Women's EcoSmart Crewneck Sweatshirt",
+      "price": 22,
+      "imgurl": "https://m.media-amazon.com/images/I/81DBZBlMAfL._AC_SX255_.jpg",
+      "favourites": 15
+    },
+    {
+      "id": 12,
+      "name": "Under Armour Blitzing 3.0 Cap",
+      "price": 24.95,
+      "imgurl": "https://m.media-amazon.com/images/I/91qn632TK1L._AC_SX255_.jpg",
+      "favourites": 125
+    },
+    {
+      "id": 13,
+      "name": "adidas Golf UPF Sun Hat",
+      "price": 40,
+      "imgurl": "https://m.media-amazon.com/images/I/71Lwq2gzduL._AC_SX255_.jpg",
+      "favourites": 4
+    }
+  ],
+
+  "popularitems":[
+    {
+      "id": 1,
+      "name": "UGG Tasman",
+      "price": 99.95,
+      "imgurl": "https://m.media-amazon.com/images/I/816V3NbceDL._AC_SX255_.jpg",
+      "favourites": 7931 
+    },
+    {
+      "id": 2,
+      "name": "Crocs Classic Lined Clog",
+      "price": 49.95,
+      "imgurl": "https://m.media-amazon.com/images/I/81NKoInBS7L._AC_SX255_.jpg",
+      "favourites": 3881
+    },
+    {
+      "id": 3,
+      "name": "Bogs Sauvie Slip-On Boot",
+      "price": 100,
+      "imgurl": "https://m.media-amazon.com/images/I/81hRbfDNsFL._AC_SX255_.jpg",
+      "favourites": 100
+    },
+    {
+      "id": 4,
+      "name": "Circus by Sam Edelman Darielle",
+      "price": 69.30,
+      "imgurl": "https://m.media-amazon.com/images/I/71mlmcKmuAL._AC_SX255_.jpg",
+      "favourites": 852
+    },
+    {
+      "id": 5,
+      "name": "Under Armour Kids Pennant",
+      "price": 40,
+      "imgurl": "https://m.media-amazon.com/images/I/61gQaOWfwNL._AC_SX255_.jpg",
+      "favourites": 112
+    },
+    {
+      "id": 6,
+      "name": "adidas Tiro 21 Track Pants",
+      "price": 49.95,
+      "imgurl": "https://m.media-amazon.com/images/I/71m33Aqx-gL._AC_SX255_.jpg",
+      "favourites": 175
+    },
+    {
+      "id": 7,
+      "name": "SKECHERS Performance Go",
+      "price": 42.95,
+      "imgurl": "https://m.media-amazon.com/images/I/81j8xKlC2xL._AC_SX255_.jpg",
+      "favourites": 814 
+    },
+    {
+      "id": 8,
+      "name": "Under Armour Blitzing 3.0 Cap",
+      "price": 24.95,
+      "imgurl": "https://m.media-amazon.com/images/I/81dGYj+1gYL._AC_SX255_.jpg",
+      "favourites": 263
+    },
+    {
+      "id": 9,
+      "name": "Under Armour UA Ignite VI SL",
+      "price": 27.81,
+      "imgurl": "https://m.media-amazon.com/images/I/61Sz-S3DeAL._AC_SX255_.jpg",
+      "favourites": 184
+    },
+    {
+      "id": 10,
+      "name": "Under Armour Blitzing 3.0 Cap",
+      "price": 24.95,
+      "imgurl": "https://m.media-amazon.com/images/I/81ZQ8DAnwNL._AC_SX255_.jpg",
+      "favourites": 75
+    },
+    {
+      "id": 11,
+      "name": "Hanes Women's EcoSmart Sweatshirt",
+      "price": 22,
+      "imgurl": "https://m.media-amazon.com/images/I/81DBZBlMAfL._AC_SX255_.jpg",
+      "favourites": 15
+    },
+    {
+      "id": 12,
+      "name": "Under Armour Blitzing 3.0 Cap",
+      "price": 24.95,
+      "imgurl": "https://m.media-amazon.com/images/I/91qn632TK1L._AC_SX255_.jpg",
+      "favourites": 125
+    },
+    {
+      "id": 13,
+      "name": "adidas Golf UPF Sun Hat",
+      "price": 40,
+      "imgurl": "https://m.media-amazon.com/images/I/71Lwq2gzduL._AC_SX255_.jpg",
+      "favourites": 4
+    }
   ]
 }
