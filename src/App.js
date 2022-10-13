@@ -1,4 +1,5 @@
 import { Box } from '@chakra-ui/react';
+import Allroute from './Allroutes/Allroute';
 import './App.css';
 import Footer from './components/Footer';
 import Navbar from './components/Navbar';
@@ -11,8 +12,12 @@ function App() {
   return (
     <Box>
       <Navbar/>
-      <LandingPage/>
-      <Footer/>
+
+      <Allroute/>
+
+      <Footer/> 
+
+      
         {/* <MensClothing/>  */}
       {/* <WomensClothing/> */}
       {/* <Product/>  */}
