@@ -10,9 +10,9 @@ function App() {
     <Box>
       <Navbar/>
       <LandingPage/>
-       {/* <MensClothing/>
-      <WomensClothing/>
-      <Product/> */}
+        {/* <MensClothing/>  */}
+      {/* <WomensClothing/> */}
+      {/* <Product/>  */}
     </Box>
   );
 }
