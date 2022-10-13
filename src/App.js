@@ -13,11 +13,14 @@ function App() {
     <Box>
       <Navbar/>
 
+
       <Allroute/>
 
       <Footer/> 
+  
 
-      
+      <LandingPage/>
+
         {/* <MensClothing/>  */}
       {/* <WomensClothing/> */}
       <Product/> 
