@@ -16,10 +16,12 @@ const Slick = () => {
     return (
       <div className="container">
         <Slider {...settings}>
+        
         <div><img src="https://images.unsplash.com/photo-1617727553252-65863c156eb0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjB8fGJyYW5kfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="Credit to Joshua Earle on Unsplash"/>
         <h1 style={{textAlign:"center",marginTop:"10px",fontWeight:"bolder",textTransform:"uppercase"}}>Red Bull</h1> 
-
         </div>
+
+        
         <div><img src="https://images.unsplash.com/photo-1566657817181-c69e4a8eeb1e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fGJyYW5kfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="Credit to Joshua Earle on Unsplash"/>
          <h1 style={{textAlign:"center",marginTop:"10px",fontWeight:"bolder",textTransform:"uppercase"}}>Coco cola</h1> 
 
