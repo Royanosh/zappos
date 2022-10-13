@@ -1,5 +1,6 @@
 import { Box } from "@chakra-ui/react"
 import BelowNavbarBanner from "../components/LandingPage-Components/BelowNavbarBanner";
+import BelowTrending from "../components/LandingPage-Components/BelowTrending";
 import Bigbanner2 from "../components/LandingPage-Components/Bigbanner2";
 import Bigbanners from "../components/LandingPage-Components/Bigbanners";
 import PopularCategory from "../components/LandingPage-Components/PopularCategory";
@@ -18,6 +19,7 @@ const LandingPage = ()=>{
             <PopularItems/>
             <Bigbanner2/>
             <TrandingBrands/>
+            <BelowTrending/>
         </Box>
     )
 }
