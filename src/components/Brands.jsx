@@ -20,12 +20,14 @@ const Brands = (props) => {
   // const { value, getCheckboxProps } = useCheckboxGroup();
   const [loading, setLoading] = useState(false);
   const { scrollStyle, getCheckboxProps } = props;
+  const [searchBrand, setSearchBrand] = useState("");
+  const searchBrandUrl = searchBrand === "" ? "" : `?name_like=${searchBrand}`;
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [searchBrand]);
   const fetchData = () => {
     setLoading(true);
-    fetch(`${url}`)
+    fetch(`${url}${searchBrandUrl}`)
       .then((res) => res.json())
       .then((res) => {
         setBrands(res);
@@ -34,6 +36,21 @@ const Brands = (props) => {
         setLoading(false);
       });
   };
+  const handleChange = (event) => {
+    // console.log("HandleChange ", event.target.value);
+    setSearchBrand(event.target.value);
+  };
+  // function debouncingbyumesh(event) {
+  //   console.log("Deb");
+  //   let timer;
+  //   return () => {
+  //     clearTimeout(timer);
+  //     timer = setTimeout(() => {
+  //       handleChange();
+  //     }, 1);
+  //   };
+  // }
+
   return (
     <AccordionItem p={"5px"}>
       <h4>
@@ -51,7 +68,7 @@ const Brands = (props) => {
         </AccordionButton>
       </h4>
       <AccordionPanel pb={4} h="200px" sx={scrollStyle}>
-        <Input mb="8px" placeholder="Search Brand" />
+        <Input onKeyDown={handleChange} mb="8px" placeholder="Search Brand" />
         <CheckboxGroup defaultValue={[""]}>
           {loading ? (
             <Center>
