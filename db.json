@@ -506,43 +506,8 @@
       "price":89.09,
       "id":12
 
-  },
-  {
-      "imageurl":"https://m.media-amazon.com/images/I/71jCwzW8aKL._AC_SR255,340_.jpg",
-      "brand":"Free People",
-      "desc":"Orange T-Shirt Classic Fitness",
-      "ratings": 56,
-      "price":29.29,
-      "id":13
-
-  },
-  {
-      "imageurl":"https://m.media-amazon.com/images/I/711-47XvolL._AC_SR255,340_.jpg",
-      "brand":"Life is Good",
-      "desc":"Light Weight Slub Jersy Short Sleeves Great Dad T-Shirt",
-      "ratings": 12,
-      "price":120.22,
-      "id":14
-
-  },
-  {
-      "imageurl":"https://m.media-amazon.com/images/I/819ucm19esL._AC_SR255,340_.jpg",
-      "brand":"Carve Design",
-      "desc":"Wisper Cotton T-Shirt With Checks",
-      "ratings": 20,
-      "price":200.05,
-      "id":15
-
-  },
-  {
-      "imageurl":"https://m.media-amazon.com/images/I/81xOBbOWIiL._AC_SR255,340_.jpg",
-      "brand":"Life is Good",
-      "desc":"Men Full Active T-Shirt With Black in Color",
-      "ratings": 2,
-      "price":102.38,
-      "id":16
-
   }
+
   ],
 
   "womencloths":[
@@ -689,6 +654,24 @@
       "ratings": 2000,
       "price": 102.38,
       "id": 16
+    },
+    {
+      "imageurl":
+        "https://images.unsplash.com/photo-1582896911227-c966f6e7fb93?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8d29tYW4lMjB3aGl0ZSUyMGJhY2tncm91bmR8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
+      "brand": "Life is Good",
+      "desc": " Active Tee With Design",
+      "ratings": 1800,
+      "price": 200,
+      "id": 17
+    },
+    {
+      "imageurl":
+        "https://plus.unsplash.com/premium_photo-1661892519337-6ceeb0b537c6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8d29tZW4lMjBkcmVzcyUyMHdoaXRlJTIwYmFja2dyb3VuZHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+      "brand": "Life is Good",
+      "desc": " Tee With Design",
+      "ratings": 1200,
+      "price": 180,
+      "id": 18
     }
   ],
   "brands": [
@@ -11163,5 +11146,364 @@
       "selected": false,
       "facetUrl": null
     }
-  ]
+  ],
+  "womenclothsPage":[
+    {
+      "imageurl":
+        "https://m.media-amazon.com/images/I/81OyYKjcoiL._AC_SX255_.jpg",
+      "brand": "CeCe",
+      "desc": "Short sleves Round Neck Tees",
+      "ratings": 20864,
+      "price": 50,
+      "id": 1
+    },
+    {
+      "imageurl":
+        "https://m.media-amazon.com/images/I/81pRNsduEbL._AC_SX255_.jpg",
+      "brand": "Nic+Zoe",
+      "desc": "Perfect Layer 3/4 sleves",
+      "ratings": 777,
+      "price": 69.95,
+      "id": 2
+    },
+    {
+      "imageurl":
+        "https://m.media-amazon.com/images/I/81ISmEt9prL._AC_SX255_.jpg",
+      "brand": "Madewells",
+      "desc": "Puff Sleeves Mixed Media Knit Top",
+      "ratings": 729,
+      "price": 98.11,
+      "id": 3
+    }
+  ],
+  
+  "menclothsPage":[
+    {
+      "imageurl":
+        "https://m.media-amazon.com/images/I/816oM6FRuxS._AC_SX255_.jpg",
+      "brand": "CeCe",
+      "desc": "Short sleves Round Neck Tees",
+      "ratings": 20864,
+      "price": 50,
+      "id": 1
+    },
+    {
+      "imageurl":
+        "https://m.media-amazon.com/images/I/813ORXYkvWL._AC_SX255_.jpg",
+      "brand": "Nic+Zoe",
+      "desc": "Perfect Layer 3/4 sleves",
+      "ratings": 777,
+      "price": 69.95,
+      "id": 2
+    },
+    {
+      "imageurl":
+        "https://m.media-amazon.com/images/I/81CKNNjY9BL._AC_SX255_.jpg",
+      "brand": "Madewells",
+      "desc": "Puff Sleeves Mixed Media Knit Top",
+      "ratings": 729,
+      "price": 98.11,
+      "id": 3
+    }
+  ],
+
+    "pricecell":[
+      {
+        "imageurl":
+          "https://m.media-amazon.com/images/G/01/2022/womens/WOMENS-CLOTHING-LP-TRENDING-CATEGORY-1.png",
+        "brand": "CeCe",
+        "desc": "Dress Under $50",
+        "ratings": 20864,
+        "price": 50,
+        "id": 1
+      },
+      {
+        "imageurl":
+          "https://m.media-amazon.com/images/G/01/2022/womens/WOMENS-CLOTHING-LP-TRENDING-CATEGORY-2.png",
+        "brand": "Nic+Zoe",
+        "desc": "Boots Under $100",
+        "ratings": 777,
+        "price": 69.95,
+        "id": 2
+      },
+      {
+        "imageurl":
+          "https://m.media-amazon.com/images/G/01/2022/womens/WOMENS-CLOTHING-LP-TRENDING-CATEGORY-5.png",
+        "brand": "Madewells",
+        "desc": "Sweaters Under $50",
+        "ratings": 729,
+        "price": 98.11,
+        "id": 3
+      },
+      {
+        "imageurl":
+          "https://m.media-amazon.com/images/G/01/2022/womens/WOMENS-CLOTHING-LP-TRENDING-CATEGORY-4_1.png",
+        "brand": "Henes",
+        "desc": "Women's Coats & Outerwear Under $150",
+        "ratings": 323,
+        "price": 34.34,
+        "id": 4
+      },
+      {
+        "imageurl":
+          "https://m.media-amazon.com/images/G/01/2022/womens/WOMENS-CLOTHING-LP-TRENDING-CATEGORY-6.png",
+        "brand": "Alternative",
+        "desc": "Seakers Under $50",
+        "ratings": 5678,
+        "price": 45.34,
+        "id": 5
+      },
+      {
+        "imageurl":
+          "https://m.media-amazon.com/images/G/01/2022/womens/WOMENS-CLOTHING-LP-TRENDING-CATEGORY-3.png",
+        "brand": "Armour",
+        "desc": "Sleepwear Under $50",
+        "ratings": 809,
+        "price": 19.23,
+        "id": 6
+      }
+  ],
+  "womenclothsPro":[
+    {
+      "imageurl":
+        "https://m.media-amazon.com/images/I/71oq4d1UQ3L._AC_SR255,340_.jpg",
+      "brand": "CeCe",
+      "desc": "Short sleves Round Neck Tees",
+      "ratings": 20864,
+      "price": 50,
+      "id": 1
+    },
+    {
+      "imageurl":
+        "https://m.media-amazon.com/images/I/81I2hM50A8L._AC_SR255,340_.jpg",
+      "brand": "Nic+Zoe",
+      "desc": "Perfect Layer 3/4 sleves",
+      "ratings": 777,
+      "price": 69.95,
+      "id": 2
+    },
+    {
+      "imageurl":
+        "https://m.media-amazon.com/images/I/71e5Qmj+zdL._AC_SR255,340_.jpg",
+      "brand": "Madewells",
+      "desc": "Puff Sleeves Mixed Media Knit Top",
+      "ratings": 729,
+      "price": 98.11,
+      "id": 3
+    },
+    {
+      "imageurl":
+        "https://m.media-amazon.com/images/I/81EFawko13L._AC_SR255,340_.jpg",
+      "brand": "Henes",
+      "desc": "Lily Top",
+      "ratings": 323,
+      "price": 34.34,
+      "id": 4
+    },
+    {
+      "imageurl":
+        "https://m.media-amazon.com/images/I/61nDXvlWZiL._AC_SR255,340_.jpg",
+      "brand": "Alternative",
+      "desc": "Step Herm PopoVern In Layers",
+      "ratings": 5678,
+      "price": 45.34,
+      "id": 5
+    },
+    {
+      "imageurl":
+        "https://m.media-amazon.com/images/I/81lM9tJEsML._AC_SR255,340_.jpg",
+      "brand": "Armour",
+      "desc": "Short-Sleves Relaxed Tee",
+      "ratings": 809,
+      "price": 19.23,
+      "id": 6
+    }
+  ],
+  "mensPro":[
+    {
+      "imageurl":
+        "https://m.media-amazon.com/images/G/01/2022/Mens/MENS-LIGHT-LAYERS-OCTOBER-TRIPTYCH-500x500.jpg",
+      "brand": "Workout Wonders: Men’s Lightweight Athletic Layers",
+      "desc": "Make every activity comfy with pieces that you can layer on or take off.",
+      "ratings": 20864,
+      "title":"Shop Men’s Lightweight Athletic Layers",
+      "price": 50,
+      "id": 1
+    },
+    {
+      "imageurl":
+        "https://m.media-amazon.com/images/G/01/2022/Mens/MENS-JOGGERS-SWEATPANTS-OCTOBER-TRIPTYCH-500x500.jpg",
+      "brand": "On-the-Go Essentials: Joggers &amp; Sweatpants",
+      "desc": "Explore key pieces for the ultimate in cozy comfort and easy style.",
+      "ratings": 777,
+      "title":"Shop Men’s Joggers &amp; Sweatpants",
+      "price": 69.95,
+      "id": 2
+    },
+    {
+      "imageurl":
+        "https://m.media-amazon.com/images/G/01/2022/Mens/MENS-ACCESSORIES-OCTOBER-TRIPTYCH-500x500.jpg",
+      "brand": "The Finishing Touch: Men’s Accessories",
+      "desc": "Discover all-new beanies, socks, watches, belt bags, and more!",
+      "ratings": 729,
+      "title":"Shop Men’s Accessories",
+      "price": 98.11,
+      "id": 3
+    }
+    
+],  "popularitems":[
+  {
+    "id": 1,
+    "name": "UGG Tasman",
+    "price": 99.95,
+    "imgurl": "https://m.media-amazon.com/images/I/816V3NbceDL._AC_SX255_.jpg",
+    "favourites": 7931 
+  },
+  {
+    "id": 2,
+    "name": "Crocs Classic Lined Clog",
+    "price": 49.95,
+    "imgurl": "https://m.media-amazon.com/images/I/81NKoInBS7L._AC_SX255_.jpg",
+    "favourites": 3881
+  },
+  {
+    "id": 3,
+    "name": "Bogs Sauvie Slip-On Boot",
+    "price": 100,
+    "imgurl": "https://m.media-amazon.com/images/I/81hRbfDNsFL._AC_SX255_.jpg",
+    "favourites": 100
+  },
+  {
+    "id": 4,
+    "name": "Circus by Sam Edelman Darielle",
+    "price": 69.30,
+    "imgurl": "https://m.media-amazon.com/images/I/71mlmcKmuAL._AC_SX255_.jpg",
+    "favourites": 852
+  },
+  {
+    "id": 5,
+    "name": "Under Armour Kids Pennant",
+    "price": 40,
+    "imgurl": "https://m.media-amazon.com/images/I/61gQaOWfwNL._AC_SX255_.jpg",
+    "favourites": 112
+  },
+  {
+    "id": 6,
+    "name": "adidas Tiro 21 Track Pants",
+    "price": 49.95,
+    "imgurl": "https://m.media-amazon.com/images/I/71m33Aqx-gL._AC_SX255_.jpg",
+    "favourites": 175
+  },
+  {
+    "id": 7,
+    "name": "SKECHERS Performance Go",
+    "price": 42.95,
+    "imgurl": "https://m.media-amazon.com/images/I/81j8xKlC2xL._AC_SX255_.jpg",
+    "favourites": 814 
+  },
+  {
+    "id": 8,
+    "name": "Under Armour Blitzing 3.0 Cap",
+    "price": 24.95,
+    "imgurl": "https://m.media-amazon.com/images/I/81dGYj+1gYL._AC_SX255_.jpg",
+    "favourites": 263
+  },
+  {
+    "id": 9,
+    "name": "Under Armour UA Ignite VI SL",
+    "price": 27.81,
+    "imgurl": "https://m.media-amazon.com/images/I/61Sz-S3DeAL._AC_SX255_.jpg",
+    "favourites": 184
+  },
+  {
+    "id": 10,
+    "name": "Under Armour Blitzing 3.0 Cap",
+    "price": 24.95,
+    "imgurl": "https://m.media-amazon.com/images/I/81ZQ8DAnwNL._AC_SX255_.jpg",
+    "favourites": 75
+  },
+  {
+    "id": 11,
+    "name": "Hanes Women's EcoSmart Sweatshirt",
+    "price": 22,
+    "imgurl": "https://m.media-amazon.com/images/I/81DBZBlMAfL._AC_SX255_.jpg",
+    "favourites": 15
+  },
+  {
+    "id": 12,
+    "name": "Under Armour Blitzing 3.0 Cap",
+    "price": 24.95,
+    "imgurl": "https://m.media-amazon.com/images/I/91qn632TK1L._AC_SX255_.jpg",
+    "favourites": 125
+  },
+  {
+    "id": 13,
+    "name": "adidas Golf UPF Sun Hat",
+    "price": 40,
+    "imgurl": "https://m.media-amazon.com/images/I/71Lwq2gzduL._AC_SX255_.jpg",
+    "favourites": 4
+  }
+],
+"Trendingbrands":[
+  {
+    "id": 1,
+    "name": "Hoka",
+    "imgurl": "https://www.zappos.com/boutiques/3377/hoka_header012722.gif"
+  },
+  {
+    "id": 2,
+    "name": "Free People",
+    "imgurl": "https://www.zappos.com/boutiques/2631/FreePeople_Header070121.jpg"
+  },
+  {
+    "id": 3,
+    "name": "On",
+    "imgurl": "https://www.zappos.com/boutiques/4033/ON_header140422.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Steve Madden",
+    "imgurl": "https://www.zappos.com/boutiques/108/stevemadden_header093013.jpg"
+  },
+  {
+    "id": 5,
+    "name": "New Balance",
+    "imgurl": "https://www.zappos.com/boutiques/179/nb_header170922.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Birkenstock",
+    "imgurl": "https://www.zappos.com/boutiques/148/birkenstock_head-010616.jpg"
+  },
+  {
+    "id": 7,
+    "name": "UGG",
+    "imgurl": "https://www.zappos.com/boutiques/184/ugg_header_092116.jpg"
+  },
+  {
+    "id": 8,
+    "name": "ASICS",
+    "imgurl": "https://www.zappos.com/boutiques/162/asics_header061206.gif"
+  },
+  {
+    "id": 9,
+    "name": "Brooks",
+    "imgurl": "https://www.zappos.com/boutiques/193/brooks_head-060116.jpg"
+  },
+  {
+    "id": 10,
+    "name": "Crocs",
+    "imgurl": "https://www.zappos.com/boutiques/775/crocs_head_042617.jpg"
+  },
+  {
+    "id": 11,
+    "name": "SOREL",
+    "imgurl": "https://www.zappos.com/boutiques/272/sorel_head_101215.jpg"
+  },
+  {
+    "id": 12,
+    "name": "The North Face",
+    "imgurl": "https://www.zappos.com/boutiques/617/THENORTHFACE_header042619.gif"
+  }
+]
 }

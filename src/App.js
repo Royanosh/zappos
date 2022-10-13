@@ -1,17 +1,21 @@
-import "./App.css";
-import SignInModal from "./components/SignInModal";
-import Products from "./pages/Products";
-import SignIn from "./pages/SignIn";
-import SignUP from "./pages/SignUP";
-
+import { Box } from '@chakra-ui/react';
+import './App.css';
+import Footer from './components/Footer';
+import Navbar from './components/Navbar';
+import LandingPage from './pages/LandingPage'
+import MensClothing from './pages/MensClothing';
+import Product from './pages/Product';
+import WomensClothing from './pages/WomensClothing';
 function App() {
   return (
-    <div className="App">
-      {/* <Products /> */}
-
-      {/* <SignInModal /> */}
-      <SignIn />
-    </div>
+    <Box>
+      <Navbar/>
+      <LandingPage/>
+      <Footer/>
+        {/* <MensClothing/>  */}
+      {/* <WomensClothing/> */}
+      {/* <Product/>  */}
+    </Box>
   );
 }
 
