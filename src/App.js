@@ -8,10 +8,10 @@ import WomensClothing from './pages/WomensClothing';
 function App() {
   return (
     <Box>
-      <Navbar/>
-      <LandingPage/>
+      {/* <Navbar/> */}
+      {/* <LandingPage/> */}
         {/* <MensClothing/>  */}
-      {/* <WomensClothing/> */}
+      <WomensClothing/>
       {/* <Product/>  */}
     </Box>
   );
