@@ -78,7 +78,7 @@ const Navbar = () => {
                     <DrawerExample/>
                     </Box>
 
-                    <Link to="/" end>
+                    <Link to="/">
                     <Image
                         h="40px" m={2}
                         src="https://m.media-amazon.com/images/G/01/zappos/melody/zapposPBS._CB1509642213_.svg" />
@@ -761,7 +761,7 @@ const Navbar = () => {
                 <Box m={2} mr={5}
                 _hover={{borderBottom:'2px solid'}}
                 >
-                    <Text as='button'><SignInModal/></Text>
+                    <SignInModal/>
                 </Box>
 
             </Flex>
