@@ -13,8 +13,8 @@ function App() {
       <Navbar/>
       <LandingPage/>
         {/* <MensClothing/>  */}
-      <WomensClothing/>
-      {/* <Product/>  */}
+      {/* <WomensClothing/> */}
+      <Product/> 
       {/* <Products/> */}
     </Box>
   );
