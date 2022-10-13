@@ -20,7 +20,7 @@ function App() {
       
         {/* <MensClothing/>  */}
       {/* <WomensClothing/> */}
-      {/* <Product/>  */}
+      <Product/> 
       {/* <Products/> */}
     </Box>
   );
