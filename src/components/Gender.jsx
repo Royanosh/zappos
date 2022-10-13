@@ -14,7 +14,7 @@ import {
   useCheckboxGroup,
 } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
-const url = `http://localhost:3001/gender`;
+const url = `http://localhost:3000/gender`;
 const Gender = (props) => {
   const [gender, setGender] = useState([]);
   // const { value, getCheckboxProps } = useCheckboxGroup();

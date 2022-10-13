@@ -55,7 +55,7 @@ import Brands from "../components/Brands";
 import PriceRange from "../components/PriceRange";
 import Colors from "../components/Colors";
 import Gender from "../components/Gender";
-const url = `http://localhost:3001`;
+const url = `http://localhost:3000`;
 
 const Products = () => {
   const { value, getCheckboxProps } = useCheckboxGroup();

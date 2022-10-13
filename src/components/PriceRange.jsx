@@ -14,7 +14,7 @@ import {
   useCheckboxGroup,
 } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
-const url = `http://localhost:3001/priceRange`;
+const url = `http://localhost:3000/priceRange`;
 const PriceRange = (props) => {
   const [data, setData] = useState([]);
   // const { value, getCheckboxProps } = useCheckboxGroup();

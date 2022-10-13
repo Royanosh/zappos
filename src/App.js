@@ -5,6 +5,7 @@ import Navbar from './components/Navbar';
 import LandingPage from './pages/LandingPage'
 import MensClothing from './pages/MensClothing';
 import Product from './pages/Product';
+import Products from './pages/Products';
 import WomensClothing from './pages/WomensClothing';
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         {/* <MensClothing/>  */}
       {/* <WomensClothing/> */}
       {/* <Product/>  */}
+      {/* <Products/> */}
     </Box>
   );
 }
