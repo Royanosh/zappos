@@ -75,6 +75,66 @@ import MensSlick from "../components/MenWomenLAndingPage-components/MensSlick";
     <div>
        <MensSlick/>
     </div>
+   
+
+   {/* rating */}
+     <div className="container" style={{marginTop:"4%"}}>
+        <hr />
+       <h1 style={{fontSize:"25px",margin:"20px 0px"}}>Customer Reviews Product {data.brand} ${data.price} </h1>
+       <button style={{border:"2px solid black",padding:"5px 10px"}} >WRITE A REVIEW</button>
+       <br />
+       <br />
+       <hr />
+
+    <div style={{display:"flex", margin:"20px 0px"}}>
+       <div>
+           <h1 style={{fontSize:"25px",margin:"20px 0px"}}>{data.ratings} TOTAL REVIEW</h1>
+           <img style={{height:"100px",width:"100px",border:"1px solid gray",marginTop:"8px"}} src={data.imageurl} alt="" />
+          
+       </div>
+       <div>
+       <br />
+          <h1  style={{fontSize:"25px",margin:"20px 0px"}}>87%  ⭐⭐⭐⭐⭐</h1>
+          <h1  style={{fontSize:"25px",margin:"20px 0px"}}>54%  ⭐⭐⭐⭐</h1>
+          <h1  style={{fontSize:"25px",margin:"20px 0px"}}>42%  ⭐⭐⭐</h1>
+          <h1  style={{fontSize:"25px",margin:"20px 0px"}}>10%  ⭐⭐</h1>
+          <h1  style={{fontSize:"25px",margin:"20px 0px"}}>4%   ⭐</h1>
+       </div>
+     </div>
+     <hr />
+     </div>
+
+
+{/* other thing */}
+<div className="container" style={{marginTop:"4%"}}>
+      
+    <div style={{ margin:"20px 0px"}}>
+       <div>
+           <h1 style={{fontSize:"30px",margin:"20px 0px"}}>Show how you wore it!</h1>
+          <h1 style={{fontSize:"20px",margin:"20px 0px"}}> Be the first to add your Women's Single Breasted Jacket to Knee outfit to this gallery! </h1>
+       </div>
+       <div>
+           <button style={{border:"2px solid black",padding:"5px 10px",margin:"20px 0px"}}>SHARE YOUR OUTFITS</button>
+           <br />
+       </div>
+     </div>
+     <hr />
+     </div>
+
+{/* other OUTFIT */}
+<div className="container" style={{marginTop:"2%"}}>
+    <div style={{ margin:"20px 0px"}}>
+       <div>
+           <h1 style={{fontSize:"30px",margin:"15px 0px"}}>Customer Reviews Norma Kamali Women's Single Breasted Jacket to Knee</h1>
+          <h1 style={{fontSize:"20px",margin:"15px 0px"}}> This product currently has 0 reviews. </h1>
+       </div>
+       <br />
+       <div>
+           <button style={{border:"2px solid black",padding:"5px 10px"}}>WRITE A REVIEW</button>
+       </div>
+     </div>
+     <hr />
+     </div>
     </>
   );
 };
