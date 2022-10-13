@@ -49,14 +49,14 @@ import MensSlick from "../components/MenWomenLAndingPage-components/MensSlick";
           ⭐⭐⭐⭐⭐ <span className={styles.ratingSpan}>({data.ratings})</span>
         </div>
         <br />
-        <button style={{margin:"5px 10px",border:"1px solid black"}} type="button" class="btn btn-light">XS</button>
+        <button  style={{margin:"5px 10px",border:"1px solid black"}} type="button" class="btn btn-light">XS</button>
         <button style={{margin:"5px 10px",border:"1px solid black"}}  type="button" class="btn btn-light">SM</button>
         <button style={{margin:"5px 10px",border:"1px solid black"}}  type="button" class="btn btn-light">MD</button>
         <button style={{margin:"5px 10px",border:"1px solid black"}}  type="button" class="btn btn-light">LG</button>
         <button style={{margin:"5px 10px",border:"1px solid black"}}  type="button" class="btn btn-light">XL</button>
         <button style={{margin:"5px 10px",border:"1px solid black"}}  type="button" class="btn btn-light">XXL</button>
         <br />
-        <button  className={styles.cartBtn} onClick={AddtoCart}> 
+        <button  className={styles.cartBtn} onClick={AddtoCart} > 
           {/* onClick={AddtoCart} */}
           Add To Cart
         </button>
