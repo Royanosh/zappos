@@ -3,6 +3,8 @@ import React, { useEffect, useState } from 'react'
 import { Link, Navigate } from 'react-router-dom'
 import Brand from '../components/MenWomenLAndingPage-components/Brand'
 import '../components/MenWomenLAndingPage-components/mensWomesPage.css';
+
+
 const WomensClothing = () => {
    
   const [products,setProducts] = useState([]) 
@@ -18,6 +20,8 @@ const WomensClothing = () => {
         }
        
     }
+   
+
     useEffect(()=>{
       fetch(`http://localhost:3000/womenclothsPro`)
       .then(response => response.json())
@@ -221,7 +225,9 @@ const WomensClothing = () => {
    <section>
    <div className='container' style={{width:"100%" , marginBottom:"40px"}} >
     <h1 style={{fontSize:"40px"}}>Best Sellor</h1>
+
     <div style={{display:"grid",gridTemplateColumns:"repeat(5,1fr)",gap:"20px",width:"80%" ,marginTop:"40px"}}>
+
 
     {womenCloth.map((women) => (
             <div key={women.id}  onClick={() => handleClick(women)} className="card box" style={{width: "13rem",cursor:"pointer"}}>
@@ -234,6 +240,7 @@ const WomensClothing = () => {
             </div>
            </div>
      ))}
+     
     </div>
  </div>
    </section>
