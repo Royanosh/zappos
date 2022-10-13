@@ -13,6 +13,7 @@ import {
   Text,
   VStack,
 } from "@chakra-ui/react";
+import { NavLink } from "react-router-dom";
 const SignUP = () => {
   return (
     <>
@@ -30,7 +31,7 @@ const SignUP = () => {
               <FormLabel>Your name</FormLabel>
               <Input placeholder="First and last name" />
               <FormLabel>Email</FormLabel>
-              <Input type="email" />
+              <Input type="email" placeholder="Enter Email"/>
               <FormLabel>Password</FormLabel>
               <Input type="password" placeholder="At least 6 characters" />
               <FormHelperText>
@@ -62,7 +63,7 @@ const SignUP = () => {
               <Divider />
 
               <Text>
-                Already have an account?<Link color="#003953">Sign in</Link>
+                Already have an account?<NavLink to="/signin"><Link color="#003953">Sign in</Link></NavLink>
               </Text>
             </FormControl>
           </Box>

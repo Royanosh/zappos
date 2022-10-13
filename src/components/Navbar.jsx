@@ -4,6 +4,8 @@ import { ChevronDownIcon } from '@chakra-ui/icons'
 import { AiOutlineShoppingCart } from 'react-icons/ai';
 import { CgProfile } from 'react-icons/cg';
 import DrawerExample from "../components/LandingPage-Components/Smallscreendrawer";
+import SignInModal from "./SignInModal";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
 
@@ -76,10 +78,11 @@ const Navbar = () => {
                     <DrawerExample/>
                     </Box>
 
+                    <Link to="/" end>
                     <Image
                         h="40px" m={2}
                         src="https://m.media-amazon.com/images/G/01/zappos/melody/zapposPBS._CB1509642213_.svg" />
-
+                    </Link>
                     <Input
                     display={{base:'none', sm:'none', md:'none', lg:'flex', xl:'flex'}}
                         border='1px solid'
@@ -153,7 +156,7 @@ const Navbar = () => {
 
                                 <MenuList>
                                     <MenuItem fontWeight='bold'>Shoes</MenuItem>
-                                    <MenuItem>Sneakers and Athletic</MenuItem>
+                                    <MenuItem><Link to="/category/womenSneakers">Sneakers and Athletic</Link></MenuItem>
                                     <MenuItem>Sandals</MenuItem>
                                     <MenuItem>Clogs and Mules</MenuItem>
                                     <MenuItem>Heels</MenuItem>
@@ -167,7 +170,7 @@ const Navbar = () => {
 
                                 <MenuList>
                                     <MenuItem fontWeight='bold'>Clothing</MenuItem>
-                                    <MenuItem>Shirts and Tops</MenuItem>
+                                    <MenuItem><Link to="/womensclothing">Shirts and Tops</Link></MenuItem>
                                     <MenuItem>Swimwear</MenuItem>
                                     <MenuItem>Dresses</MenuItem>
                                     <MenuItem>Shorts</MenuItem>
@@ -254,7 +257,7 @@ const Navbar = () => {
 
                                 <MenuList>
                                     <MenuItem fontWeight='bold'>Shoes</MenuItem>
-                                    <MenuItem>Sneakers and Athletic</MenuItem>
+                                    <MenuItem><Link to="/category/menssneakers">Sneakers and Athletic</Link></MenuItem>
                                     <MenuItem>Sandals</MenuItem>
                                     <MenuItem>Clogs and Mules</MenuItem>
                                     <MenuItem>Heels</MenuItem>
@@ -268,7 +271,7 @@ const Navbar = () => {
 
                                 <MenuList>
                                     <MenuItem fontWeight='bold'>Clothing</MenuItem>
-                                    <MenuItem>Shirts and Tops</MenuItem>
+                                    <MenuItem><Link to="/mensclothing">Shirts and Tops</Link></MenuItem>
                                     <MenuItem>Swimwear</MenuItem>
                                     <MenuItem>Dresses</MenuItem>
                                     <MenuItem>Shorts</MenuItem>
@@ -758,7 +761,7 @@ const Navbar = () => {
                 <Box m={2} mr={5}
                 _hover={{borderBottom:'2px solid'}}
                 >
-                    <Text as='button'>Sign In / Register</Text>
+                    <Text as='button'><SignInModal/></Text>
                 </Box>
 
             </Flex>

@@ -90,15 +90,18 @@ const WomensClothing = () => {
     </div>
 
  <div className='container' style={{width:"100%" , marginBottom:"40px"}} >
-    <div style={{display:"grid",gridTemplateColumns:"repeat(6,1fr)",gap:"20px",width:"80%" ,marginTop:"40px"}}>
+    <div style={{display:"grid",gridTemplateColumns:"repeat(6,1fr)",gap:"10px",width:"100%" ,marginTop:"40px"}}>
 
     {products.map((womencloths) => (
-            <div key={womencloths.id} onClick={()=>{<div>Rajtilak patel</div>}} className="card box" style={{width: "13rem",cursor:"pointer"}}>
+            <Link to="/category/womencloths"
+            >
+            <div key={womencloths.id} onClick={()=>{<div>Rajtilak patel</div>}} className="card box" style={{width: "100%",cursor:"pointer"}}>
             <img style={{height: "18rem"}}  src={womencloths.imageurl} className="card-img-top" alt="..."/>
             <div className="card-body">
               <h2 className="card-title" style={{textAlign:"center"}}>{womencloths.desc}</h2>
             </div>
            </div>
+           </Link>
           ))}
     </div>
  </div>
@@ -131,10 +134,10 @@ const WomensClothing = () => {
 
     <div className="container" style={{width:"100%" , marginBottom:"40px"}}>
       <h1 style={{fontSize:"30px"}}>Shop by Price</h1>
-       <div style={{display:"grid",gridTemplateColumns:"repeat(6,1fr)",gap:"20px",width:"80%" ,marginTop:"40px"}}>
+       <div style={{display:"grid",gridTemplateColumns:"repeat(6,1fr)",gap:"20px",width:"100%" ,marginTop:"40px"}}>
 
        {price.map((price) => (
-            <div key={price.id} className="card box" style={{width: "13rem",cursor:"pointer"}}>
+            <div key={price.id} className="card box" style={{width: "100%",cursor:"pointer"}}>
             <img style={{height: "18rem"}}  src={price.imageurl} className="card-img-top" alt="..."/>
             <div className="card-body">
               <h2 className="card-title" style={{textAlign:"center",fontSize:"20px"}}>{price.desc}</h2>
@@ -167,7 +170,7 @@ const WomensClothing = () => {
    <div className="container" style={{display:"flex"}}>
       <div>
           <div style={{width:"100%",margin:"auto",marginLeft:"20px",margin:"20px"}} >
-            <div style={{height:"250px",backgroundColor:"white", width:"500px",padding:"50px"}} >
+            <div style={{height:"250px",backgroundColor:"white", width:"100%",padding:"50px"}} >
             <h1 style={{fontSize:"30px"}}>New Arrivals from KUT from the Kloth</h1>
               <div style={{fontSize:"28px"}}>
                 <button type="button"  style={{fontSize:"18px",backgroundColor:"white",border:"2px solid black",fontWeight:"bold",padding:"5px 10px",marginTop:"20px"}} >SHOP KUT FROM THE KLOTH</button>
@@ -202,7 +205,7 @@ const WomensClothing = () => {
 {/* shop the fall */}
 
    <div style={{width:"100%",margin:"auto",marginLeft:"80px",margin:"40px"}} >
-       <div style={{height:"260px",backgroundColor:"white", width:"440px" ,position:"absolute",marginLeft:"1000px",marginTop:"30px",padding:"10px 40px"}} >
+       <div style={{height:"260px",backgroundColor:"white", width:"440px" ,position:"absolute",marginLeft:"54%",marginTop:"30px",padding:"10px 40px"}} >
        <h1 style={{fontSize:"25px"}}>Your Fall 2022 Guide to Fashion</h1>
         <h4 style= {{marginTop:"10px",fontSize:"20px"}}>Boots,jackets,sneakers-- everything you love avout fall all in one place. plus, don't miss out on key picks from SOREL, L.L.Beans,UGG, nad Steve Maddden!</h4>
         <div style={{fontSize:"28px"}}>
@@ -218,7 +221,7 @@ const WomensClothing = () => {
    <section>
    <div className='container' style={{width:"100%" , marginBottom:"40px"}} >
     <h1 style={{fontSize:"40px"}}>Best Sellor</h1>
-    <div style={{display:"grid",gridTemplateColumns:"repeat(6,1fr)",gap:"20px",width:"80%" ,marginTop:"40px"}}>
+    <div style={{display:"grid",gridTemplateColumns:"repeat(5,1fr)",gap:"20px",width:"80%" ,marginTop:"40px"}}>
 
     {womenCloth.map((women) => (
             <div key={women.id}  onClick={() => handleClick(women)} className="card box" style={{width: "13rem",cursor:"pointer"}}>
