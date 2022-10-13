@@ -55,6 +55,7 @@ import Brands from "../components/Brands";
 import PriceRange from "../components/PriceRange";
 import Colors from "../components/Colors";
 import Gender from "../components/Gender";
+import { NavLink, useParams } from "react-router-dom";
 const url = `http://localhost:3000`;
 
 const Products = () => {
@@ -62,6 +63,7 @@ const Products = () => {
   const [data, setData] = useState([]);
   const [priceRange, setPriceRange] = useState([]);
   const [loading, setLoading] = useState(false);
+  let { cat } = useParams();
   console.log("PriceRange", priceRange);
   const priceRangeUrl =
     priceRange[0] >= 0
@@ -76,7 +78,7 @@ const Products = () => {
   }, [sortPrice, priceRangeUrl]);
   const fetchData = () => {
     setLoading(true);
-    const gender = "menscloths";
+    const gender = cat;
     fetch(`${url}/${gender}?_limit=100&_page=1${sortPriceUrl}${priceRangeUrl}`)
       .then((res) => res.json())
       .then((res) => {
@@ -278,7 +280,9 @@ const Products = () => {
               ) : (
                 <SimpleGrid minChildWidth="220px" spacing="10px" m={5}>
                   {data.map((elem, i) => (
+                    <NavLink to={`/category/mens/${elem.id}`}>
                     <Product key={i} elem={elem} i={i} />
+                    </NavLink>
                   ))}
                 </SimpleGrid>
               )}

@@ -13,6 +13,7 @@ import {
   Text,
   VStack,
 } from "@chakra-ui/react";
+import { NavLink } from "react-router-dom";
 const SignIn = () => {
   return (
     <>
@@ -28,7 +29,7 @@ const SignIn = () => {
             <FormControl>
               <Text fontSize="3xl">Sign-In</Text>
               <FormLabel>Email</FormLabel>
-              <Input type="email" />
+              <Input type="email" placeholder="Enter Email"/>
               <FormLabel>Password</FormLabel>
               <Input type="password" placeholder="At least 6 characters" />
               <Button
@@ -42,6 +43,7 @@ const SignIn = () => {
                 Sign in
               </Button>
 
+              <NavLink to="/signup">
               <Button
                 mt={"20px"}
                 color="#003953"
@@ -52,6 +54,7 @@ const SignIn = () => {
               >
                 CREATE YOUR ZAPPOS ACCOUNT
               </Button>
+              </NavLink>
             </FormControl>
           </Box>
         </VStack>
