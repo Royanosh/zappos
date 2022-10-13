@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react'
 import { Navigate } from 'react-router-dom'
 import Slick from '../components/MenWomenLAndingPage-components/Slick'
+import '../components/MenWomenLAndingPage-components/mensWomesPage.css';
 const MensClothing = () => {
    
   const [products,setProducts] = useState([]) 
@@ -109,7 +110,7 @@ const MensClothing = () => {
  <div className='container' style={{width:"100%" , marginBottom:"40px"}} >
     <div style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:"20px",width:"80%" ,marginTop:"40px"}}>
     {price.map((womencloths) => (
-            <div key={womencloths.id} className="card" style={{width: "28rem",cursor:"pointer"}}>
+            <div key={womencloths.id} className="card box" style={{width: "28rem",cursor:"pointer"}}>
             <img style={{height: "30rem"}}  src={womencloths.imageurl} className="card-img-top" alt="..."/>
             <div className="card-body">
               <h2 className="card-title" style={{textAlign:"center"}}>{womencloths.desc}</h2>
@@ -163,7 +164,7 @@ const MensClothing = () => {
       <div style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:"20px",width:"90%" ,marginTop:"40px"}}>
 
       {menCloth.map((womencloths) => (
-             <div key={womencloths.id} onClick={() => handleClick(womencloths)} className="card" style={{width: "14rem",cursor:"pointer"}}>
+             <div key={womencloths.id} onClick={() => handleClick(womencloths)} className="card box" style={{width: "14rem",cursor:"pointer"}}>
              <img style={{height: "18rem"}}  src={womencloths.imageurl} className="card-img-top" alt="..."/>
                <h3 className="card-title" style={{textAlign:"center",fontSize:"20px",marginTop:"5px"}}>{womencloths.brand}</h3>
              <div className="card-body">
@@ -200,7 +201,7 @@ const MensClothing = () => {
     <div style={{display:"grid",gridTemplateColumns:"repeat(6,1fr)",gap:"20px",width:"80%" ,marginTop:"40px"}}>
 
     {womenCloth.map((women) => (
-            <div key={women.id} onClick={() => handleClick(women)} className="card" style={{width: "14rem",cursor:"pointer"}}>
+            <div key={women.id} onClick={() => handleClick(women)} className="card box" style={{width: "14rem",cursor:"pointer"}}>
             <img style={{height: "18rem"}}  src={women.imageurl} className="card-img-top" alt="..."/>
               <h3 className="card-title" style={{textAlign:"center",fontSize:"20px",marginTop:"5px"}}>{women.brand}</h3>
             <div className="card-body">
