@@ -7,11 +7,15 @@ import DrawerExample from "../components/LandingPage-Components/Smallscreendrawe
 import SignInModal from "./SignInModal";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { useSelector } from "react-redux";
 
 const Navbar = () => {
 
     const [ search, setSearch ] = useState("");
     const navigate = useNavigate();
+
+    const isauth = useSelector((state) => state.isauth);
+
     const handlesearch = ()=>{
         if(search==="men" || search==="mens" || search==="mens shirt" || search==="mens cloths" || search === "mensclothing" || search==="menscloths"){
             setSearch("");
@@ -780,7 +784,7 @@ const Navbar = () => {
                 <Box m={2} mr={5}
                 _hover={{borderBottom:'2px solid'}}
                 >
-                    <SignInModal/>
+                   isauth ? <SignInModal/>
                 </Box>
 
             </Flex>

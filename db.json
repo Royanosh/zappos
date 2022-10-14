@@ -384,7 +384,8 @@
       "desc": "Short sleves Round Neck Tees",
       "ratings": 20864,
       "price": 50,
-      "id": 1
+      "id": 1,
+      "gender": "men"
     },
     {
       "imageurl": "https://m.media-amazon.com/images/I/81eUMKdBuPL._AC_SR255,340_.jpg",
@@ -392,7 +393,8 @@
       "desc": "Perfect Layer Cotton Printed Shirt",
       "ratings": 225,
       "price": 69.95,
-      "id": 2
+      "id": 2,
+      "gender": "men"
     },
     {
       "imageurl": "https://m.media-amazon.com/images/I/61SFAqf9EDL._AC_SR255,340_.jpg",
@@ -400,7 +402,8 @@
       "desc": "Round Neck Plain White  T-Shirt ",
       "ratings": 196,
       "price": 98.11,
-      "id": 3
+      "id": 3,
+      "gender": "men"
     },
     {
       "imageurl": "https://m.media-amazon.com/images/I/71YKqYLNA7L._AC_SR255,340_.jpg",
@@ -408,7 +411,8 @@
       "desc": "Round Neck Plain Black  T-Shirt ",
       "ratings": 169,
       "price": 34.34,
-      "id": 4
+      "id": 4,
+      "gender": "men"
     },
     {
       "imageurl": "https://m.media-amazon.com/images/I/61LD0gck1DL._AC_SR255,340_.jpg",
@@ -416,7 +420,8 @@
       "desc": "Step Herm PopoVern In Layers With a color neck",
       "ratings": 144,
       "price": 45.34,
-      "id": 5
+      "id": 5,
+      "gender": "men"
     },
     {
       "imageurl": "https://m.media-amazon.com/images/I/81Lnc5Nr9EL._AC_SR255,340_.jpg",
@@ -424,7 +429,8 @@
       "desc": "Color Neck Comfortable Cotton Mix T-Shirt",
       "ratings": 121,
       "price": 19.23,
-      "id": 6
+      "id": 6,
+      "gender": "men"
     },
     {
       "imageurl": "https://m.media-amazon.com/images/I/71QdUTlawTL._AC_SR255,340_.jpg",
@@ -432,7 +438,8 @@
       "desc": "UA-Tech VNeck T-Shirt With A Good Fabric",
       "ratings": 81,
       "price": 150.23,
-      "id": 7
+      "id": 7,
+      "gender": "men"
     },
     {
       "imageurl": "https://m.media-amazon.com/images/I/71fAPkW49fL._AC_SR255,340_.jpg",
@@ -440,7 +447,8 @@
       "desc": "American Rino T-Shirt",
       "ratings": 35,
       "price": 76.23,
-      "id": 8
+      "id": 8,
+      "gender": "men"
     },
     {
       "imageurl": "https://m.media-amazon.com/images/I/71er1W7Df5L._AC_SR255,340_.jpg",
@@ -448,7 +456,8 @@
       "desc": "Fether Weight Cotton Shirt Casual Wear",
       "ratings": 98,
       "price": 109.1,
-      "id": 9
+      "id": 9,
+      "gender": "men"
     },
     {
       "imageurl": "https://m.media-amazon.com/images/I/61L9JVNvo9L._AC_SR255,340_.jpg",
@@ -456,7 +465,8 @@
       "desc": "BoyFriend Shirt With Good Fitness",
       "ratings": 123,
       "price": 76.23,
-      "id": 10
+      "id": 10,
+      "gender": "men"
     },
     {
       "imageurl": "https://m.media-amazon.com/images/I/71OL+zOndQL._AC_SR255,340_.jpg",
@@ -464,7 +474,8 @@
       "desc": "Marlie London Paris T-Shirt",
       "ratings": 90,
       "price": 229.19,
-      "id": 11
+      "id": 11,
+      "gender": "men"
     },
     {
       "imageurl": "https://m.media-amazon.com/images/I/61hjDKNSSYL._AC_SR255,340_.jpg",
@@ -472,7 +483,8 @@
       "desc": "Model Tee Blend Racer T-Shirt",
       "ratings": 34,
       "price": 89.09,
-      "id": 12
+      "id": 12,
+      "gender": "men"
     }
   ],
   "womencloths": [
@@ -482,7 +494,8 @@
       "desc": "Short sleves Round Neck Tees",
       "ratings": 20864,
       "price": 50,
-      "id": 1
+      "id": 1,
+      "gender": "women"
     },
     {
       "imageurl": "https://m.media-amazon.com/images/I/81I2hM50A8L._AC_SR255,340_.jpg",
@@ -490,7 +503,8 @@
       "desc": "Perfect Layer 3/4 sleves",
       "ratings": 777,
       "price": 69.95,
-      "id": 2
+      "id": 2,
+      "gender": "women"
     },
     {
       "imageurl": "https://m.media-amazon.com/images/I/71e5Qmj+zdL._AC_SR255,340_.jpg",
@@ -498,7 +512,8 @@
       "desc": "Puff Sleeves Mixed Media Knit Top",
       "ratings": 729,
       "price": 98.11,
-      "id": 3
+      "id": 3,
+      "gender": "women"
     },
     {
       "imageurl": "https://m.media-amazon.com/images/I/81EFawko13L._AC_SR255,340_.jpg",
@@ -506,7 +521,8 @@
       "desc": "Lily Top",
       "ratings": 323,
       "price": 34.34,
-      "id": 4
+      "id": 4,
+      "gender": "women"
     },
     {
       "imageurl": "https://m.media-amazon.com/images/I/61nDXvlWZiL._AC_SR255,340_.jpg",
@@ -514,7 +530,8 @@
       "desc": "Step Herm PopoVern In Layers",
       "ratings": 5678,
       "price": 45.34,
-      "id": 5
+      "id": 5,
+      "gender": "women"
     },
     {
       "imageurl": "https://m.media-amazon.com/images/I/81lM9tJEsML._AC_SR255,340_.jpg",
@@ -522,7 +539,8 @@
       "desc": "Short-Sleves Relaxed Tee",
       "ratings": 809,
       "price": 19.23,
-      "id": 6
+      "id": 6,
+      "gender": "women"
     },
     {
       "imageurl": "https://m.media-amazon.com/images/I/81vvUmdmonL._AC_SR255,340_.jpg",
@@ -530,7 +548,8 @@
       "desc": "UA-Tech VNeck Sleves",
       "ratings": 620,
       "price": 150.23,
-      "id": 7
+      "id": 7,
+      "gender": "women"
     },
     {
       "imageurl": "https://m.media-amazon.com/images/I/710ehjlRSeL._AC_SR255,340_.jpg",
@@ -538,7 +557,8 @@
       "desc": "Plus Size American Badge Of Sports",
       "ratings": 144,
       "price": 76.23,
-      "id": 8
+      "id": 8,
+      "gender": "women"
     },
     {
       "imageurl": "https://m.media-amazon.com/images/I/81wNdYGAB-L._AC_SR255,340_.jpg",
@@ -546,7 +566,8 @@
       "desc": "Fether Weight Specialy For Women",
       "ratings": 729,
       "price": 109.1,
-      "id": 9
+      "id": 9,
+      "gender": "women"
     },
     {
       "imageurl": "https://m.media-amazon.com/images/I/71oecDUjA7L._AC_SR255,340_.jpg",
@@ -554,7 +575,8 @@
       "desc": "BoyFriend Tee",
       "ratings": 432,
       "price": 76.23,
-      "id": 10
+      "id": 10,
+      "gender": "women"
     },
     {
       "imageurl": "https://m.media-amazon.com/images/I/91dWJ9FRq6L._AC_SR255,340_.jpg",
@@ -562,7 +584,8 @@
       "desc": "Ideal Tee With Perfect Layer",
       "ratings": 234,
       "price": 229.19,
-      "id": 11
+      "id": 11,
+      "gender": "women"
     },
     {
       "imageurl": "https://m.media-amazon.com/images/I/81q1jEcBRZS._AC_SR255,340_.jpg",
@@ -570,7 +593,8 @@
       "desc": "Model Tee Blend Racer Tee",
       "ratings": 901,
       "price": 89.09,
-      "id": 12
+      "id": 12,
+      "gender": "women"
     },
     {
       "imageurl": "https://m.media-amazon.com/images/I/715Rj4146vL._AC_SR255,340_.jpg",
@@ -578,7 +602,8 @@
       "desc": "Short Sleeves Two Button Classic Fitness",
       "ratings": 81,
       "price": 29.29,
-      "id": 13
+      "id": 13,
+      "gender": "women"
     },
     {
       "imageurl": "https://m.media-amazon.com/images/I/81r+IJ6FyBL._AC_SR255,340_.jpg",
@@ -586,7 +611,8 @@
       "desc": "Light Weight Slub Jersy Short Sleeves",
       "ratings": 64,
       "price": 120.22,
-      "id": 14
+      "id": 14,
+      "gender": "women"
     },
     {
       "imageurl": "https://m.media-amazon.com/images/I/91crWsr7gJL._AC_SR255,340_.jpg",
@@ -594,7 +620,8 @@
       "desc": "Wisper Cotton V-Neck Tee",
       "ratings": 976,
       "price": 200.05,
-      "id": 15
+      "id": 15,
+      "gender": "women"
     },
     {
       "imageurl": "https://m.media-amazon.com/images/I/81EFCTkSdxL._AC_SR255,340_.jpg",
@@ -602,7 +629,8 @@
       "desc": "Women 3/4 Active Tee With Design",
       "ratings": 2000,
       "price": 102.38,
-      "id": 16
+      "id": 16,
+      "gender": "women"
     },
     {
       "imageurl": "https://images.unsplash.com/photo-1582896911227-c966f6e7fb93?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8d29tYW4lMjB3aGl0ZSUyMGJhY2tncm91bmR8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
@@ -610,7 +638,8 @@
       "desc": " Active Tee With Design",
       "ratings": 1800,
       "price": 200,
-      "id": 17
+      "id": 17,
+      "gender": "women"
     },
     {
       "imageurl": "https://plus.unsplash.com/premium_photo-1661892519337-6ceeb0b537c6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8d29tZW4lMjBkcmVzcyUyMHdoaXRlJTIwYmFja2dyb3VuZHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
@@ -618,7 +647,280 @@
       "desc": " Tee With Design",
       "ratings": 1200,
       "price": 180,
-      "id": 18
+      "id": 18,
+      "gender": "women"
+    }
+  ],
+  "mix":[
+    {
+      "imageurl": "https://m.media-amazon.com/images/I/71oq4d1UQ3L._AC_SR255,340_.jpg",
+      "brand": "CeCe",
+      "desc": "Short sleves Round Neck Tees",
+      "ratings": 20864,
+      "price": 50,
+      "id": 1,
+      "gender": "women"
+    },
+    {
+      "imageurl": "https://m.media-amazon.com/images/I/81I2hM50A8L._AC_SR255,340_.jpg",
+      "brand": "Nic+Zoe",
+      "desc": "Perfect Layer 3/4 sleves",
+      "ratings": 777,
+      "price": 69.95,
+      "id": 2,
+      "gender": "women"
+    },
+    {
+      "imageurl": "https://m.media-amazon.com/images/I/71e5Qmj+zdL._AC_SR255,340_.jpg",
+      "brand": "Madewells",
+      "desc": "Puff Sleeves Mixed Media Knit Top",
+      "ratings": 729,
+      "price": 98.11,
+      "id": 3,
+      "gender": "women"
+    },
+    {
+      "imageurl": "https://m.media-amazon.com/images/I/81EFawko13L._AC_SR255,340_.jpg",
+      "brand": "Henes",
+      "desc": "Lily Top",
+      "ratings": 323,
+      "price": 34.34,
+      "id": 4,
+      "gender": "women"
+    },
+    {
+      "imageurl": "https://m.media-amazon.com/images/I/61nDXvlWZiL._AC_SR255,340_.jpg",
+      "brand": "Alternative",
+      "desc": "Step Herm PopoVern In Layers",
+      "ratings": 5678,
+      "price": 45.34,
+      "id": 5,
+      "gender": "women"
+    },
+    {
+      "imageurl": "https://m.media-amazon.com/images/I/81lM9tJEsML._AC_SR255,340_.jpg",
+      "brand": "Armour",
+      "desc": "Short-Sleves Relaxed Tee",
+      "ratings": 809,
+      "price": 19.23,
+      "id": 6,
+      "gender": "women"
+    },
+    {
+      "imageurl": "https://m.media-amazon.com/images/I/81vvUmdmonL._AC_SR255,340_.jpg",
+      "brand": "Madewell",
+      "desc": "UA-Tech VNeck Sleves",
+      "ratings": 620,
+      "price": 150.23,
+      "id": 7,
+      "gender": "women"
+    },
+    {
+      "imageurl": "https://m.media-amazon.com/images/I/710ehjlRSeL._AC_SR255,340_.jpg",
+      "brand": "Free People",
+      "desc": "Plus Size American Badge Of Sports",
+      "ratings": 144,
+      "price": 76.23,
+      "id": 8,
+      "gender": "women"
+    },
+    {
+      "imageurl": "https://m.media-amazon.com/images/I/81wNdYGAB-L._AC_SR255,340_.jpg",
+      "brand": "AberCrombia &Fitch",
+      "desc": "Fether Weight Specialy For Women",
+      "ratings": 729,
+      "price": 109.1,
+      "id": 9,
+      "gender": "women"
+    },
+    {
+      "imageurl": "https://m.media-amazon.com/images/I/71oecDUjA7L._AC_SR255,340_.jpg",
+      "brand": "Salty Crew@",
+      "desc": "BoyFriend Tee",
+      "ratings": 432,
+      "price": 76.23,
+      "id": 10,
+      "gender": "women"
+    },
+    {
+      "imageurl": "https://m.media-amazon.com/images/I/91dWJ9FRq6L._AC_SR255,340_.jpg",
+      "brand": "Marvel",
+      "desc": "Ideal Tee With Perfect Layer",
+      "ratings": 234,
+      "price": 229.19,
+      "id": 11,
+      "gender": "women"
+    },
+    {
+      "imageurl": "https://m.media-amazon.com/images/I/81q1jEcBRZS._AC_SR255,340_.jpg",
+      "brand": "Armour",
+      "desc": "Model Tee Blend Racer Tee",
+      "ratings": 901,
+      "price": 89.09,
+      "id": 12,
+      "gender": "women"
+    },
+    {
+      "imageurl": "https://m.media-amazon.com/images/I/715Rj4146vL._AC_SR255,340_.jpg",
+      "brand": "Free People",
+      "desc": "Short Sleeves Two Button Classic Fitness",
+      "ratings": 81,
+      "price": 29.29,
+      "id": 13,
+      "gender": "women"
+    },
+    {
+      "imageurl": "https://m.media-amazon.com/images/I/81r+IJ6FyBL._AC_SR255,340_.jpg",
+      "brand": "Life is Good",
+      "desc": "Light Weight Slub Jersy Short Sleeves",
+      "ratings": 64,
+      "price": 120.22,
+      "id": 14,
+      "gender": "women"
+    },
+    {
+      "imageurl": "https://m.media-amazon.com/images/I/91crWsr7gJL._AC_SR255,340_.jpg",
+      "brand": "Carve Design",
+      "desc": "Wisper Cotton V-Neck Tee",
+      "ratings": 976,
+      "price": 200.05,
+      "id": 15,
+      "gender": "women"
+    },
+    {
+      "imageurl": "https://m.media-amazon.com/images/I/81EFCTkSdxL._AC_SR255,340_.jpg",
+      "brand": "Life is Good",
+      "desc": "Women 3/4 Active Tee With Design",
+      "ratings": 2000,
+      "price": 102.38,
+      "id": 16,
+      "gender": "women"
+    },
+    {
+      "imageurl": "https://images.unsplash.com/photo-1582896911227-c966f6e7fb93?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8d29tYW4lMjB3aGl0ZSUyMGJhY2tncm91bmR8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
+      "brand": "Life is Good",
+      "desc": " Active Tee With Design",
+      "ratings": 1800,
+      "price": 200,
+      "id": 17,
+      "gender": "women"
+    },
+    {
+      "imageurl": "https://plus.unsplash.com/premium_photo-1661892519337-6ceeb0b537c6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8d29tZW4lMjBkcmVzcyUyMHdoaXRlJTIwYmFja2dyb3VuZHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+      "brand": "Life is Good",
+      "desc": " Tee With Design",
+      "ratings": 1200,
+      "price": 180,
+      "id": 18,
+      "gender": "women"
+    },
+    {
+      "imageurl": "https://m.media-amazon.com/images/I/81ALpSfIiOL._AC_SR255,340_.jpg",
+      "brand": "CeCe",
+      "desc": "Short sleves Round Neck Tees",
+      "ratings": 20864,
+      "price": 50,
+      "id": 19,
+      "gender": "men"
+    },
+    {
+      "imageurl": "https://m.media-amazon.com/images/I/81eUMKdBuPL._AC_SR255,340_.jpg",
+      "brand": "Nic+Zoe",
+      "desc": "Perfect Layer Cotton Printed Shirt",
+      "ratings": 225,
+      "price": 69.95,
+      "id": 20,
+      "gender": "men"
+    },
+    {
+      "imageurl": "https://m.media-amazon.com/images/I/61SFAqf9EDL._AC_SR255,340_.jpg",
+      "brand": "Madewells",
+      "desc": "Round Neck Plain White  T-Shirt ",
+      "ratings": 196,
+      "price": 98.11,
+      "id": 21,
+      "gender": "men"
+    },
+    {
+      "imageurl": "https://m.media-amazon.com/images/I/71YKqYLNA7L._AC_SR255,340_.jpg",
+      "brand": "Henes",
+      "desc": "Round Neck Plain Black  T-Shirt ",
+      "ratings": 169,
+      "price": 34.34,
+      "id": 22,
+      "gender": "men"
+    },
+    {
+      "imageurl": "https://m.media-amazon.com/images/I/61LD0gck1DL._AC_SR255,340_.jpg",
+      "brand": "Alternative",
+      "desc": "Step Herm PopoVern In Layers With a color neck",
+      "ratings": 144,
+      "price": 45.34,
+      "id": 23,
+      "gender": "men"
+    },
+    {
+      "imageurl": "https://m.media-amazon.com/images/I/81Lnc5Nr9EL._AC_SR255,340_.jpg",
+      "brand": "Armour",
+      "desc": "Color Neck Comfortable Cotton Mix T-Shirt",
+      "ratings": 121,
+      "price": 19.23,
+      "id": 24,
+      "gender": "men"
+    },
+    {
+      "imageurl": "https://m.media-amazon.com/images/I/71QdUTlawTL._AC_SR255,340_.jpg",
+      "brand": "Madewell",
+      "desc": "UA-Tech VNeck T-Shirt With A Good Fabric",
+      "ratings": 81,
+      "price": 150.23,
+      "id": 25,
+      "gender": "men"
+    },
+    {
+      "imageurl": "https://m.media-amazon.com/images/I/71fAPkW49fL._AC_SR255,340_.jpg",
+      "brand": "Free People",
+      "desc": "American Rino T-Shirt",
+      "ratings": 35,
+      "price": 76.23,
+      "id": 26,
+      "gender": "men"
+    },
+    {
+      "imageurl": "https://m.media-amazon.com/images/I/71er1W7Df5L._AC_SR255,340_.jpg",
+      "brand": "AberCrombia &Fitch",
+      "desc": "Fether Weight Cotton Shirt Casual Wear",
+      "ratings": 98,
+      "price": 109.1,
+      "id": 27,
+      "gender": "men"
+    },
+    {
+      "imageurl": "https://m.media-amazon.com/images/I/61L9JVNvo9L._AC_SR255,340_.jpg",
+      "brand": "Salty Crew@",
+      "desc": "BoyFriend Shirt With Good Fitness",
+      "ratings": 123,
+      "price": 76.23,
+      "id": 28,
+      "gender": "men"
+    },
+    {
+      "imageurl": "https://m.media-amazon.com/images/I/71OL+zOndQL._AC_SR255,340_.jpg",
+      "brand": "Levies",
+      "desc": "Marlie London Paris T-Shirt",
+      "ratings": 90,
+      "price": 229.19,
+      "id": 29,
+      "gender": "men"
+    },
+    {
+      "imageurl": "https://m.media-amazon.com/images/I/61hjDKNSSYL._AC_SR255,340_.jpg",
+      "brand": "Armour",
+      "desc": "Model Tee Blend Racer T-Shirt",
+      "ratings": 34,
+      "price": 89.09,
+      "id": 30,
+      "gender": "men"
     }
   ],
   "brands": [
@@ -11430,7 +11732,5 @@
       "imgurl": "https://www.zappos.com/boutiques/617/THENORTHFACE_header042619.gif"
     }
   ],
-  "users": [
-    
-  ]
+  "users": []
 }
