@@ -56,7 +56,7 @@ const WomensClothing = () => {
       .then(response => response.json())
       .then(product =>{
         setWomenCloth(product);
-          console.log(product);
+          // console.log(product);
       })
       .catch((err) => {
         // setError(true)
@@ -70,7 +70,7 @@ const WomensClothing = () => {
       .then(response => response.json())
       .then(product =>{
         setWomenClothPro(product);
-          console.log(product);
+          // console.log(product);
       })
       .catch((err) => {
         // setError(true)

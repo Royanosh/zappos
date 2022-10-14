@@ -118,7 +118,12 @@ const Products = () => {
       <Center>
         <Flex w="95%">
           <Box p="4">
-            <Heading size="lg">Men's Shirts & Tops</Heading>
+            <Heading size="lg">
+              {
+                cat==="menscloths" ? "Men's Clothings" : cat==="womencloths" ? "Women's Clothings" : cat==="menssneakers" ? "Men's Sneakers & Shoes" : "Women's Sneakers & Shoes"
+
+              }
+            </Heading>
             <Text fontSize="xl">5099 items found</Text>
             <Flex>
               <Box marginRight="5px">
