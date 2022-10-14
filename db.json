@@ -11252,16 +11252,8 @@
         "ratings": 5678,
         "price": 45.34,
         "id": 5
-      },
-      {
-        "imageurl":
-          "https://m.media-amazon.com/images/G/01/2022/womens/WOMENS-CLOTHING-LP-TRENDING-CATEGORY-3.png",
-        "brand": "Armour",
-        "desc": "Sleepwear Under $50",
-        "ratings": 809,
-        "price": 19.23,
-        "id": 6
       }
+      
   ],
   "womenclothsPro":[
     {
@@ -11308,16 +11300,8 @@
       "ratings": 5678,
       "price": 45.34,
       "id": 5
-    },
-    {
-      "imageurl":
-        "https://m.media-amazon.com/images/I/81lM9tJEsML._AC_SR255,340_.jpg",
-      "brand": "Armour",
-      "desc": "Short-Sleves Relaxed Tee",
-      "ratings": 809,
-      "price": 19.23,
-      "id": 6
     }
+   
   ],
   "mensPro":[
     {
