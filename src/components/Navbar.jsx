@@ -17,7 +17,6 @@ const Navbar = () => {
     const dispatch = useDispatch();
 
     const { isauth, userprofile, cart } = useSelector((state) => state);
-    console.log(cart)
 
     const handlesearch = () => {
         if (search === "men" || search === "mens" || search === "mens shirt" || search === "mens cloths" || search === "mensclothing" || search === "menscloths") {
