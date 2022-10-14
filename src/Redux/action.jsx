@@ -1,5 +1,7 @@
 import { ERROR, 
-    LOGOUT, SETUSER 
+    LOGOUT, SETUSER,
+    ADDTOCART, DELFROMCART,
+    INCREASECART, DECREASECART
 } from './actionTypes'
 
 
@@ -20,6 +22,25 @@ import { ERROR,
     payload: user
   });
 
+  export const addtocart = (item) => ({
+    type: ADDTOCART,
+    payload: item
+  });
+
+  export const deletefromcart = (item) => ({
+    type: DELFROMCART,
+    payload: item
+  });
+
+  export const increasecart = (data) => ({
+    type: INCREASECART,
+    payload: data
+  });
+
+  export const decreasecart = (data) => ({
+    type: DECREASECART,
+    payload: data
+  });
   
 export const register = (user) => (dispatch) => {
 

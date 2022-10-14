@@ -83,7 +83,6 @@ const Error = ()=>{
     }
     getusers();
   }, [])
-
   const { isauth } = useSelector((state) => state.isauth);
 
   if (isauth)
@@ -107,20 +106,21 @@ const Error = ()=>{
       users.forEach((elem) => {
         if (elem.email === email)
           isPresent = true;
-      })
+        })
 
       if (isPresent) {
 
         let passwormatch = false;
 
         users.forEach((elem) => {
-          if (elem.password === password)
+          if (elem.password === password){
+          dispatch(setuser(elem));
           passwormatch = true;
+          }
         })
 
         if(passwormatch){
           LoginSuccess();
-          dispatch(setuser(user));
           navigate("/");
         }else{
           Error();

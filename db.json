@@ -651,7 +651,7 @@
       "gender": "women"
     }
   ],
-  "mix":[
+  "mix": [
     {
       "imageurl": "https://m.media-amazon.com/images/I/71oq4d1UQ3L._AC_SR255,340_.jpg",
       "brand": "CeCe",
@@ -11732,5 +11732,12 @@
       "imgurl": "https://www.zappos.com/boutiques/617/THENORTHFACE_header042619.gif"
     }
   ],
-  "users": []
+  "users": [
+    {
+      "name": "Gaurav Sapkal",
+      "email": "gauravsapkal1997@gmail.com",
+      "password": "Pass@123",
+      "id": 1
+    }
+  ]
 }
