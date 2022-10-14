@@ -14,7 +14,7 @@ import {
 
 
 
- const Product = ({setCartToggle}) => {
+ const SingleProduct = ({setCartToggle}) => {
  
 
   let data = JSON.parse(localStorage.getItem("singleProduct")) ;
@@ -163,4 +163,4 @@ import {
 };
 
 
-export default Product;
+export default SingleProduct;
