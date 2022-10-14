@@ -1,4 +1,5 @@
 import { Route, Routes } from "react-router-dom"
+import PrivateRoute from "../components/Privateroute";
 import LandingPage from "../pages/LandingPage"
 import MensClothing from "../pages/MensClothing";
 import Product from "../pages/Product";
@@ -23,7 +24,9 @@ const Allroute = ()=>{
 
                 <Route path="/category/:cat" element={<Products/>}></Route>
 
-                <Route path="/category/:cat/:id" element={<Product/>}></Route>
+                <Route path="/category/:cat/:id" element={
+                    <PrivateRoute><Product/></PrivateRoute>
+                }></Route>
 
                 <Route path="/signin" element={<SignIn/>}></Route>
                 <Route path="/signup" element={<SignUP/>}></Route>
