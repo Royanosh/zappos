@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { Link, Navigate } from 'react-router-dom'
 import Brand from '../components/MenWomenLAndingPage-components/Brand'
 import '../components/MenWomenLAndingPage-components/mensWomesPage.css';
+import "../components/MenWomenLAndingPage-components/mens.css"
 
 
 const WomensClothing = () => {
@@ -94,8 +95,7 @@ const WomensClothing = () => {
     </div>
 
  <div className='container' style={{width:"100%" , marginBottom:"40px"}} >
-    <div style={{display:"grid",gridTemplateColumns:"repeat(6,1fr)",gap:"10px",width:"100%" ,marginTop:"40px"}}>
-
+    <div className='manAll'>
     {products.map((womencloths) => (
             <Link to="/category/womencloths"
             >
@@ -111,26 +111,27 @@ const WomensClothing = () => {
  </div>
 {/* women's page end */}
 
+
 {/* email page */}
-    <div  style={{backgroundColor:"#e5f1f8", textAlign:"center",marginTop:"50px",height:"250px",paddingTop:"30px",width:"91%",margin:"auto",marginLeft:"80px"}}>
+    <div className='container email' style={{backgroundColor:"#e5f1f8"}} >
         <h1 style={{fontSize:"30px",paddingBottom:"20px"}}>Make Zappos (Emails) Your New BFF</h1>
         <h4 style= {{fontSize:"25px",paddingBottom:"30px"}}>Get the deets on upcoming sales, new arrivals, seasonal favorites, and all the brands you love!</h4>
-        <div style={{display:"flex",justifyContent:"center",alignItems:"center"}}>
+        <div className='emailFlex' style={{display:"flex",justifyContent:"center",alignItems:"center"}}>
           <input type="email" name="" id="" style={{fontSize:"20px",padding:"5px",border:"2px dashed blue"}} placeholder="Email Address" />
           <button type="button" className="btn btn-primary" style= {{fontSize:"18px",backgroundColor:"#003953",marginLeft:"10px",textTransform:"uppercase"}} >Subscribe to zappos Emails</button>
         </div>
     </div>
 
   {/* coats and outwears */}
-    <div style={{width:"100%",margin:"auto",marginLeft:"80px",margin:"40px" }} >
-       <div style={{height:"250px",backgroundColor:"white", width:"350px" ,position:"absolute",marginLeft:"40px",marginTop:"30px",padding:"10px 40px"}} >
+    <div className='container'  >
+       {/* <div style={{height:"250px",backgroundColor:"white", width:"350px" ,position:"absolute",marginLeft:"40px",marginTop:"30px",padding:"10px 40px"}} >
        <h1 style={{fontSize:"23px"}}>New Arrivals: Coats & Outerwear</h1>
         <h4 style= {{marginTop:"30px"}}>Complete every fall look with our most coveted picks of the season.</h4>
         <div style={{fontSize:"28px"}}>
           <button type="button"  style={{fontSize:"18px",backgroundColor:"white",border:"2px solid black",fontWeight:"bold",margin:"20px",padding:"5px 10px"}} >SHOP WOMEN'S COATS & OUTERWEAR</button>
         </div>
-       </div>
-       <img style={{width:"91%"}} src="https://m.media-amazon.com/images/G/01/2022/womens/WOMENS-COATS-OUTERWEAR-NEW-ARRIVALS-OCTOBER-HERO-1440x700.jpg" alt="" />
+       </div> */}
+       <img  src="https://m.media-amazon.com/images/G/01/2022/womens/WOMENS-COATS-OUTERWEAR-NEW-ARRIVALS-OCTOBER-HERO-1440x700.jpg" alt="" />
     </div>
 
 
@@ -138,7 +139,7 @@ const WomensClothing = () => {
 
     <div className="container" style={{width:"100%" , marginBottom:"40px"}}>
       <h1 style={{fontSize:"30px"}}>Shop by Price</h1>
-       <div style={{display:"grid",gridTemplateColumns:"repeat(6,1fr)",gap:"20px",width:"100%" ,marginTop:"40px"}}>
+       <div className='manAll'>
 
        {price.map((price) => (
             <div key={price.id} className="card box" style={{width: "100%",cursor:"pointer"}}>
@@ -153,10 +154,10 @@ const WomensClothing = () => {
 
 
 {/* fall in love */}
-   <div className="container" style={{display:"flex"}}>
+   <div className="container manFlex" >
       <div>
-          <div style={{width:"100%",margin:"auto",marginLeft:"20px",margin:"20px"}} >
-            <div style={{height:"250px",backgroundColor:"white", width:"500px",padding:"50px"}} >
+          <div style={{width:"90%",margin:"auto",marginLeft:"20px",margin:"20px"}} >
+            <div className='fallLove' >
             <h1 style={{fontSize:"30px"}}>Fall in Love with Free people</h1>
               <h4 style= {{marginTop:"20px",fontSize:"22px"}}>kick-start the new season with cozy-chic tops,timelwss denim, midi dresses , and si much more!</h4>
               <div style={{fontSize:"28px"}}>
@@ -171,7 +172,7 @@ const WomensClothing = () => {
    </div>
 
 
-   <div className="container" style={{display:"flex"}}>
+   <div className="container manFlex" >
       <div>
           <div style={{width:"100%",margin:"auto",marginLeft:"20px",margin:"20px"}} >
             <div style={{height:"250px",backgroundColor:"white", width:"100%",padding:"50px"}} >
@@ -185,10 +186,10 @@ const WomensClothing = () => {
 
 {/* three card page */}
       <div>
-      <div style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:"20px",width:"90%" ,marginTop:"40px"}}>
+      <div className='manGrid'>
 
       {womenClothPro.map((womencloths) => (
-             <div key={womencloths.id} onClick={() => handleClick(womencloths)} className="card box" style={{width: "14rem",cursor:"pointer"}}>
+             <div key={womencloths.id} onClick={() => handleClick(womencloths)} className="card box boxSize" style={{cursor:"pointer"}}>
              <img style={{height: "18rem"}}  src={womencloths.imageurl} className="card-img-top" alt="..."/>
                <h3 className="card-title" style={{textAlign:"center",fontSize:"20px",marginTop:"5px"}}>{womencloths.brand}</h3>
              <div className="card-body">
@@ -208,15 +209,15 @@ const WomensClothing = () => {
 
 {/* shop the fall */}
 
-   <div style={{width:"100%",margin:"auto",marginLeft:"80px",margin:"40px"}} >
-       <div style={{height:"260px",backgroundColor:"white", width:"440px" ,position:"absolute",marginLeft:"54%",marginTop:"30px",padding:"10px 40px"}} >
+   <div className='container' >
+       {/* <div style={{height:"260px",backgroundColor:"white", width:"440px" ,position:"absolute",marginLeft:"54%",marginTop:"30px",padding:"10px 40px"}} >
        <h1 style={{fontSize:"25px"}}>Your Fall 2022 Guide to Fashion</h1>
         <h4 style= {{marginTop:"10px",fontSize:"20px"}}>Boots,jackets,sneakers-- everything you love avout fall all in one place. plus, don't miss out on key picks from SOREL, L.L.Beans,UGG, nad Steve Maddden!</h4>
         <div style={{fontSize:"28px"}}>
           <button type="button"  style={{fontSize:"18px",backgroundColor:"white",border:"2px solid black",fontWeight:"bold",margin:"20px",padding:"5px 10px"}} >SHOP THE FALL FUIDE</button>
         </div>
-       </div>
-       <img style={{width:"91%"}}  src="https://m.media-amazon.com/images/G/01/2022/homepage9.05HP/COOP-FALL-STYLE-CAMPAIGN-HERO-1440x700.jpg" alt="" />
+       </div> */}
+       <img   src="https://m.media-amazon.com/images/G/01/2022/homepage9.05HP/COOP-FALL-STYLE-CAMPAIGN-HERO-1440x700.jpg" alt="" />
     </div>
 
    
@@ -226,11 +227,9 @@ const WomensClothing = () => {
    <div className='container' style={{width:"100%" , marginBottom:"40px"}} >
     <h1 style={{fontSize:"40px"}}>Best Sellor</h1>
 
-    <div style={{display:"grid",gridTemplateColumns:"repeat(5,1fr)",gap:"20px",width:"80%" ,marginTop:"40px"}}>
-
-
+    <div className='manAll'>
     {womenCloth.map((women) => (
-            <div key={women.id}  onClick={() => handleClick(women)} className="card box" style={{width: "13rem",cursor:"pointer"}}>
+            <div key={women.id}  onClick={() => handleClick(women)} className="card box boxSize" style={{width:"13rem",cursor:"pointer"}}>
             <img style={{height: "18rem"}}  src={women.imageurl} className="card-img-top" alt="..."/>
               <h3 className="card-title" style={{textAlign:"center",fontSize:"17px",marginTop:"5px"}}>{women.brand}</h3>
             <div className="card-body">

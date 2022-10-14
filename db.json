@@ -11448,55 +11448,54 @@
       "id": 3
     }
   ],
-  "pricecell": [
-    {
-      "imageurl": "https://m.media-amazon.com/images/G/01/2022/womens/WOMENS-CLOTHING-LP-TRENDING-CATEGORY-1.png",
-      "brand": "CeCe",
-      "desc": "Dress Under $50",
-      "ratings": 20864,
-      "price": 50,
-      "id": 1
-    },
-    {
-      "imageurl": "https://m.media-amazon.com/images/G/01/2022/womens/WOMENS-CLOTHING-LP-TRENDING-CATEGORY-2.png",
-      "brand": "Nic+Zoe",
-      "desc": "Boots Under $100",
-      "ratings": 777,
-      "price": 69.95,
-      "id": 2
-    },
-    {
-      "imageurl": "https://m.media-amazon.com/images/G/01/2022/womens/WOMENS-CLOTHING-LP-TRENDING-CATEGORY-5.png",
-      "brand": "Madewells",
-      "desc": "Sweaters Under $50",
-      "ratings": 729,
-      "price": 98.11,
-      "id": 3
-    },
-    {
-      "imageurl": "https://m.media-amazon.com/images/G/01/2022/womens/WOMENS-CLOTHING-LP-TRENDING-CATEGORY-4_1.png",
-      "brand": "Henes",
-      "desc": "Women's Coats & Outerwear Under $150",
-      "ratings": 323,
-      "price": 34.34,
-      "id": 4
-    },
-    {
-      "imageurl": "https://m.media-amazon.com/images/G/01/2022/womens/WOMENS-CLOTHING-LP-TRENDING-CATEGORY-6.png",
-      "brand": "Alternative",
-      "desc": "Seakers Under $50",
-      "ratings": 5678,
-      "price": 45.34,
-      "id": 5
-    },
-    {
-      "imageurl": "https://m.media-amazon.com/images/G/01/2022/womens/WOMENS-CLOTHING-LP-TRENDING-CATEGORY-3.png",
-      "brand": "Armour",
-      "desc": "Sleepwear Under $50",
-      "ratings": 809,
-      "price": 19.23,
-      "id": 6
-    }
+
+    "pricecell":[
+      {
+        "imageurl":
+          "https://m.media-amazon.com/images/G/01/2022/womens/WOMENS-CLOTHING-LP-TRENDING-CATEGORY-1.png",
+        "brand": "CeCe",
+        "desc": "Dress Under $50",
+        "ratings": 20864,
+        "price": 50,
+        "id": 1
+      },
+      {
+        "imageurl":
+          "https://m.media-amazon.com/images/G/01/2022/womens/WOMENS-CLOTHING-LP-TRENDING-CATEGORY-2.png",
+        "brand": "Nic+Zoe",
+        "desc": "Boots Under $100",
+        "ratings": 777,
+        "price": 69.95,
+        "id": 2
+      },
+      {
+        "imageurl":
+          "https://m.media-amazon.com/images/G/01/2022/womens/WOMENS-CLOTHING-LP-TRENDING-CATEGORY-5.png",
+        "brand": "Madewells",
+        "desc": "Sweaters Under $50",
+        "ratings": 729,
+        "price": 98.11,
+        "id": 3
+      },
+      {
+        "imageurl":
+          "https://m.media-amazon.com/images/G/01/2022/womens/WOMENS-CLOTHING-LP-TRENDING-CATEGORY-4_1.png",
+        "brand": "Henes",
+        "desc": "Women's Coats & Outerwear Under $150",
+        "ratings": 323,
+        "price": 34.34,
+        "id": 4
+      },
+      {
+        "imageurl":
+          "https://m.media-amazon.com/images/G/01/2022/womens/WOMENS-CLOTHING-LP-TRENDING-CATEGORY-6.png",
+        "brand": "Alternative",
+        "desc": "Seakers Under $50",
+        "ratings": 5678,
+        "price": 45.34,
+        "id": 5
+      }
+      
   ],
   "womenclothsPro": [
     {
@@ -11538,15 +11537,8 @@
       "ratings": 5678,
       "price": 45.34,
       "id": 5
-    },
-    {
-      "imageurl": "https://m.media-amazon.com/images/I/81lM9tJEsML._AC_SR255,340_.jpg",
-      "brand": "Armour",
-      "desc": "Short-Sleves Relaxed Tee",
-      "ratings": 809,
-      "price": 19.23,
-      "id": 6
     }
+   
   ],
   "mensPro": [
     {
