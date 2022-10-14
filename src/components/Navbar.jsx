@@ -5,10 +5,27 @@ import { AiOutlineShoppingCart } from 'react-icons/ai';
 import { CgProfile } from 'react-icons/cg';
 import DrawerExample from "../components/LandingPage-Components/Smallscreendrawer";
 import SignInModal from "./SignInModal";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 const Navbar = () => {
 
+    const [ search, setSearch ] = useState("");
+    const navigate = useNavigate();
+    const handlesearch = ()=>{
+        if(search==="men" || search==="mens" || search==="mens shirt" || search==="mens cloths" || search === "mensclothing" || search==="menscloths"){
+            setSearch("");
+            navigate("/category/menscloths")
+        }
+        if(search==="women" || search==="tops" || search==="womens" || search==="womens shirt" || search==="womens cloths" || search === "womensclothing" || search==="womenscloths"){
+            setSearch("");
+            navigate("/category/womencloths")
+        }
+        if(search==="sneakers" || search==="shoes" || search==="boots"){
+            setSearch("");
+            navigate("/category/menssneakers")
+        }
+    }
 
     return (
         <Box w='100%'>
@@ -90,6 +107,8 @@ const Navbar = () => {
                         w='80%'
                         placeholder='Gaurav, search for shoes, clothes, etc'
                         m={2}
+                        value={search}
+                        onChange={(e)=>setSearch(e.target.value)}
                     />
 
                     <Button
@@ -98,7 +117,7 @@ const Navbar = () => {
                         bg='#003953'
                         color='white'
                         _hover={{ bg: "blue.500", color: 'white' }}
-                        m={2}
+                        m={2} onClick={handlesearch}
                     >SEARCH</Button>
                 </Flex>
 
