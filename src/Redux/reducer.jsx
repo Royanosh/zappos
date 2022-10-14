@@ -1,6 +1,6 @@
 import { ADDTOCART, DELFROMCART, ERROR, 
     LOGOUT, SETUSER,
-    INCREASECART, DECREASECART
+    INCREASECART, DECREASECART, SETSHIPADDRESS
 } from './actionTypes'
 
 
@@ -9,7 +9,8 @@ import { ADDTOCART, DELFROMCART, ERROR,
     error: false,
     userprofile: {},
     isauth : false,
-    cart: []
+    cart: [],
+    shipaddress: ""
   };
   
   function reducer(state = initState, { type, payload }) {
@@ -113,6 +114,13 @@ import { ADDTOCART, DELFROMCART, ERROR,
 
           return{
             ...state, cart:[...update]
+          }
+        }
+
+        case SETSHIPADDRESS:{
+
+          return{
+            ...state, shipaddress:payload
           }
         }
 
