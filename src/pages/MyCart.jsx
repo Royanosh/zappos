@@ -90,8 +90,7 @@ const MyCart = () => {
                 <Box ml="40px">
                   <Text color={"red"}>$56.31</Text>
                   <Text as={"del"}>$56.31</Text>
-                  <Select mt={"5px"} mb={"5px"} w={"80px"} placeholder="1">
-                    <option value="remove">Remove</option>
+                  <Select mt={"5px"} mb={"5px"} w={"80px"}>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
