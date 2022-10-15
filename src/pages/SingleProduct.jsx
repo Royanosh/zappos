@@ -1,28 +1,42 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 // import { useNavigate, useParams } from "react-router-dom";
 import styles from "../components/MenWomenLAndingPage-components/product.module.css";
 import MensSlick from "../components/MenWomenLAndingPage-components/MensSlick";
 
 import {
-  Alert,
-  AlertIcon,
-  AlertTitle,
-  AlertDescription,
+  Center,
+  Spinner,
   useToast,
 } from '@chakra-ui/react'
+import { useDispatch, useSelector } from "react-redux";
+import { addtocart } from "../Redux/action";
+import { useNavigate, useParams } from "react-router-dom";
+import Page404 from "./Page404";
 // import { useEffect, useState } from "react";
 // import {  useParams } from "react-router-dom";
 
   
- const SingleProduct = ({setCartToggle}) => {
+ const SingleProduct = () => {
   const toast = useToast()
-//  8f69de2451203a9aeea88e6d15d678a8540a199c:src/pages/SingleProduct.jsx
 
-  let data = JSON.parse(localStorage.getItem("singleProduct")) ;
+  const [ data, setData ] = useState({});
+  const [ loading, setLoading ] = useState(false);
+  const [ error, setError ] = useState(false);
+  let { cat, id } = useParams();
+  const isauth = useSelector((state) => state.isauth);
+  console.log(isauth)
+  const navigate = useNavigate();
 
-  let CartData = JSON.parse(localStorage.getItem("CartItem")) || [];
+  const dispatch = useDispatch();
 
-
+  useEffect(()=>{
+    setLoading(true);
+      const getData = ()=>{
+        fetch(`http://localhost:3000/${cat}/${id}`).then((res)=>res.json()).then((res1)=>setData(res1))
+        .catch((err)=>setError(true)).finally(()=>setLoading(false));
+      }
+      getData();
+  },[])
 
   const Cartalert = ()=>{
     return toast({
@@ -37,9 +51,30 @@ import {
  
 
   const AddtoCart = () => {
-    Cartalert();
+    if(isauth){
+      dispatch(addtocart(data))
+      Cartalert()
+    }else{
+      navigate("/signin")
+    }
   };
 
+  if(loading){
+    return <Center><Spinner
+    thickness='4px'
+    speed='0.65s'
+    emptyColor='gray.200'
+    color='blue.500'
+    size='xl'
+    w='250px'
+    h='250px'
+    mt="100px"
+  /></Center>
+  }
+
+  if(error){
+    return<Page404/>
+  }
 
   return (
     <>

@@ -1,5 +1,6 @@
 import { Box, Button, Flex, Text } from "@chakra-ui/react";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 
 const OrdersuccessPage = ()=>{
@@ -23,9 +24,10 @@ const OrdersuccessPage = ()=>{
                 _hover={{bg:"#0076bd"}}
                 >REVIEW OR EDIT YOUR ORDER</Button> or
 
+                <Link to="/">
                 <Button bg="white" color="#144860" border="2px solid #144860"
                 _hover={{bg:"#0076bd", color:"white", border:"none"}}
-                >CONTINUE SHOPPING</Button>
+                >CONTINUE SHOPPING</Button></Link>
             </Flex>
         </Box>
     )

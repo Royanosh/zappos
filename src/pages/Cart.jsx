@@ -20,7 +20,7 @@ import {
   Spacer,
   Text,
 } from "@chakra-ui/react";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   AiFillLock,
   AiOutlineHeart,
@@ -30,8 +30,29 @@ import {
 } from "react-icons/ai";
 import { BsArrow90DegLeft, BsStars } from "react-icons/bs";
 import { IoIosAirplane } from "react-icons/io";
+import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+import { deletefromcart, increasecart } from "../Redux/action";
 
 const Cart = () => {
+  const cart = useSelector((state) => state.cart);
+  const [ totalAmount, setTotalAmount ] = useState(0);
+  const dispatch = useDispatch();
+  useEffect(()=>{
+    const getAmount = ()=>{
+      let amt = cart.reduce((acc, elem)=>{
+          return acc + elem.price*elem.count
+      },0)
+      setTotalAmount(Math.floor(amt));
+    }
+    getAmount();
+  },[cart])
+
+
+
+
+
+
   return (
     <>
       <Box p="5px" bg={"#e5f1f8"}>
@@ -79,7 +100,7 @@ const Cart = () => {
               fontWeight={"700"}
               ml="1px"
             >
-              <a href="#">Continue Shopping</a>
+              <Link to="/category/menscloths">Continue Shopping</Link>
             </Box>
           </Center>
         </Flex>
@@ -153,7 +174,7 @@ const Cart = () => {
           </HStack>
         </Grid>
         <Text mt={2} fontSize={"2xl"} fontWeight="400">
-          2 items in My Cart Item
+          {cart.length} items in My Cart Item
         </Text>
         <Grid
           templateColumns={{
@@ -184,9 +205,12 @@ const Cart = () => {
                 <Text>Price/Quantity</Text>
               </Box>
             </Flex>
-            <Box>
-              <Flex p={2} w="90%" justifyContent="space-between">
-                <Flex>
+            
+            {
+              cart.map((elem)=>(
+                <Box>
+                  <Flex p={2} w="90%" justifyContent="space-between">
+                  <Flex>
                   <Box borderRadius={2} boxShadow={"md"} position={"relative"}>
                     <Box
                       padding={"4px 6px"}
@@ -202,25 +226,29 @@ const Cart = () => {
                     <Image
                       w={"150px"}
                       h="200px"
-                      src="https://m.media-amazon.com/images/I/71CNa3Q3lTL._SR255,340__FMwebp_.jpg"
-                      alt="https://m.media-amazon.com/images/I/71CNa3Q3lTL._SR255,340__FMwebp_.jpg"
+                      src={elem.imageurl}
+                      alt="image of product"
                     />
                   </Box>
                   <Box pl="10px">
-                    <Text>ASICS</Text>
+                    <Text>{elem.brand}</Text>
                     <Text>
-                      <b>GEL-Sonoma 6</b>
+                      <b>{elem.desc}</b>
                     </Text>
                     <Text>Color: French Blue/Black</Text>
                     <Text>Size: 7</Text>
                     <Text>Width: B - Medium</Text>
                   </Box>
-                </Flex>
+                  </Flex>
 
-                <Box>
-                  <Text color={"red"}>$56.31</Text>
-                  <Text as={"del"}>$56.31</Text>
-                  <Select mt={"5px"} mb={"5px"} w={"80px"}>
+                  <Box>
+                  <Text color={"red"}>${elem.price}</Text>
+                  <Text as={"del"}>$156.31</Text>
+                  <Select mt={"5px"} mb={"5px"} w={"80px"} value={elem.count}
+                  onChange={(e)=>{
+                    dispatch(increasecart({item:elem, qty: +e.target.value}))
+                  }}
+                  >
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -241,75 +269,19 @@ const Cart = () => {
                       color: "teal",
                       borderBottom: "1px solid teal",
                     }}
-                  >
-                    REMOVE
-                  </Button>
-                </Box>
-              </Flex>
-            </Box>
-            <Box>
-              <Flex p={2} w="90%" justifyContent="space-between">
-                <Flex>
-                  <Box borderRadius={2} boxShadow={"md"} position={"relative"}>
-                    <Box
-                      padding={"4px 6px"}
-                      boxShadow="sm"
-                      borderEndStartRadius={"10px"}
-                      bg={"white"}
-                      position={"absolute"}
-                      right="0"
-                      top={0}
-                    >
-                      <AiOutlineHeart />
-                    </Box>
-                    <Image
-                      w={"150px"}
-                      h="200px"
-                      src="https://m.media-amazon.com/images/I/71CNa3Q3lTL._SR255,340__FMwebp_.jpg"
-                      alt="https://m.media-amazon.com/images/I/71CNa3Q3lTL._SR255,340__FMwebp_.jpg"
-                    />
-                  </Box>
-                  <Box pl="10px">
-                    <Text>ASICS</Text>
-                    <Text>
-                      <b>GEL-Sonoma 6</b>
-                    </Text>
-                    <Text>Color: French Blue/Black</Text>
-                    <Text>Size: 7</Text>
-                    <Text>Width: B - Medium</Text>
-                  </Box>
-                </Flex>
-
-                <Box>
-                  <Text color={"red"}>$56.31</Text>
-                  <Text as={"del"}>$56.31</Text>
-                  <Select mt={"5px"} mb={"5px"} w={"80px"}>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                  </Select>
-                  <Button
-                    bg={"initial"}
-                    borderWidth="0"
-                    borderBottom={"1px solid #003953"}
-                    color="#003953"
-                    borderRadius={0}
-                    textDecoration="none"
-                    padding="0"
-                    _hover={{
-                      bg: "white",
-                      color: "teal",
-                      borderBottom: "1px solid teal",
+                    onClick={()=>{
+                      dispatch(deletefromcart(elem))
                     }}
                   >
                     REMOVE
                   </Button>
-                </Box>
-              </Flex>
-            </Box>
+                    </Box>
+                  </Flex>
+               </Box>
+              ))
+            }
+            
+            
           </Box>
           <Box w={{ sm: "90vw", md: "28vw", xl: "28vw" }}>
             <Box
@@ -320,14 +292,16 @@ const Cart = () => {
               h="-webkit-fit-content"
             >
               <Box>
+              <Link to="/checkout">
                 <Button
                   fontSize={{ base: "md", sm: "md", md: "sm", xl: "md" }}
                   w={"100%"}
                   bg="#a7e688"
                   color="#003953"
+
                 >
                   PROCEED T0 CHECKOUT
-                </Button>
+                </Button></Link>
               </Box>
               <Text fontSize={"xs"} mt="10px">
                 Have a Promotional Code? Proceed to checkout to redeem it.
@@ -336,7 +310,7 @@ const Cart = () => {
                 fontWeight={"500"}
                 fontSize={{ base: "xl", sm: "xl", md: "md", xl: "xl" }}
               >
-                Cart Summary (2 Items)
+                Cart Summary ({cart.length} Items)
               </Text>
               <Flex justifyContent={"space-between"}>
                 <Box>
@@ -344,7 +318,7 @@ const Cart = () => {
                     fontWeight={"500"}
                     fontSize={{ base: "xl", sm: "xl", md: "md", xl: "xl" }}
                   >
-                    Subtotal (2 items)
+                    Subtotal ({cart.length} items)
                   </Text>
                 </Box>
                 <Box>
@@ -352,7 +326,7 @@ const Cart = () => {
                     fontWeight={"500"}
                     fontSize={{ base: "xl", sm: "xl", md: "md", xl: "xl" }}
                   >
-                    $299.90
+                    ${totalAmount}
                   </Text>
                 </Box>
               </Flex>

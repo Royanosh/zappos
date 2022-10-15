@@ -11724,16 +11724,6 @@
       "id": 1,
       "cart": [
         {
-          "imageurl": "https://m.media-amazon.com/images/I/81eUMKdBuPL._AC_SR255,340_.jpg",
-          "brand": "Nic+Zoe",
-          "desc": "Perfect Layer Cotton Printed Shirt",
-          "ratings": 225,
-          "price": 69.95,
-          "id": 2,
-          "gender": "men",
-          "count": 2
-        },
-        {
           "imageurl": "https://m.media-amazon.com/images/I/61L9JVNvo9L._AC_SR255,340_.jpg",
           "brand": "Salty Crew@",
           "desc": "BoyFriend Shirt With Good Fitness",
@@ -11741,9 +11731,35 @@
           "price": 76.23,
           "id": 10,
           "gender": "men",
+          "count": 2
+        },
+        {
+          "imageurl": "https://m.media-amazon.com/images/I/71oq4d1UQ3L._AC_SR255,340_.jpg",
+          "brand": "CeCe",
+          "desc": "Short sleves Round Neck Tees",
+          "ratings": 20864,
+          "price": 50,
+          "id": 1,
+          "gender": "women",
+          "count": 2
+        },
+        {
+          "imageurl": "https://m.media-amazon.com/images/I/81eUMKdBuPL._AC_SR255,340_.jpg",
+          "brand": "Nic+Zoe",
+          "desc": "Perfect Layer Cotton Printed Shirt",
+          "ratings": 225,
+          "price": 69.95,
+          "id": 2,
+          "gender": "men",
           "count": 1
         }
       ]
+    },
+    {
+      "name": "Abhijit Satape",
+      "email": "abhisatape2000@gmail.com",
+      "password": "1234",
+      "id": 2
     }
   ]
 }

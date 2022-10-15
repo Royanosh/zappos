@@ -19,19 +19,46 @@ import {
   Text,
   useDisclosure,
 } from "@chakra-ui/react";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { AiOutlineHeart } from "react-icons/ai";
 import { BsStars } from "react-icons/bs";
 import { Link } from "react-router-dom";
+import { AiOutlineShoppingCart } from 'react-icons/ai';
+import { useDispatch, useSelector } from "react-redux";
+import { deletefromcart, increasecart } from "../Redux/action";
 
 const MyCart = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef();
+  const cart = useSelector((state) => state.cart);
+  const [ totalAmount, setTotalAmount ] = useState(0);
+  const dispatch = useDispatch();
+  useEffect(()=>{
+    const getAmount = ()=>{
+      let amt = cart.reduce((acc, elem)=>{
+          return acc + elem.price*elem.count
+      },0)
+      setTotalAmount(Math.floor(amt));
+    }
+    getAmount();
+  },[cart])
+
+
+
+
 
   return (
     <>
-      <Button ref={btnRef} colorScheme="teal" onClick={onOpen}>
-        My Cart
+      <Button ref={btnRef} onClick={onOpen}
+      m={2}
+      bg='green.200'
+      _hover={{ bg: "green.100" }}
+      >
+      <Box mr="10px"><AiOutlineShoppingCart /></Box> <span>
+        {
+          `${cart.length} ITEMS IN CART`
+        }
+      </span>
       </Button>
       <Drawer
         size={"md"}
@@ -55,8 +82,13 @@ const MyCart = () => {
               </Center>
             </Box>
             <Box>
-              <Flex p={2}>
-                <Flex>
+              {
+                cart.map((elem)=>(
+
+
+
+                <Flex p={2} key={elem.id*Math.random()+Date.now()}>
+                  <Flex>
                   <Box borderRadius={2} boxShadow={"md"} position={"relative"}>
                     <Box
                       padding={"4px 6px"}
@@ -72,14 +104,14 @@ const MyCart = () => {
                     <Image
                       w={"150px"}
                       h="200px"
-                      src="https://m.media-amazon.com/images/I/71CNa3Q3lTL._SR255,340__FMwebp_.jpg"
-                      alt="https://m.media-amazon.com/images/I/71CNa3Q3lTL._SR255,340__FMwebp_.jpg"
+                      src={elem.imageurl}
+                      alt="image of product"
                     />
                   </Box>
                   <Box pl="10px">
-                    <Text>ASICS</Text>
+                    <Text>{elem.brand}</Text>
                     <Text>
-                      <b>GEL-Sonoma 6</b>
+                      <b>{elem.desc}</b>
                     </Text>
                     <Text>Color: French Blue/Black</Text>
                     <Text>Size: 7</Text>
@@ -88,9 +120,13 @@ const MyCart = () => {
                 </Flex>
 
                 <Box ml="40px">
-                  <Text color={"red"}>$56.31</Text>
-                  <Text as={"del"}>$56.31</Text>
-                  <Select mt={"5px"} mb={"5px"} w={"80px"}>
+                  <Text color={"red"}>${elem.price}</Text>
+                  <Text as={"del"}>$195.31</Text>
+                  <Select mt={"5px"} mb={"5px"} w={"80px"} value={elem.count}
+                  onChange={(e)=>{
+                    dispatch(increasecart({item:elem, qty: +e.target.value}))
+                  }}
+                  >
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -111,20 +147,29 @@ const MyCart = () => {
                       color: "teal",
                       borderBottom: "1px solid teal",
                     }}
+                    onClick={()=>{
+                      dispatch(deletefromcart(elem))
+                    }}
                   >
                     REMOVE
                   </Button>
                 </Box>
               </Flex>
+
+                ))
+              }
+              
+              
             </Box>
           </DrawerBody>
 
           <DrawerFooter display={"block"} bg={"#f5f5f5"}>
             <Text mb={"5px"} textAlign={"right"}>
-              Cart Subtotal (1 Item)$56.31
+              Cart Subtotal ({cart.length} Items)${totalAmount}
             </Text>
             <Flex>
               <Box>
+                <Link to="/mycart">
                 <Button
                   border={"2px solid #003953"}
                   color="#003953"
@@ -136,12 +181,15 @@ const MyCart = () => {
                   {" "}
                   VIEW CART
                 </Button>
+                </Link>
               </Box>
               <Spacer />
               <Box>
+                <Link to="/checkout">
                 <Button bg="#a7e688" color="#003953">
                   PROCEED T0 CHECKOUT
                 </Button>
+                </Link>
               </Box>
             </Flex>
           </DrawerFooter>

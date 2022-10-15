@@ -1,7 +1,7 @@
 import { ERROR, 
     LOGOUT, SETUSER,
     ADDTOCART, DELFROMCART,
-    INCREASECART, DECREASECART, SETSHIPADDRESS
+    INCREASECART, SETSHIPADDRESS, CHECKOUTDONE
 } from './actionTypes'
 
 
@@ -37,14 +37,18 @@ import { ERROR,
     payload: data
   });
 
-  export const decreasecart = (data) => ({
-    type: DECREASECART,
-    payload: data
-  });
+  // export const decreasecart = (data) => ({
+  //   type: DECREASECART,
+  //   payload: data
+  // });
 
   export const setshipaddress = (data)=>({
     type: SETSHIPADDRESS,
     payload: data
+  })
+
+  export const checkoutdone = ()=>({
+    type: CHECKOUTDONE
   })
   
 export const register = (user) => (dispatch) => {
