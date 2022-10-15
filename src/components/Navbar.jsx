@@ -144,9 +144,9 @@ const Navbar = () => {
                         m={2}
                         bg='green.200'
                         _hover={{ bg: "green.100" }}
-                    ><AiOutlineShoppingCart /> <span>
+                    ><Box mr="10px"><AiOutlineShoppingCart /></Box> <span>
                         {
-                            isauth ? `. ${cart.length} ITEMS IN CART` : `. MY CART`
+                            isauth ? `${cart.length} ITEMS IN CART` : ` MY CART`
                         }
                         </span></Button>
                 </Box>
