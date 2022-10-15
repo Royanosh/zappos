@@ -1,6 +1,6 @@
 import { ADDTOCART, DELFROMCART, ERROR, 
     LOGOUT, SETUSER,
-    INCREASECART, DECREASECART, SETSHIPADDRESS
+    INCREASECART, SETSHIPADDRESS, CHECKOUTDONE
 } from './actionTypes'
 
 
@@ -110,7 +110,7 @@ import { ADDTOCART, DELFROMCART, ERROR,
 
               if(elem.desc===payload.item.desc){
                 return{
-                  ...elem, count: +elem.count + +payload.qty
+                  ...elem, count: +payload.qty
                 }
               }else{
                 return elem;
@@ -134,37 +134,37 @@ import { ADDTOCART, DELFROMCART, ERROR,
           }
         }
 
-        case DECREASECART:{
-          let newcart = state.cart.map((elem)=>{
+        // case DECREASECART:{
+        //   let newcart = state.cart.map((elem)=>{
 
-              if(elem.desc===payload.item.desc){
-                return{
-                  ...elem, count: +elem.count - payload.qty
-                }
-              }else{
-                return elem;
-              }
-          })
+        //       if(elem.desc===payload.item.desc){
+        //         return{
+        //           ...elem, count: +elem.count - payload.qty
+        //         }
+        //       }else{
+        //         return elem;
+        //       }
+        //   })
 
-          let update = newcart.filter((elem)=>{
-            return elem.count > 0;
-          })
+        //   let update = newcart.filter((elem)=>{
+        //     return elem.count > 0;
+        //   })
 
-          fetch(`http://localhost:3000/users/${state.userprofile.id}`,{     //update for json integration
-              method: 'PATCH',
-              body: JSON.stringify({
-                cart: newcart,
-              }),
-              headers: {
-                'Content-type': 'application/json'
-              }
-          })
+        //   fetch(`http://localhost:3000/users/${state.userprofile.id}`,{     //update for json integration
+        //       method: 'PATCH',
+        //       body: JSON.stringify({
+        //         cart: newcart,
+        //       }),
+        //       headers: {
+        //         'Content-type': 'application/json'
+        //       }
+        //   })
 
 
-          return{
-            ...state, cart:[...update]
-          }
-        }
+        //   return{
+        //     ...state, cart:[...update]
+        //   }
+        // }
 
         case SETSHIPADDRESS:{
 
@@ -173,6 +173,26 @@ import { ADDTOCART, DELFROMCART, ERROR,
           }
         }
 
+
+        case CHECKOUTDONE:{
+
+          let orders = [...state.cart]
+
+          fetch(`http://localhost:3000/users/${state.userprofile.id}`,{     //update for json integration
+              method: 'PATCH',
+              body: JSON.stringify({
+                cart: [],
+                orders: [...orders]
+              }),
+              headers: {
+                'Content-type': 'application/json'
+              }
+          })
+
+          return{
+            ...state, cart:[], userprofile:{...state.userprofile, cart:[], orders:[...orders]}
+          }
+        }
 
 
       default: {

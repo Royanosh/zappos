@@ -9,6 +9,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getlogout } from "../Redux/action";
+import MyCart from "../pages/MyCart";
 
 const Navbar = () => {
 
@@ -140,15 +141,16 @@ const Navbar = () => {
                 </Box>
 
                 <Box p='4' display={{ base: 'none', sm: 'none', md: 'none', lg: 'block', xl: 'block' }}>
-                    <Button
+                    {
+                        isauth ? <MyCart/>
+                        :
+                        <Button
                         m={2}
                         bg='green.200'
                         _hover={{ bg: "green.100" }}
-                    ><Box mr="10px"><AiOutlineShoppingCart /></Box> <span>
-                        {
-                            isauth ? `${cart.length} ITEMS IN CART` : ` MY CART`
-                        }
-                        </span></Button>
+                    ><Box mr="10px"><AiOutlineShoppingCart /></Box> <span>MY CART</span></Button>
+                            
+                    }
                 </Box>
 
             </Flex>

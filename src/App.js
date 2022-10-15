@@ -9,11 +9,11 @@ function App() {
     <Box>
       <Navbar/>
 
-      {/* <Allroute/> */}
+      <Allroute/>
 
       {/* <Footer/>  */}
 
-      <Footer/> 
+      <Footer/>
 
     </Box>
     </>

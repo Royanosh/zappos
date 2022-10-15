@@ -26,7 +26,7 @@ const SignIn = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [users, setUsers] = useState([]);
-
+  const isauth = useSelector((state) => state.isauth);
   const [user, setUser] = useState({
     email: "",
     password: ""
@@ -83,10 +83,7 @@ const Error = ()=>{
     }
     getusers();
   }, [])
-  const { isauth } = useSelector((state) => state.isauth);
-
-  if (isauth)
-    return <Navigate to='/' />
+  
 
   const handlechange = (e) => {
     const { value, name } = e.target;
@@ -138,6 +135,9 @@ const Error = ()=>{
     }
 
   }
+
+  if (isauth)
+  return <Navigate to='/' />
 
   return (
     <>

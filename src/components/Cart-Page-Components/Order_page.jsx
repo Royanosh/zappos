@@ -1,6 +1,6 @@
 import React from 'react'
 import "./shipping.css"
-
+import { Link } from "react-router-dom";
 const Order_page = () => {
   return (
     <>
@@ -9,7 +9,8 @@ const Order_page = () => {
         <div>
         </div>
           <div className="div2">
-           <button  className="payment-btn place">PLACE YOUR ORDER</button>
+            <Link to="/ordersuccess">
+           <button  className="payment-btn place">PLACE YOUR ORDER</button></Link>
             <h3 className="order-summary">Order Summary (2 Items)</h3>
             <div className="divide subtotal">
               <h3>Subtotal:</h3>
