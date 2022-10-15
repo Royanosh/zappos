@@ -15,13 +15,12 @@ import {
 
 
 
-<<<<<<< HEAD:src/pages/Product.jsx
+// <<<<<<< HEAD:src/pages/Product.jsx
  const Product = ({setCartToggle}) => {
   const toast = useToast()
-=======
  const SingleProduct = ({setCartToggle}) => {
  
->>>>>>> 8f69de2451203a9aeea88e6d15d678a8540a199c:src/pages/SingleProduct.jsx
+//  8f69de2451203a9aeea88e6d15d678a8540a199c:src/pages/SingleProduct.jsx
 
   let data = JSON.parse(localStorage.getItem("singleProduct")) ;
 
@@ -179,6 +178,6 @@ import {
     </>
   );
 };
-
+ }
 
 export default SingleProduct;
