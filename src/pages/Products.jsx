@@ -70,16 +70,24 @@ const Products = () => {
       ? `&price_gte=${priceRange[0]}&price_lte=${priceRange[1]}`
       : "";
   const [sortPrice, setSortPrice] = useState("");
+  const [sortRatings, setSortRatings] = useState("");
+  const [sortBrandName, setSortBrandName] = useState("");
+
   const sortPriceUrl =
     sortPrice === "" ? "" : `&_sort=price&_order=${sortPrice}`;
+  const sortRatingsUrl = sortRatings === "" ? "" : `&_sort=ratings&_order=desc`;
+  const sortBrandNameUrl =
+    sortBrandName === "" ? "" : `&_sort=brand&_order=asc`;
 
   useEffect(() => {
     fetchData();
-  }, [sortPrice, priceRangeUrl]);
+  }, [sortPrice, priceRangeUrl, sortRatings, sortBrandName]);
   const fetchData = () => {
     setLoading(true);
     const gender = cat;
-    fetch(`${url}/${gender}?_limit=100&_page=1${sortPriceUrl}${priceRangeUrl}`)
+    fetch(
+      `${url}/${gender}?_limit=100&_page=1${sortPriceUrl}${priceRangeUrl}${sortRatingsUrl}${sortBrandNameUrl}`
+    )
       .then((res) => res.json())
       .then((res) => {
         setData(res);
@@ -89,7 +97,14 @@ const Products = () => {
       });
   };
   const handleChange = (event) => {
-    setSortPrice(event.target.value);
+    let val = event.target.value;
+    if (val == "asc" || val == "desc") {
+      setSortPrice(event.target.value);
+    } else if (val == "customerRating") {
+      setSortRatings("sortRatingsDesc");
+    } else {
+      setSortBrandName("brandName");
+    }
   };
   const scrollStyle = {
     overflow: "auto",
@@ -111,54 +126,84 @@ const Products = () => {
       height: "1em",
     },
   };
+  const scrollStyleH = {
+    overflow: "auto",
+    scrollbarWidth: "thin",
+    "&::-webkit-scrollbar": {
+      width: "0.3em",
+      height: "0.3em",
+    },
+    "&::-webkit-scrollbar-track": {
+      background: "#f1f1f1",
+      height: "1em",
+    },
+    "&::-webkit-scrollbar-thumb": {
+      backgroundColor: "#888",
+      borderRadius: "10px",
+    },
+    "&::-webkit-scrollbar-thumb:hover": {
+      background: "#555",
+      height: "1em",
+    },
+  };
+
   console.log("Value", value);
 
   return (
     <>
-      <Center>
-        <Flex w="95%">
-          <Box p="4">
-            <Heading size="lg">
-              {
-                cat==="menscloths" ? "Men's Clothings" : cat==="womencloths" ? "Women's Clothings" : cat==="menssneakers" ? "Men's Sneakers & Shoes" : "Women's Sneakers & Shoes"
-
-              }
-            </Heading>
-            <Text fontSize="xl">5099 items found</Text>
-            <Flex>
-              <Box marginRight="5px">
-                <Text fontSize="sm">Have Feedback?</Text>
-              </Box>
-              <Center>
-                <Box>
-                  <GoComment />
-                </Box>
-              </Center>
-            </Flex>
-          </Box>
-          <Spacer />
-          <Box p="4">
-            <Flex>
-              <Center>
-                <Box marginRight="10px" verticalAlign="Center">
-                  <Text fontSize="xl">Sort By:</Text>
-                </Box>
-              </Center>
+      <SimpleGrid
+        minChildWidth="280px"
+        w="95vw"
+        marginX={"auto"}
+        spacingX={{
+          base: "0vm",
+          sm: "10vw",
+          md: "20vw",
+          lg: "30vw",
+          xl: "40vw",
+          "2xl": "52vw",
+        }}
+      >
+        <Box p="4">
+          <Heading size="lg">
+            {cat === "menscloths"
+              ? "Men's Clothings"
+              : cat === "womencloths"
+              ? "Women's Clothings"
+              : cat === "menssneakers"
+              ? "Men's Sneakers & Shoes"
+              : "Women's Sneakers & Shoes"}
+          </Heading>
+          <Text fontSize="xl">5099 items found</Text>
+          <Flex>
+            <Box marginRight="5px">
+              <Text fontSize="sm">Have Feedback?</Text>
+            </Box>
+            <Center>
               <Box>
-                <Select placeholder="Relevance" onChange={handleChange}>
-                  <option value="relevance">Relevance</option>
-                  <option value="newArrivals">New Arrivals</option>
-                  <option value="customerRating">Customer Rating</option>
-                  <option value="bestSeller">Best Sellers</option>
-                  <option value="asc">Price: Low to High</option>
-                  <option value="desc">Price: High to Low</option>
-                  <option value="brandName">Brand Name</option>
-                </Select>
+                <GoComment />
               </Box>
-            </Flex>
-          </Box>
-        </Flex>
-      </Center>
+            </Center>
+          </Flex>
+        </Box>
+        <Box p="4">
+          <Flex>
+            <Center>
+              <Box marginRight="10px" verticalAlign="Center">
+                <Text fontSize={{ base: "sm", sm: "lg" }}>Sort By:</Text>
+              </Box>
+            </Center>
+            <Box>
+              <Select placeholder="Select" onChange={handleChange}>
+                <option value="customerRating">Customer Rating</option>
+                <option value="asc">Price: Low to High</option>
+                <option value="desc">Price: High to Low</option>
+                <option value="brandName">Brand Name</option>
+              </Select>
+            </Box>
+          </Flex>
+        </Box>
+      </SimpleGrid>
       <Center>
         <Flex w="95%" spacing="10px" m={"8px"}>
           <Box
@@ -176,13 +221,13 @@ const Products = () => {
               <VStack align="stretch">
                 <Accordion defaultIndex={[0, 1, 2, 3]} allowMultiple>
                   <Gender getCheckboxProps={getCheckboxProps} />
-                  <Brands
-                    getCheckboxProps={getCheckboxProps}
-                    scrollStyle={scrollStyle}
-                  />
                   <PriceRange
                     setPriceRange={setPriceRange}
                     getCheckboxProps={getCheckboxProps}
+                  />
+                  <Brands
+                    getCheckboxProps={getCheckboxProps}
+                    scrollStyle={scrollStyle}
                   />
                   <Colors
                     getCheckboxProps={getCheckboxProps}
@@ -201,23 +246,35 @@ const Products = () => {
             }}
           >
             <Text fontSize={"2xl"}>Your Selection</Text>
-            <HStack mt="10px">
-              {value.map((el, i) => (
-                <Button
-                  key={Date.now() + Math.random() + el}
-                  alignItems="center"
-                  borderRadius={50}
-                  bg="#e5f1f8"
-                  color="#0076bd"
-                >
-                  {el}
-                  <Center ml="4px" mt="4px">
-                    <AiOutlineCloseCircle />
-                  </Center>
-                </Button>
-              ))}
+            <Box
+              sx={scrollStyleH}
+              w={{
+                base: "90vw",
+                sm: "90vw",
+                md: "61vw",
+                lg: "67vw",
+                xl: "73vw",
+              }}
+            >
+              <HStack mt="10px" mb="10px">
+                {value.map((el, i) => (
+                  <Box>
+                    <Button
+                      key={Date.now() + Math.random() + el}
+                      alignItems="center"
+                      borderRadius={50}
+                      bg="#e5f1f8"
+                      color="#0076bd"
+                    >
+                      {el}
+                      <Center ml="4px" mt="4px">
+                        {/* <AiOutlineCloseCircle /> */}
+                      </Center>
+                    </Button>
+                  </Box>
+                ))}
 
-              {/* <Button
+                {/* <Button
                 alignItems="center"
                 borderRadius={50}
                 bg="#e5f1f8"
@@ -267,7 +324,8 @@ const Products = () => {
               >
                 Girls
               </Button> */}
-            </HStack>
+              </HStack>
+            </Box>
             <Box mt={"5px"}>
               {loading ? (
                 <Center>
@@ -286,7 +344,7 @@ const Products = () => {
                 <SimpleGrid minChildWidth="220px" spacing="10px" m={5}>
                   {data.map((elem, i) => (
                     <NavLink to={`/category/${cat}/${elem.id}`}>
-                    <Product key={i} elem={elem} i={i} />
+                      <Product key={i} elem={elem} i={i} />
                     </NavLink>
                   ))}
                 </SimpleGrid>

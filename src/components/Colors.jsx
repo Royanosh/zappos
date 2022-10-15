@@ -20,12 +20,14 @@ const Colors = (props) => {
   // const { value, getCheckboxProps } = useCheckboxGroup();
   const { scrollStyle, getCheckboxProps } = props;
   const [loading, setLoading] = useState(false);
+  const [searchColor, setSearchColor] = useState("");
+  const searchColorUrl = searchColor === "" ? "" : `?name_like=${searchColor}`;
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [searchColor]);
   const fetchData = () => {
     setLoading(true);
-    fetch(`${url}`)
+    fetch(`${url}${searchColorUrl}`)
       .then((res) => res.json())
       .then((res) => {
         setColors(res);
@@ -33,6 +35,10 @@ const Colors = (props) => {
       .finally(() => {
         setLoading(false);
       });
+  };
+  const handleChange = (event) => {
+    // console.log("HandleChange ", event.target.value);
+    setSearchColor(event.target.value);
   };
   return (
     <AccordionItem p={"5px"}>
@@ -51,7 +57,7 @@ const Colors = (props) => {
         </AccordionButton>
       </h4>
       <AccordionPanel pb={4} h="200px" sx={scrollStyle}>
-        <Input mb="8px" placeholder="Search Color" />
+        <Input onKeyDown={handleChange} mb="8px" placeholder="Search Color" />
         <CheckboxGroup defaultValue={[""]}>
           {loading ? (
             <Center>
