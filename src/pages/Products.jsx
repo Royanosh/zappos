@@ -285,7 +285,7 @@ const Products = () => {
               ) : (
                 <SimpleGrid minChildWidth="220px" spacing="10px" m={5}>
                   {data.map((elem, i) => (
-                    <NavLink to={`/category/mens/${elem.id}`}>
+                    <NavLink to={`/category/${cat}/${elem.id}`}>
                     <Product key={i} elem={elem} i={i} />
                     </NavLink>
                   ))}

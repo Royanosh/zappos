@@ -16,7 +16,7 @@ const Navbar = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
-    const { isauth, userprofile } = useSelector((state) => state);
+    const { isauth, userprofile, cart } = useSelector((state) => state);
 
     const handlesearch = () => {
         if (search === "men" || search === "mens" || search === "mens shirt" || search === "mens cloths" || search === "mensclothing" || search === "menscloths") {
@@ -146,7 +146,7 @@ const Navbar = () => {
                         _hover={{ bg: "green.100" }}
                     ><AiOutlineShoppingCart /> <span>
                         {
-                            isauth ? `. ${5} ITEMS IN CART` : `. MY CART`
+                            isauth ? `. ${cart.length} ITEMS IN CART` : `. MY CART`
                         }
                         </span></Button>
                 </Box>

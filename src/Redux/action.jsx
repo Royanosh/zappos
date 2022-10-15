@@ -1,7 +1,7 @@
 import { ERROR, 
     LOGOUT, SETUSER,
     ADDTOCART, DELFROMCART,
-    INCREASECART, DECREASECART
+    INCREASECART, DECREASECART, SETSHIPADDRESS
 } from './actionTypes'
 
 
@@ -41,6 +41,11 @@ import { ERROR,
     type: DECREASECART,
     payload: data
   });
+
+  export const setshipaddress = (data)=>({
+    type: SETSHIPADDRESS,
+    payload: data
+  })
   
 export const register = (user) => (dispatch) => {
 
