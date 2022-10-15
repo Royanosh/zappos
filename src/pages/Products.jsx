@@ -56,8 +56,6 @@ import PriceRange from "../components/PriceRange";
 import Colors from "../components/Colors";
 import Gender from "../components/Gender";
 import { NavLink, useParams } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { addtocart } from "../Redux/action";
 const url = `http://localhost:3000`;
 
 const Products = () => {
@@ -65,7 +63,6 @@ const Products = () => {
   const [data, setData] = useState([]);
   const [priceRange, setPriceRange] = useState([]);
   const [loading, setLoading] = useState(false);
-  const dispatch = useDispatch();
   let { cat } = useParams();
   console.log("PriceRange", priceRange);
   const priceRangeUrl =
@@ -288,14 +285,9 @@ const Products = () => {
               ) : (
                 <SimpleGrid minChildWidth="220px" spacing="10px" m={5}>
                   {data.map((elem, i) => (
-                    <Box>
                     <NavLink to={`/category/${cat}/${elem.id}`}>
                     <Product key={i} elem={elem} i={i} />
                     </NavLink>
-                    <Button onClick={()=>{
-                      dispatch(addtocart(elem))
-                    }}>Add</Button>
-                    </Box>
                   ))}
                 </SimpleGrid>
               )}
