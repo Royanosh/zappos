@@ -8,14 +8,20 @@ import {
   AlertIcon,
   AlertTitle,
   AlertDescription,
+  useToast,
 } from '@chakra-ui/react'
 // import { useEffect, useState } from "react";
 // import {  useParams } from "react-router-dom";
 
 
 
+<<<<<<< HEAD:src/pages/Product.jsx
+ const Product = ({setCartToggle}) => {
+  const toast = useToast()
+=======
  const SingleProduct = ({setCartToggle}) => {
  
+>>>>>>> 8f69de2451203a9aeea88e6d15d678a8540a199c:src/pages/SingleProduct.jsx
 
   let data = JSON.parse(localStorage.getItem("singleProduct")) ;
 
@@ -23,13 +29,25 @@ import {
 
   const [show, setShow] = useState(false);
 
+
+  const Cartalert = ()=>{
+    return toast({
+      title: 'Added to Cart.',
+      description: "Your product has beem added to cart successfully.",
+      status: 'success',
+      duration: 2000,
+      isClosable: true,
+      position:"top"
+    })
+  }
  
 
   const AddtoCart = () => {
-    setShow(true)
-    CartData.push(data);
-    localStorage.setItem("CartItem", JSON.stringify(CartData));
-    setCartToggle(true);
+    // setShow(true)
+    // CartData.push(data);
+    // localStorage.setItem("CartItem", JSON.stringify(CartData));
+    // setCartToggle(true);
+    Cartalert();
   };
 
   if (show) {

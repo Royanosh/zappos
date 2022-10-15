@@ -4,6 +4,7 @@ import { Link, Navigate } from 'react-router-dom'
 import Brand from '../components/MenWomenLAndingPage-components/Brand'
 import '../components/MenWomenLAndingPage-components/mensWomesPage.css';
 import "../components/MenWomenLAndingPage-components/mens.css"
+import TrandingBrands from '../components/LandingPage-Components/TrendingBrands';
 
 
 const WomensClothing = () => {
@@ -246,7 +247,8 @@ const WomensClothing = () => {
 
 
    <section>
-      <Brand/>
+      {/* <Brand/> */}
+      <TrandingBrands/>
    </section>
     </>
   )
