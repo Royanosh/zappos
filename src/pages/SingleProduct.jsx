@@ -1,24 +1,45 @@
-import React from "react";
+import React, { useState } from "react";
 // import { useNavigate, useParams } from "react-router-dom";
 import styles from "../components/MenWomenLAndingPage-components/product.module.css";
 import MensSlick from "../components/MenWomenLAndingPage-components/MensSlick";
+
+import {
+  Alert,
+  AlertIcon,
+  AlertTitle,
+  AlertDescription,
+  useToast,
+} from '@chakra-ui/react'
 // import { useEffect, useState } from "react";
 // import {  useParams } from "react-router-dom";
 
-
-
- const Product = ({setCartToggle}) => {
- 
+  
+ const SingleProduct = ({setCartToggle}) => {
+  const toast = useToast()
+//  8f69de2451203a9aeea88e6d15d678a8540a199c:src/pages/SingleProduct.jsx
 
   let data = JSON.parse(localStorage.getItem("singleProduct")) ;
 
   let CartData = JSON.parse(localStorage.getItem("CartItem")) || [];
 
+
+
+  const Cartalert = ()=>{
+    return toast({
+      title: 'Added to Cart.',
+      description: "Your product has beem added to cart successfully.",
+      status: 'success',
+      duration: 2000,
+      isClosable: true,
+      position:"top"
+    })
+  }
+ 
+
   const AddtoCart = () => {
-    CartData.push(data);
-    localStorage.setItem("CartItem", JSON.stringify(CartData));
-    setCartToggle(true);
+    Cartalert();
   };
+
 
   return (
     <>
@@ -49,14 +70,14 @@ import MensSlick from "../components/MenWomenLAndingPage-components/MensSlick";
           ⭐⭐⭐⭐⭐ <span className={styles.ratingSpan}>({data.ratings})</span>
         </div>
         <br />
-        <button style={{margin:"5px 10px",border:"1px solid black"}} type="button" class="btn btn-light">XS</button>
+        <button  style={{margin:"5px 10px",border:"1px solid black"}} type="button" class="btn btn-light">XS</button>
         <button style={{margin:"5px 10px",border:"1px solid black"}}  type="button" class="btn btn-light">SM</button>
         <button style={{margin:"5px 10px",border:"1px solid black"}}  type="button" class="btn btn-light">MD</button>
         <button style={{margin:"5px 10px",border:"1px solid black"}}  type="button" class="btn btn-light">LG</button>
         <button style={{margin:"5px 10px",border:"1px solid black"}}  type="button" class="btn btn-light">XL</button>
         <button style={{margin:"5px 10px",border:"1px solid black"}}  type="button" class="btn btn-light">XXL</button>
         <br />
-        <button  className={styles.cartBtn} onClick={AddtoCart}> 
+        <button  className={styles.cartBtn} onClick={AddtoCart} > 
           {/* onClick={AddtoCart} */}
           Add To Cart
         </button>
@@ -94,11 +115,11 @@ import MensSlick from "../components/MenWomenLAndingPage-components/MensSlick";
        </div>
        <div>
        <br />
-          <h1  style={{fontSize:"25px",margin:"20px 0px"}}>87%  ⭐⭐⭐⭐⭐</h1>
-          <h1  style={{fontSize:"25px",margin:"20px 0px"}}>54%  ⭐⭐⭐⭐</h1>
-          <h1  style={{fontSize:"25px",margin:"20px 0px"}}>42%  ⭐⭐⭐</h1>
-          <h1  style={{fontSize:"25px",margin:"20px 0px"}}>10%  ⭐⭐</h1>
-          <h1  style={{fontSize:"25px",margin:"20px 0px"}}>4%   ⭐</h1>
+          <h1  style={{fontSize:"1.2rem",margin:"20px 0px"}}>87%  ⭐⭐⭐⭐⭐</h1>
+          <h1  style={{fontSize:"1.2rem",margin:"20px 0px"}}>54%  ⭐⭐⭐⭐</h1>
+          <h1  style={{fontSize:"1.2rem",margin:"20px 0px"}}>42%  ⭐⭐⭐</h1>
+          <h1  style={{fontSize:"1.2rem",margin:"20px 0px"}}>10%  ⭐⭐</h1>
+          <h1  style={{fontSize:"1.2rem",margin:"20px 0px"}}>4%   ⭐</h1>
        </div>
      </div>
      <hr />
@@ -139,5 +160,4 @@ import MensSlick from "../components/MenWomenLAndingPage-components/MensSlick";
   );
 };
 
-
-export default Product;
+export default SingleProduct;

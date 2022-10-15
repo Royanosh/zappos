@@ -151,6 +151,7 @@ const Products = () => {
 
   return (
     <>
+<<<<<<< HEAD
       <SimpleGrid
         minChildWidth="280px"
         w="95vw"
@@ -172,6 +173,37 @@ const Products = () => {
               <Text fontSize="sm">Have Feedback?</Text>
             </Box>
             <Center>
+=======
+      <Center>
+        <Flex w="95%">
+          <Box p="4">
+            <Heading size="lg">
+              {
+                cat==="menscloths" ? "Men's Clothings" : cat==="womencloths" ? "Women's Clothings" : cat==="menssneakers" ? "Men's Sneakers & Shoes" : "Women's Sneakers & Shoes"
+
+              }
+            </Heading>
+            <Text fontSize="xl">5099 items found</Text>
+            <Flex>
+              <Box marginRight="5px">
+                <Text fontSize="sm">Have Feedback?</Text>
+              </Box>
+              <Center>
+                <Box>
+                  <GoComment />
+                </Box>
+              </Center>
+            </Flex>
+          </Box>
+          <Spacer />
+          <Box p="4">
+            <Flex>
+              <Center>
+                <Box marginRight="10px" verticalAlign="Center">
+                  <Text fontSize="xl">Sort By:</Text>
+                </Box>
+              </Center>
+>>>>>>> db7d875c000ef92065c27db905865e663841f5b9
               <Box>
                 <GoComment />
               </Box>
@@ -336,8 +368,13 @@ const Products = () => {
               ) : (
                 <SimpleGrid minChildWidth="220px" spacing="10px" m={5}>
                   {data.map((elem, i) => (
+<<<<<<< HEAD
                     <NavLink to={`/category/mens/${elem.id}`}>
                       <Product key={i} elem={elem} i={i} />
+=======
+                    <NavLink to={`/category/${cat}/${elem.id}`}>
+                    <Product key={i} elem={elem} i={i} />
+>>>>>>> db7d875c000ef92065c27db905865e663841f5b9
                     </NavLink>
                   ))}
                 </SimpleGrid>

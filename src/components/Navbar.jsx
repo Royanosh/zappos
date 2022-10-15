@@ -5,10 +5,33 @@ import { AiOutlineShoppingCart } from 'react-icons/ai';
 import { CgProfile } from 'react-icons/cg';
 import DrawerExample from "../components/LandingPage-Components/Smallscreendrawer";
 import SignInModal from "./SignInModal";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getlogout } from "../Redux/action";
 
 const Navbar = () => {
 
+    const [search, setSearch] = useState("");
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
+
+    const { isauth, userprofile, cart } = useSelector((state) => state);
+
+    const handlesearch = () => {
+        if (search === "men" || search === "mens" || search === "mens shirt" || search === "mens cloths" || search === "mensclothing" || search === "menscloths") {
+            setSearch("");
+            navigate("/category/menscloths")
+        }
+        if (search === "women" || search === "tops" || search === "womens" || search === "womens shirt" || search === "womens cloths" || search === "womensclothing" || search === "womenscloths") {
+            setSearch("");
+            navigate("/category/womencloths")
+        }
+        if (search === "sneakers" || search === "shoes" || search === "boots") {
+            setSearch("");
+            navigate("/category/menssneakers")
+        }
+    }
 
     return (
         <Box w='100%'>
@@ -62,7 +85,7 @@ const Navbar = () => {
                     mr={5}
                     color='white'
                     alignItems='center'
-                    display={{base:'none', sm:'none', md:'none', lg:'block', xl:'block'}}
+                    display={{ base: 'none', sm: 'none', md: 'none', lg: 'block', xl: 'block' }}
                 >
                     Every Zappos order comes with FAST, FREE Shipping, plus a FREE 365-Day Return Policy! More About Shipping and Returns
                 </Text>
@@ -73,82 +96,91 @@ const Navbar = () => {
                 <Flex p='4' w='60%'
                 >
                     <Box
-                    display={{base:'flex', sm:'flex', md:'flex', lg:'none', xl:'none'}}
+                        display={{ base: 'flex', sm: 'flex', md: 'flex', lg: 'none', xl: 'none' }}
                     >
-                    <DrawerExample/>
+                        <DrawerExample />
                     </Box>
 
-                    <Link to="/" end>
-                    <Image
-                        h="40px" m={2}
-                        src="https://m.media-amazon.com/images/G/01/zappos/melody/zapposPBS._CB1509642213_.svg" />
+                    <Link to="/">
+                        <Image
+                            h="40px" m={2}
+                            src="https://m.media-amazon.com/images/G/01/zappos/melody/zapposPBS._CB1509642213_.svg" />
                     </Link>
                     <Input
-                    display={{base:'none', sm:'none', md:'none', lg:'flex', xl:'flex'}}
+                        display={{ base: 'none', sm: 'none', md: 'none', lg: 'flex', xl: 'flex' }}
                         border='1px solid'
                         borderColor='black'
                         w='80%'
-                        placeholder='Gaurav, search for shoes, clothes, etc'
+                        placeholder={ isauth ? `${userprofile.name}, search for shoes, clothes, etc` :
+                                    `search for shoes, clothes, etc`
+                                }
                         m={2}
+                        value={search}
+                        onChange={(e) => setSearch(e.target.value)}
                     />
 
                     <Button
-                    display={{base:'none', sm:'none', md:'none', lg:'flex', xl:'flex'}}
+                        display={{ base: 'none', sm: 'none', md: 'none', lg: 'flex', xl: 'flex' }}
                         // p={5}
                         bg='#003953'
                         color='white'
                         _hover={{ bg: "blue.500", color: 'white' }}
-                        m={2}
+                        m={2} onClick={handlesearch}
                     >SEARCH</Button>
                 </Flex>
 
                 <Spacer />
 
-                <Box m={4} display={{base:'block', sm:'block', md:'block', lg:'none', xl:'none'}}>
-                    <CgProfile size={40}/>
+                <Box m={4} display={{ base: 'block', sm: 'block', md: 'block', lg: 'none', xl: 'none' }}>
+                    <CgProfile size={40} />
                 </Box>
 
-                <Box m={4} display={{base:'block', sm:'block', md:'block', lg:'none', xl:'none'}}>
-                    <AiOutlineShoppingCart size={40}/>
+                <Box m={4} display={{ base: 'block', sm: 'block', md: 'block', lg: 'none', xl: 'none' }}>
+                    <AiOutlineShoppingCart size={40} />
                 </Box>
 
-                <Box p='4' display={{base:'none', sm:'none', md:'none', lg:'block', xl:'block'}}>
+                <Box p='4' display={{ base: 'none', sm: 'none', md: 'none', lg: 'block', xl: 'block' }}>
                     <Button
                         m={2}
                         bg='green.200'
                         _hover={{ bg: "green.100" }}
-                    ><AiOutlineShoppingCart /> <span>. MY CART</span></Button>
+                    ><AiOutlineShoppingCart /> <span>
+                        {
+                            isauth ? `. ${cart.length} ITEMS IN CART` : `. MY CART`
+                        }
+                        </span></Button>
                 </Box>
 
-                {/* . 5 ITEMS IN CART after login show this */}
             </Flex>
 
 
             <Flex p='4' w='100%'
-                display={{base:'flex', sm:'flex', md:'flex', lg:'none', xl:'none'}}
-                >
-                    <Input
-                        border='1px solid'
-                        borderColor='black'
-                        w='95%'
-                        placeholder='Gaurav, search for shoes, clothes, etc'
-                        m={2}
-                    />
+                display={{ base: 'flex', sm: 'flex', md: 'flex', lg: 'none', xl: 'none' }}
+            >
+                <Input
+                    border='1px solid'
+                    borderColor='black'
+                    w='95%'
+                    placeholder={ isauth ? `${userprofile.name}, search for shoes, clothes, etc` :
+                    `search for shoes, clothes, etc`
+                }
+                    m={2}
+                />
 
-                    <Button
-                        // p={5}
-                        bg='#003953'
-                        color='white'
-                        _hover={{ bg: "blue.500", color: 'white' }}
-                        m={2}
-                    >SEARCH</Button>
-                </Flex>
-            
-            <Flex bg="gray.100" display={{base:'none', sm:'none', md:'none', lg:'flex', xl:'flex'}}>
+                <Button
+                    // p={5}
+                    bg='#003953'
+                    color='white'
+                    _hover={{ bg: "blue.500", color: 'white' }}
+                    m={2}
+                >SEARCH</Button>
+            </Flex>
+
+            <Flex bg="gray.100" display={{ base: 'none', sm: 'none', md: 'none', lg: 'flex', xl: 'flex' }}>
                 <Flex>
                     <Menu>
                         <MenuButton
-                        as={Button} rightIcon={<ChevronDownIcon />}>
+                            as={Button} rightIcon={<ChevronDownIcon />}>
                             Women
                         </MenuButton>
                         <MenuList>
@@ -249,7 +281,7 @@ const Navbar = () => {
 
                     <Menu>
                         <MenuButton
-                        as={Button} rightIcon={<ChevronDownIcon />}>
+                            as={Button} rightIcon={<ChevronDownIcon />}>
                             Men
                         </MenuButton>
                         <MenuList>
@@ -351,7 +383,7 @@ const Navbar = () => {
 
                     <Menu>
                         <MenuButton
-                        as={Button} rightIcon={<ChevronDownIcon />}>
+                            as={Button} rightIcon={<ChevronDownIcon />}>
                             Kids
                         </MenuButton>
                         <MenuList>
@@ -452,7 +484,7 @@ const Navbar = () => {
 
                     <Menu>
                         <MenuButton
-                        as={Button} rightIcon={<ChevronDownIcon />}>
+                            as={Button} rightIcon={<ChevronDownIcon />}>
                             Departments
                         </MenuButton>
                         <MenuList>
@@ -548,8 +580,8 @@ const Navbar = () => {
 
 
                     <Menu>
-                    <MenuButton
-                        as={Button} rightIcon={<ChevronDownIcon />}>
+                        <MenuButton
+                            as={Button} rightIcon={<ChevronDownIcon />}>
                             Brands
                         </MenuButton>
                     </Menu>
@@ -558,7 +590,7 @@ const Navbar = () => {
 
                     <Menu>
                         <MenuButton
-                        as={Button} rightIcon={<ChevronDownIcon />}>
+                            as={Button} rightIcon={<ChevronDownIcon />}>
                             Sale
                         </MenuButton>
                         <MenuList>
@@ -660,7 +692,7 @@ const Navbar = () => {
 
                     <Menu>
                         <MenuButton
-                        as={Button} rightIcon={<ChevronDownIcon />}>
+                            as={Button} rightIcon={<ChevronDownIcon />}>
                             🔥 Clothing
                         </MenuButton>
                         <MenuList>
@@ -759,9 +791,26 @@ const Navbar = () => {
                 <Spacer />
 
                 <Box m={2} mr={5}
-                _hover={{borderBottom:'2px solid'}}
+                    _hover={{ borderBottom: '2px solid' }}
                 >
-                    <Text as='button'><SignInModal/></Text>
+                    {isauth ?
+                    <Flex>
+                        <Button>Favourites</Button>
+                        <Menu>
+                            <MenuButton as={Button} rightIcon={<ChevronDownIcon />}>
+                                My Account
+                            </MenuButton>
+                            <MenuList>
+                                <MenuItem color="#144860" fontWeight="bold.100">Welcome, back {userprofile.name} !</MenuItem>
+                                <MenuItem>VIP Dashboard</MenuItem>
+                                <MenuItem>View Orders / Return Items</MenuItem>
+                                <MenuItem>Account Overview</MenuItem>
+                                <MenuItem onClick={()=>dispatch(getlogout())}
+                                >Not {userprofile.name}? Sign Out</MenuItem>
+                            </MenuList>
+                        </Menu>
+                        </Flex>
+                        : <SignInModal />}
                 </Box>
 
             </Flex>
