@@ -8,6 +8,7 @@ import {
   AlertIcon,
   AlertTitle,
   AlertDescription,
+  useToast,
 } from '@chakra-ui/react'
 // import { useEffect, useState } from "react";
 // import {  useParams } from "react-router-dom";
@@ -15,7 +16,7 @@ import {
 
 
  const Product = ({setCartToggle}) => {
- 
+  const toast = useToast()
 
   let data = JSON.parse(localStorage.getItem("singleProduct")) ;
 
@@ -23,13 +24,25 @@ import {
 
   const [show, setShow] = useState(false);
 
+
+  const Cartalert = ()=>{
+    return toast({
+      title: 'Added to Cart.',
+      description: "Your product has beem added to cart successfully.",
+      status: 'success',
+      duration: 2000,
+      isClosable: true,
+      position:"top"
+    })
+  }
  
 
   const AddtoCart = () => {
-    setShow(true)
-    CartData.push(data);
-    localStorage.setItem("CartItem", JSON.stringify(CartData));
-    setCartToggle(true);
+    // setShow(true)
+    // CartData.push(data);
+    // localStorage.setItem("CartItem", JSON.stringify(CartData));
+    // setCartToggle(true);
+    Cartalert();
   };
 
   if (show) {

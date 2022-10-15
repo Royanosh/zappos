@@ -4,6 +4,7 @@ import { Link, Navigate } from 'react-router-dom'
 import Slick from '../components/MenWomenLAndingPage-components/Slick'
 import '../components/MenWomenLAndingPage-components/mensWomesPage.css';
 import "../components/MenWomenLAndingPage-components/mens.css"
+import TrandingBrands from '../components/LandingPage-Components/TrendingBrands';
 const MensClothing = () => {
    
   const [products,setProducts] = useState([]) 
@@ -215,7 +216,8 @@ const MensClothing = () => {
 
 {/* brand section */}
    <section>
-     <Slick/>
+    <TrandingBrands/>
+     {/* <Slick/> */}
    </section>
     </>
   )
