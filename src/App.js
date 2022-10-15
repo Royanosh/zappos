@@ -1,22 +1,22 @@
-import { Box } from "@chakra-ui/react";
-import Allroute from "./Allroutes/Allroute";
-import "./App.css";
-import Footer from "./components/Footer";
-import Navbar from "./components/Navbar";
-import Cart from "./pages/Cart";
-import MyCart from "./pages/MyCart";
+import { Box } from '@chakra-ui/react';
+import Allroute from './Allroutes/Allroute';
+import './App.css';
+import Footer from './components/Footer';
+import Navbar from './components/Navbar';
 function App() {
-  return (
+  return (<>
+  
     <Box>
-      {/* <Navbar/>
+      <Navbar/>
 
+      {/* <Allroute/> */}
 
-      <Allroute/>
+      {/* <Footer/>  */}
 
-      <Footer/>  */}
-      <Cart />
-      {/* <MyCart /> */}
+      <Footer/> 
+
     </Box>
+    </>
   );
 }
 
