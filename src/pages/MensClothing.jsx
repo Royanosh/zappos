@@ -164,7 +164,7 @@ const MensClothing = () => {
       <div>
       <div  className='manGrid'>
       {menCloth.map((womencloths) => (
-             <div key={womencloths.id} onClick={() => handleClick(womencloths)} className="card box boxSize" style={{cursor:"pointer"}}>
+             <div key={Math.random()+Date.now()*womencloths.id} onClick={() => handleClick(womencloths)} className="card box boxSize" style={{cursor:"pointer"}}>
              <img style={{height: "18rem"}}  src={womencloths.imageurl} className="card-img-top" alt="..."/>
                <h3 className="card-title" style={{textAlign:"center",fontSize:"20px",marginTop:"5px"}}>{womencloths.brand}</h3>
              <div className="card-body">
@@ -197,10 +197,10 @@ const MensClothing = () => {
 {/* best sellor part */}
    <section>
    <div className='container' style={{width:"100%" , marginBottom:"40px"}} >
-    <h1  className="bestSellor">Best Sellor</h1>
+    <h1  className="bestSellor" style={{marginTop:"20px"}}>Best Seller</h1>
     <div className='manAll' >
     {womenCloth.map((women) => (
-            <div key={women.id} onClick={() => handleClick(women)} className="card box" style={{width: "14rem",cursor:"pointer"}}>
+            <div key={women.id} onClick={() => handleClick(women)} className="card box" style={{width: "100%",cursor:"pointer"}}>
             <img style={{height: "18rem"}}  src={women.imageurl} className="card-img-top" alt="..."/>
               <h3 className="card-title" style={{textAlign:"center",fontSize:"20px",marginTop:"5px"}}>{women.brand}</h3>
             <div className="card-body">

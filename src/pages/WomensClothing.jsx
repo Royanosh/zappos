@@ -226,11 +226,11 @@ const WomensClothing = () => {
 {/* Best sellor part */}
    <section>
    <div className='container' style={{width:"100%" , marginBottom:"40px"}} >
-    <h1 style={{fontSize:"40px"}}>Best Sellor</h1>
+    <h1 style={{fontSize:"40px", marginTop:"20px"}}>Best Seller</h1>
 
     <div className='manAll'>
     {womenCloth.map((women) => (
-            <div key={women.id}  onClick={() => handleClick(women)} className="card box boxSize" style={{width:"13rem",cursor:"pointer"}}>
+            <div key={women.id}  onClick={() => handleClick(women)} className="card box boxSize" style={{width:"100%",cursor:"pointer"}}>
             <img style={{height: "18rem"}}  src={women.imageurl} className="card-img-top" alt="..."/>
               <h3 className="card-title" style={{textAlign:"center",fontSize:"17px",marginTop:"5px"}}>{women.brand}</h3>
             <div className="card-body">
