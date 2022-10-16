@@ -137,7 +137,7 @@ const Navbar = () => {
                 </Box>
 
                 <Box m={4} display={{ base: 'block', sm: 'block', md: 'block', lg: 'none', xl: 'none' }}>
-                    <AiOutlineShoppingCart size={40} />
+                    <Link to="/mycart"><AiOutlineShoppingCart size={40} /></Link>
                 </Box>
 
                 <Box p='4' display={{ base: 'none', sm: 'none', md: 'none', lg: 'block', xl: 'block' }}>
