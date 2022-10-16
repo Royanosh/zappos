@@ -11722,26 +11722,17 @@
       "email": "gauravsapkal1997@gmail.com",
       "password": "Pass@123",
       "id": 1,
-      "cart": [
+      "cart": [],
+      "orders": [
         {
-          "imageurl": "https://m.media-amazon.com/images/I/61L9JVNvo9L._AC_SR255,340_.jpg",
-          "brand": "Salty Crew@",
-          "desc": "BoyFriend Shirt With Good Fitness",
-          "ratings": 123,
-          "price": 76.23,
-          "id": 10,
-          "gender": "men",
-          "count": 2
-        },
-        {
-          "imageurl": "https://m.media-amazon.com/images/I/71oq4d1UQ3L._AC_SR255,340_.jpg",
+          "imageurl": "https://m.media-amazon.com/images/I/81ALpSfIiOL._AC_SR255,340_.jpg",
           "brand": "CeCe",
           "desc": "Short sleves Round Neck Tees",
           "ratings": 20864,
           "price": 50,
           "id": 1,
-          "gender": "women",
-          "count": 2
+          "gender": "men",
+          "count": 1
         },
         {
           "imageurl": "https://m.media-amazon.com/images/I/81eUMKdBuPL._AC_SR255,340_.jpg",
@@ -11750,6 +11741,16 @@
           "ratings": 225,
           "price": 69.95,
           "id": 2,
+          "gender": "men",
+          "count": 1
+        },
+        {
+          "imageurl": "https://m.media-amazon.com/images/I/81Lnc5Nr9EL._AC_SR255,340_.jpg",
+          "brand": "Armour",
+          "desc": "Color Neck Comfortable Cotton Mix T-Shirt",
+          "ratings": 121,
+          "price": 19.23,
+          "id": 6,
           "gender": "men",
           "count": 1
         }

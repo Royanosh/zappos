@@ -1,7 +1,26 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import "./shipping.css"
-import { Link } from "react-router-dom";
+
+import { useSelector } from 'react-redux';
 const Order_page = () => {
+
+  const cart = useSelector((state) => state.cart);
+  const [ totalAmount, setTotalAmount ] = useState(0);
+  
+  
+  useEffect(()=>{
+    const getAmount = ()=>{
+      let amt = cart.reduce((acc, elem)=>{
+          return acc + elem.price*elem.count
+      },0)
+      setTotalAmount(Math.floor(amt));
+    }
+    getAmount();
+  },[cart])
+
+
+  
+
   return (
     <>
     <div className='container'>
@@ -9,12 +28,12 @@ const Order_page = () => {
         <div>
         </div>
           <div className="div2">
-            <Link to="/ordersuccess">
-           <button  className="payment-btn place">PLACE YOUR ORDER</button></Link>
-            <h3 className="order-summary">Order Summary (2 Items)</h3>
+            
+           <button  className="payment-btn place">PLACE YOUR ORDER</button>
+            <h3 className="order-summary">Order Summary ({cart.length} Items)</h3>
             <div className="divide subtotal">
               <h3>Subtotal:</h3>
-              <h3 className="subtotalPrice">$139.98</h3>
+              <h3 className="subtotalPrice">${totalAmount}</h3>
             </div>
             <div className="shipping divide">
               <p>Shipping</p>
@@ -31,7 +50,7 @@ const Order_page = () => {
             <hr className="order-top" />
             <div className="divide">
               <h3>Order Total</h3>
-              <h3 className="order-total">$139.98</h3>
+              <h3 className="order-total">${totalAmount}</h3>
             </div>
           </div>
           <div className="div3">

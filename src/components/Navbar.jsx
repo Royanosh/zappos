@@ -17,7 +17,7 @@ const Navbar = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
-    const { isauth, userprofile, cart } = useSelector((state) => state);
+    const { isauth, userprofile } = useSelector((state) => state);
 
     const handlesearch = () => {
         if (search === "men" || search === "mens" || search === "mens shirt" || search === "mens cloths" || search === "mensclothing" || search === "menscloths") {
@@ -144,12 +144,12 @@ const Navbar = () => {
                     {
                         isauth ? <MyCart/>
                         :
-                        <Button
+                        <Link to="/signin"><Button
                         m={2}
                         bg='green.200'
                         _hover={{ bg: "green.100" }}
                     ><Box mr="10px"><AiOutlineShoppingCart /></Box> <span>MY CART</span></Button>
-                            
+                            </Link>
                     }
                 </Box>
 
@@ -805,7 +805,7 @@ const Navbar = () => {
                             <MenuList>
                                 <MenuItem color="#144860" fontWeight="bold.100">Welcome, back {userprofile.name} !</MenuItem>
                                 <MenuItem>VIP Dashboard</MenuItem>
-                                <MenuItem>View Orders / Return Items</MenuItem>
+                                <Link to="/orderhistory"><MenuItem>View Orders / Return Items</MenuItem></Link>
                                 <MenuItem>Account Overview</MenuItem>
                                 <MenuItem onClick={()=>dispatch(getlogout())}
                                 >Not {userprofile.name}? Sign Out</MenuItem>
