@@ -4,6 +4,7 @@ import PrivateRoute from "../components/Privateroute";
 import Cart from "../pages/Cart";
 import LandingPage from "../pages/LandingPage"
 import MensClothing from "../pages/MensClothing";
+import OrderHistoryPage from "../pages/OrderHistoryPage";
 import OrdersuccessPage from "../pages/OrdersuccessPage";
 import Page404 from "../pages/Page404";
 import Products from "../pages/Products";
@@ -48,6 +49,12 @@ const Allroute = () => {
             <Route path="/ordersuccess" element={
                 <PrivateRoute>
                     <OrdersuccessPage />
+                </PrivateRoute>
+            }></Route>
+
+            <Route path="/orderhistory" element={
+                <PrivateRoute>
+                    <OrderHistoryPage />
                 </PrivateRoute>
             }></Route>
 

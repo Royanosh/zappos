@@ -14,7 +14,10 @@ const OrdersuccessPage = ()=>{
             <Text>{`${cart.length} items will be shipped to:`}</Text>
 
             <Text>{userprofile.name}</Text>
-            <Text mb="15px">{shipaddress}</Text>
+            <Text>{shipaddress.name}</Text>
+            <Text>{shipaddress.country}</Text>
+            <Text>{shipaddress.detailadd}</Text>
+            <Text mb="15px">{shipaddress.number}</Text>
 
             <Text mb="20px">Arriving: <span color="#0076bd">Arriving Oct 25, 2022</span></Text>
 
