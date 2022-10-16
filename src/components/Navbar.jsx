@@ -167,6 +167,8 @@ const Navbar = () => {
                     `search for shoes, clothes, etc`
                 }
                     m={2}
+                    value={search}
+                    onChange={(e) => setSearch(e.target.value)}
                 />
 
                 <Button
@@ -175,6 +177,7 @@ const Navbar = () => {
                     color='white'
                     _hover={{ bg: "blue.500", color: 'white' }}
                     m={2}
+                    onClick={handlesearch}
                 >SEARCH</Button>
             </Flex>
 
