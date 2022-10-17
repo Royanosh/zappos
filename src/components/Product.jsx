@@ -30,14 +30,14 @@ const Product = (props) => {
           </Flex>
         </Flex>
         <Box p="1">
-          <Link>
+          {/* <Link> */}
             <Box mt="1" fontWeight="semibold" as="h4" noOfLines={1}>
               {elem.brand}{" "}
             </Box>
             <Box as="p" noOfLines={1}>
               {elem.desc}{" "}
             </Box>
-          </Link>
+          {/* </Link> */}
 
           <Box> ${elem.price}</Box>
 
@@ -45,7 +45,7 @@ const Product = (props) => {
             {Array(5)
               .fill("")
               .map((_, i) => (
-                <StarIcon key={i} color={i < 4 ? "teal.500" : "gray.300"} />
+                <StarIcon key={Math.random()*Date.now()+i+Math.random()} color={i < 4 ? "teal.500" : "gray.300"} />
               ))}
             <Box as="span" ml="2" color="gray.600" fontSize="sm">
               ({elem.ratings})

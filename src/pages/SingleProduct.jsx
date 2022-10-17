@@ -115,42 +115,42 @@ const SingleProduct = () => {
             <button
               style={{ margin: "5px 10px", border: "1px solid black" }}
               type="button"
-              class="btn btn-light"
+              className="btn btn-light"
             >
               XS
             </button>
             <button
               style={{ margin: "5px 10px", border: "1px solid black" }}
               type="button"
-              class="btn btn-light"
+              className="btn btn-light"
             >
               SM
             </button>
             <button
               style={{ margin: "5px 10px", border: "1px solid black" }}
               type="button"
-              class="btn btn-light"
+              className="btn btn-light"
             >
               MD
             </button>
             <button
               style={{ margin: "5px 10px", border: "1px solid black" }}
               type="button"
-              class="btn btn-light"
+              className="btn btn-light"
             >
               LG
             </button>
             <button
               style={{ margin: "5px 10px", border: "1px solid black" }}
               type="button"
-              class="btn btn-light"
+              className="btn btn-light"
             >
               XL
             </button>
             <button
               style={{ margin: "5px 10px", border: "1px solid black" }}
               type="button"
-              class="btn btn-light"
+              className="btn btn-light"
             >
               XXL
             </button>

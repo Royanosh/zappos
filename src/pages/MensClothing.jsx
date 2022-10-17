@@ -44,7 +44,7 @@ const MensClothing = () => {
       .then((response) => response.json())
       .then((product) => {
         setPrice(product);
-        console.log(product);
+        // console.log(product);
       })
       .catch((err) => {
         // setError(true)
@@ -57,7 +57,7 @@ const MensClothing = () => {
       .then((response) => response.json())
       .then((product) => {
         setWomenCloth(product);
-        console.log(product);
+        // console.log(product);
       })
       .catch((err) => {
         // setError(true)
@@ -70,7 +70,7 @@ const MensClothing = () => {
       .then((response) => response.json())
       .then((product) => {
         setMenCloth(product);
-        console.log(product);
+        // console.log(product);
       })
       .catch((err) => {
         // setError(true)
@@ -110,9 +110,11 @@ const MensClothing = () => {
       >
         <div className="manGrid">
           {price.map((womencloths) => (
-            <Link to="/category/menscloths">
+            <Link to="/category/menscloths"
+            key={Math.random()*Date.now()+womencloths.id+Math.random()}
+            >
               <div
-                key={womencloths.id}
+                
                 className="card box"
                 style={{ width: "100%", cursor: "pointer" }}
               >
@@ -229,7 +231,7 @@ const MensClothing = () => {
           <div className="manGrid">
             {menCloth.map((womencloths) => (
               <div
-                key={Math.random() + Date.now() * womencloths.id}
+                key={Math.random() + Date.now() * womencloths.id+Math.random()}
                 onClick={() => handleClick(womencloths)}
                 className="card box boxSize"
                 style={{ cursor: "pointer" }}
@@ -293,7 +295,7 @@ const MensClothing = () => {
           <div className="manAll">
             {womenCloth.map((women) => (
               <div
-                key={women.id}
+                key={Math.random()*Date.now()+women.id+Math.random()}
                 onClick={() => handleClick(women)}
                 className="card box"
                 style={{ width: "100%", cursor: "pointer" }}

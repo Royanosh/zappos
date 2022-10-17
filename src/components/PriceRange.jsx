@@ -74,7 +74,7 @@ const PriceRange = (props) => {
             <Stack spacing={[1]} direction={["column"]}>
               {data.map((elem, i) => (
                 <Checkbox
-                  key={elem.name}
+                  key={Math.random()*Date.now()+elem.name+Math.random()}
                   spacing="0.8rem"
                   isChecked={pricearr.includes(elem.name)}
                   onChange={(e) => {

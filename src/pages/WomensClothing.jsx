@@ -96,9 +96,11 @@ const WomensClothing = () => {
       >
         <div className="manAll">
           {products.map((womencloths) => (
-            <Link to="/category/womencloths">
+            <Link to="/category/womencloths"
+            key={Math.random()*Date.now()+womencloths.id+Math.random()}
+            >
               <div
-                key={womencloths.id}
+                
                 onClick={() => {
                   <div>Rajtilak patel</div>;
                 }}
@@ -191,7 +193,7 @@ const WomensClothing = () => {
         <div className="manAll">
           {price.map((price) => (
             <div
-              key={price.id}
+              key={Math.random()*Date.now()+price.id+Math.random()}
               className="card box"
               style={{ width: "100%", cursor: "pointer" }}
             >
@@ -304,7 +306,7 @@ const WomensClothing = () => {
           <div className="manGrid">
             {womenClothPro.map((womencloths) => (
               <div
-                key={womencloths.id}
+                key={Math.random()*Date.now()+womencloths.id+Math.random()}
                 onClick={() => handleClick(womencloths)}
                 className="card box boxSize"
                 style={{ cursor: "pointer" }}
@@ -367,7 +369,7 @@ const WomensClothing = () => {
           <div className="manAll">
             {womenCloth.map((women) => (
               <div
-                key={women.id}
+                key={Math.random()*Date.now()+women.id+Math.random()}
                 onClick={() => handleClick(women)}
                 className="card box boxSize"
                 style={{ width: "100%", cursor: "pointer" }}
