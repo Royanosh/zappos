@@ -1,7 +1,7 @@
 import { ERROR, 
     LOGOUT, SETUSER,
     ADDTOCART, DELFROMCART,
-    INCREASECART, SETSHIPADDRESS, CHECKOUTDONE
+    INCREASECART, SETSHIPADDRESS, CHECKOUTDONE, GENDERFILTER, BRANDFILTER
 } from './actionTypes'
 
 
@@ -49,6 +49,16 @@ import { ERROR,
 
   export const checkoutdone = ()=>({
     type: CHECKOUTDONE
+  })
+
+  export const genderfilter = (data)=>({
+    type: GENDERFILTER,
+    payload: data
+  })
+
+  export const brandfilter = (data)=>({
+    type: BRANDFILTER,
+    payload: data
   })
   
 export const register = (user) => (dispatch) => {

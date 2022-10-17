@@ -14,6 +14,8 @@ import {
   useCheckboxGroup,
 } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { brandfilter } from "../Redux/action";
 const url = `http://localhost:3000/brands`;
 const Brands = (props) => {
   const [brands, setBrands] = useState([]);
@@ -21,6 +23,7 @@ const Brands = (props) => {
   const [loading, setLoading] = useState(false);
   const { scrollStyle, getCheckboxProps } = props;
   const [searchBrand, setSearchBrand] = useState("");
+  const dispatch = useDispatch();
   const searchBrandUrl = searchBrand === "" ? "" : `?name_like=${searchBrand}`;
   useEffect(() => {
     fetchData();
@@ -89,7 +92,9 @@ const Brands = (props) => {
                 <Checkbox
                   key={elem.name}
                   spacing="0.8rem"
-                  {...getCheckboxProps({ value: elem.name })}
+                  
+                  onChange={(e)=>{dispatch(brandfilter({checked:e.target.checked, value:elem.name}))}}
+                  // {...getCheckboxProps({ value: elem.name })}
                 >
                   <Text fontSize={"sm"} fontWeight="500">
                     {elem.name} ({elem.count})
