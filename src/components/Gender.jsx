@@ -14,12 +14,16 @@ import {
   useCheckboxGroup,
 } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { genderfilter } from "../Redux/action";
 const url = `http://localhost:3000/gender`;
 const Gender = (props) => {
   const [gender, setGender] = useState([]);
   // const { value, getCheckboxProps } = useCheckboxGroup();
   const { getCheckboxProps } = props;
   const [loading, setLoading] = useState(false);
+ 
+  const dispatch = useDispatch();
   useEffect(() => {
     fetchData();
   }, []);
@@ -35,10 +39,8 @@ const Gender = (props) => {
       });
   };
 
-  const handlechange = (name) => {
-    // let chk = e.target.value;
-    console.log("gaurav---> ", name);
-  };
+
+  
   return (
     <AccordionItem p={"5px"}>
       <h4>
@@ -76,7 +78,8 @@ const Gender = (props) => {
                 <Checkbox
                   key={elem.name}
                   spacing="0.8rem"
-                  {...getCheckboxProps({ value: elem.name })}
+                  onChange={(e)=>{dispatch(genderfilter({checked:e.target.checked, value:elem.name}))}}
+                  // {...getCheckboxProps({ value: elem.name })}
                 >
                   <Text fontSize={"sm"} fontWeight="500">
                     {elem.name}

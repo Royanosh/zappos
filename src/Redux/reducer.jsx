@@ -1,6 +1,6 @@
 import { ADDTOCART, DELFROMCART, ERROR, 
     LOGOUT, SETUSER,
-    INCREASECART, SETSHIPADDRESS, CHECKOUTDONE
+    INCREASECART, SETSHIPADDRESS, CHECKOUTDONE, GENDERFILTER, BRANDFILTER
 } from './actionTypes'
 
 
@@ -10,7 +10,9 @@ import { ADDTOCART, DELFROMCART, ERROR,
     userprofile: {},
     isauth : false,
     cart: [],
-    shipaddress: ""
+    shipaddress: "",
+    genderarr:[],
+    brandarr:[]
   };
   
   function reducer(state = initState, { type, payload }) {
@@ -21,7 +23,9 @@ import { ADDTOCART, DELFROMCART, ERROR,
                 error: true,
                 userprofile: {},
                 isauth : false,
-                cart: []
+                cart: [],
+                genderarr:[],
+                brandarr:[]
             };
           }
 
@@ -36,7 +40,9 @@ import { ADDTOCART, DELFROMCART, ERROR,
               error: false,
               userprofile: payload,
               isauth : true,
-              cart:newcart  //update for json integration
+              cart:newcart,  //update for json integration
+              genderarr:[],
+              brandarr:[]
           };
         }
 
@@ -46,7 +52,9 @@ import { ADDTOCART, DELFROMCART, ERROR,
                 error: false,
                 userprofile: {},
                 isauth : false,
-                cart:[]
+                cart:[],
+                genderarr:[],
+                brandarr:[]
             };
         }
 
@@ -191,6 +199,36 @@ import { ADDTOCART, DELFROMCART, ERROR,
 
           return{
             ...state, cart:[], userprofile:{...state.userprofile, cart:[], orders:[...orders]}
+          }
+        }
+
+        case GENDERFILTER:{
+          let arr = [];
+
+          if(payload.checked){
+            arr = [...state.genderarr, payload.value]
+          }else{
+            arr = state.genderarr.filter((elem)=>elem != payload.value)
+          }
+
+
+          return{
+            ...state, genderarr:[...arr]
+          }
+        }
+
+        case BRANDFILTER:{
+          let arr = [];
+
+          if(payload.checked){
+            arr = [...state.brandarr, payload.value]
+          }else{
+            arr = state.brandarr.filter((elem)=>elem != payload.value)
+          }
+            
+
+          return{
+            ...state, brandarr:[...arr]
           }
         }
 

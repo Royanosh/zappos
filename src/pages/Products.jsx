@@ -56,6 +56,7 @@ import PriceRange from "../components/PriceRange";
 import Colors from "../components/Colors";
 import Gender from "../components/Gender";
 import { NavLink, useParams } from "react-router-dom";
+import { useSelector } from "react-redux";
 const url = `http://localhost:3000`;
 
 const Products = () => {
@@ -64,6 +65,8 @@ const Products = () => {
   const [priceRange, setPriceRange] = useState([]);
   const [loading, setLoading] = useState(false);
   let { cat } = useParams();
+  const { genderarr, brandarr } = useSelector((state) => state);
+  console.log(genderarr, brandarr)
   console.log("PriceRange", priceRange);
   const priceRangeUrl =
     priceRange[0] >= 0
@@ -147,7 +150,15 @@ const Products = () => {
     },
   };
 
-  console.log("Value", value);
+  
+  // if(genderarr.length !== 0){
+  //   let gender = "";
+    
+
+  //   fetch(`${url}/mix`).then((res)=>res.json()).then((res1)=>{
+
+  //   })
+  // }
 
   return (
     <>
