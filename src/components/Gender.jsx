@@ -16,13 +16,14 @@ import {
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { genderfilter } from "../Redux/action";
-const url = `http://localhost:3000/gender`;
+const url = `https://zappos-server.herokuapp.com/gender`;
 const Gender = (props) => {
   const [gender, setGender] = useState([]);
   // const { value, getCheckboxProps } = useCheckboxGroup();
   const { getCheckboxProps } = props;
   const [loading, setLoading] = useState(false);
- 
+  const genderarr = useSelector((state) => state.genderarr);
+
   const dispatch = useDispatch();
   useEffect(() => {
     fetchData();
@@ -39,8 +40,6 @@ const Gender = (props) => {
       });
   };
 
-
-  
   return (
     <AccordionItem p={"5px"}>
       <h4>
@@ -57,7 +56,7 @@ const Gender = (props) => {
           <AccordionIcon />
         </AccordionButton>
       </h4>
-      <AccordionPanel pb={4} h="120px">
+      <AccordionPanel pb={4} h="60px">
         <CheckboxGroup defaultValue={[""]}>
           {loading ? (
             <Center>
@@ -78,7 +77,15 @@ const Gender = (props) => {
                 <Checkbox
                   key={elem.name}
                   spacing="0.8rem"
-                  onChange={(e)=>{dispatch(genderfilter({checked:e.target.checked, value:elem.name}))}}
+                  isChecked={genderarr.includes(elem.name)}
+                  onChange={(e) => {
+                    dispatch(
+                      genderfilter({
+                        checked: e.target.checked,
+                        value: elem.name,
+                      })
+                    );
+                  }}
                   // {...getCheckboxProps({ value: elem.name })}
                 >
                   <Text fontSize={"sm"} fontWeight="500">

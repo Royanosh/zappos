@@ -14,12 +14,17 @@ import {
   useCheckboxGroup,
 } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
-const url = `http://localhost:3000/priceRange`;
+import { useDispatch, useSelector } from "react-redux";
+import { pricefilter } from "../Redux/action";
+const url = `https://zappos-server.herokuapp.com/priceRange`;
+
 const PriceRange = (props) => {
   const [data, setData] = useState([]);
   // const { value, getCheckboxProps } = useCheckboxGroup();
-  const { scrollStyle, getCheckboxProps, setPriceRange } = props;
+  const { scrollStyle } = props;
   const [loading, setLoading] = useState(false);
+  const dispatch = useDispatch();
+  const pricearr = useSelector((state) => state.pricearr);
   useEffect(() => {
     fetchData();
   }, []);
@@ -71,23 +76,17 @@ const PriceRange = (props) => {
                 <Checkbox
                   key={elem.name}
                   spacing="0.8rem"
-                  {...getCheckboxProps({ value: elem.name })}
+                  isChecked={pricearr.includes(elem.name)}
+                  onChange={(e) => {
+                    dispatch(
+                      pricefilter({
+                        checked: e.target.checked,
+                        value: elem.name,
+                      })
+                    );
+                  }}
                 >
-                  <Text
-                    onClick={() => {
-                      if (i == 0) {
-                        setPriceRange([0, 50]);
-                      } else if (i == 1) {
-                        setPriceRange([0, 100]);
-                      } else if (i == 2) {
-                        setPriceRange([0, 200]);
-                      } else {
-                        setPriceRange([200, 100000]);
-                      }
-                    }}
-                    fontSize={"sm"}
-                    fontWeight="500"
-                  >
+                  <Text fontSize={"sm"} fontWeight="500">
                     {elem.name} ({elem.count})
                   </Text>
                 </Checkbox>

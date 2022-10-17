@@ -925,7 +925,7 @@
   ],
   "brands": [
     {
-      "name": "#4kids",
+      "name": "Madewell",
       "count": 80,
       "confidence": 0,
       "selected": false,
@@ -11131,20 +11131,6 @@
       "confidence": 0,
       "selected": false,
       "facetUrl": null
-    },
-    {
-      "name": "Girls",
-      "count": 17562,
-      "confidence": 0,
-      "selected": false,
-      "facetUrl": null
-    },
-    {
-      "name": "Boys",
-      "count": 16435,
-      "confidence": 0,
-      "selected": false,
-      "facetUrl": null
     }
   ],
   "colors": [
@@ -11732,7 +11718,7 @@
           "price": 50,
           "id": 1,
           "gender": "men",
-          "count": 1
+          "count": 4
         }
       ]
     },
@@ -11765,6 +11751,13 @@
           "count": 1
         }
       ]
+    },
+    {
+      "name": "Umesh Kumawat",
+      "email": "royanosh786@gmail.com",
+      "password": "123123",
+      "id": 5,
+      "cart": []
     }
   ]
 }
