@@ -208,7 +208,8 @@ const Cart = () => {
             
             {
               cart.map((elem)=>(
-                <Box>
+                <Box key={Math.random()*Date.now()+elem.imageurl+Math.random()}
+                >
                   <Flex p={2} w="90%" justifyContent="space-between">
                   <Flex>
                   <Box borderRadius={2} boxShadow={"md"} position={"relative"}>

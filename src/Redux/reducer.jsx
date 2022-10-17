@@ -10,6 +10,7 @@ import {
   GENDERFILTER,
   BRANDFILTER,
   PRICEFILTER,
+  CLEARFILTER,
 } from "./actionTypes";
 
 const initState = {
@@ -266,6 +267,14 @@ function reducer(state = initState, { type, payload }) {
         ...state,
         pricearr: [...arr],
       };
+    }
+
+    case CLEARFILTER: {
+      return {
+        ...state, genderarr: [],
+        brandarr: [],
+        pricearr: [],
+      }
     }
 
     default: {

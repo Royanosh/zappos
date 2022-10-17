@@ -10,6 +10,7 @@ import {
   GENDERFILTER,
   BRANDFILTER,
   PRICEFILTER,
+  CLEARFILTER,
 } from "./actionTypes";
 
 export const getError = () => ({
@@ -67,6 +68,10 @@ export const brandfilter = (data) => ({
 export const pricefilter = (data) => ({
   type: PRICEFILTER,
   payload: data,
+});
+
+export const clearfilter = () => ({
+  type: CLEARFILTER
 });
 
 export const register = (user) => (dispatch) => {

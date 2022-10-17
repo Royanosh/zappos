@@ -91,7 +91,7 @@ const Brands = (props) => {
             <Stack spacing={[1]} direction={["column"]}>
               {brands.map((elem) => (
                 <Checkbox
-                  key={elem.name}
+                  key={Math.random()*Date.now()+elem.name+Math.random()}
                   spacing="0.8rem"
                   isChecked={brandarr.includes(elem.name)}
                   onChange={(e) => {

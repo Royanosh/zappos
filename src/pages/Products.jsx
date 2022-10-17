@@ -57,7 +57,7 @@ import Colors from "../components/Colors";
 import Gender from "../components/Gender";
 import { NavLink, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { brandfilter, genderfilter, pricefilter } from "../Redux/action";
+import { brandfilter, clearfilter, genderfilter, pricefilter } from "../Redux/action";
 const url = `https://zappos-server.herokuapp.com`;
 
 const Products = () => {
@@ -70,7 +70,7 @@ const Products = () => {
   let { cat } = useParams();
   const [genderValue, setGenderValue] = useState(cat);
   const { genderarr, brandarr, pricearr } = useSelector((state) => state);
-  console.log(pricearr);
+  // console.log(pricearr);
 
   const UpdatePriceRange = () => {
     if (pricearr.length != 0) {
@@ -89,7 +89,7 @@ const Products = () => {
   };
 
   const UpdateGender = () => {
-    console.log("Update GEnder");
+    // console.log("Update GEnder");
     if (genderarr.length == 2) {
       setGenderValue("mix");
     } else if (genderarr[0] == "Women") {
@@ -106,8 +106,18 @@ const Products = () => {
     UpdatePriceRange();
   }, [genderarr, pricearr]);
 
-  console.log(genderarr, brandarr);
-  console.log("PriceRange", priceRange);
+
+  useEffect(() => {
+    const cleanup = () => {
+      dispatch(clearfilter());    //for clearing filters
+    };
+
+    return cleanup;
+  }, []);
+  
+
+  // console.log(genderarr, brandarr);
+  // console.log("PriceRange", priceRange);
   const priceRangeUrl =
     priceRange[0] >= 0
       ? `&price_gte=${priceRange[0]}&price_lte=${priceRange[1]}`
@@ -124,7 +134,7 @@ const Products = () => {
     sortBrandName === "" ? "" : `&_sort=brand&_order=asc`;
 
   const UpdateBrand = () => {
-    console.log("Update Brand");
+    // console.log("Update Brand");
     let newBrandURl = "&brand_like=";
     for (var i = 0; i < brandarr.length; i++) {
       if (i == brandarr.length - 1) {
@@ -338,9 +348,10 @@ const Products = () => {
                 {genderarr.map(
                   (el, i) =>
                     el != "" && (
-                      <Box>
+                      <Box key={Math.random()*Date.now()+el+Math.random()}
+                      >
                         <Button
-                          key={Date.now() + Math.random() + el}
+                          
                           alignItems="center"
                           borderRadius={50}
                           bg="#e5f1f8"
@@ -368,9 +379,11 @@ const Products = () => {
                 {pricearr.map(
                   (el, i) =>
                     el != "" && (
-                      <Box>
+                      <Box
+                      key={Math.random()*Date.now()+el+Math.random()}
+                      >
                         <Button
-                          key={Date.now() + Math.random() + el}
+                          
                           alignItems="center"
                           borderRadius={50}
                           bg="#e5f1f8"
@@ -398,9 +411,11 @@ const Products = () => {
                 {brandarr.map(
                   (el, i) =>
                     el != "" && (
-                      <Box>
+                      <Box
+                      key={Math.random()*Date.now()+el+Math.random()}
+                      >
                         <Button
-                          key={Date.now() + Math.random() + el}
+                          
                           alignItems="center"
                           borderRadius={50}
                           bg="#e5f1f8"
@@ -495,8 +510,10 @@ const Products = () => {
               ) : (
                 <SimpleGrid minChildWidth="220px" spacing="10px" m={5}>
                   {data.map((elem, i) => (
-                    <NavLink to={`/category/${genderValue}/${elem.id}`}>
-                      <Product key={i} elem={elem} i={i} />
+                    <NavLink to={`/category/${genderValue}/${elem.id}`}
+                    key={Math.random()*Date.now()+i+Math.random()}
+                    >
+                      <Product elem={elem} i={i} />
                     </NavLink>
                   ))}
                 </SimpleGrid>

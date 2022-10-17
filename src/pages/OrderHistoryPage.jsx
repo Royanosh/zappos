@@ -54,7 +54,8 @@ const OrderHistoryPage = () => {
                 <Box p="10px">
                     {
                         orders.map((elem) => (
-                            <Box>
+                            <Box key={Math.random()*Date.now()+elem.imageurl+Math.random()}
+                            >
                             <Flex p={2} w="90%" justifyContent="space-between">
                             <Flex w="43%">
                             <Box borderRadius={2} boxShadow={"md"} position={"relative"}>

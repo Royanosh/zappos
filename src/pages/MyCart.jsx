@@ -87,7 +87,7 @@ const MyCart = () => {
 
 
 
-                <Flex p={2} key={elem.id*Math.random()+Date.now()}>
+                <Flex p={2} key={elem.id*Math.random()+Date.now()+elem.imageurl}>
                   <Flex>
                   <Box borderRadius={2} boxShadow={"md"} position={"relative"}>
                     <Box
