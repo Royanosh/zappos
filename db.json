@@ -11760,6 +11760,30 @@
       "email": "abhisatape2000@gmail.com",
       "password": "1234",
       "id": 2
+    },
+    {
+      "name": "rajtilak patel",
+      "email": "rp2380264@gmail.com",
+      "password": "123456",
+      "id": 3
+    },
+    {
+      "name": "rajtilak",
+      "email": "rajpatelsirri@gmail.com",
+      "password": "123456",
+      "id": 4,
+      "cart": [
+        {
+          "imageurl": "https://m.media-amazon.com/images/I/81Lnc5Nr9EL._AC_SR255,340_.jpg",
+          "brand": "Armour",
+          "desc": "Color Neck Comfortable Cotton Mix T-Shirt",
+          "ratings": 121,
+          "price": 19.23,
+          "id": 6,
+          "gender": "men",
+          "count": 1
+        }
+      ]
     }
   ]
 }
