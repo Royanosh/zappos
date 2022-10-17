@@ -11,10 +11,13 @@ const OrdersuccessPage = ()=>{
             <Text fontSize="18" mb="4px">Your order has been placed.</Text>
             <Text fontSize="18" mb="15px">An email confirmation has been sent with your order details.</Text>
             <Text fontWeight="bold" mb="10px">Order: 114-8154941-1026666</Text>
-            <Text>{`${cart.length} items will be shipped to:`}</Text>
+            <Text>{`${userprofile.orders.length} items will be shipped to:`}</Text>
 
             <Text>{userprofile.name}</Text>
-            <Text mb="15px">{shipaddress}</Text>
+            <Text>{shipaddress.name}</Text>
+            <Text>{shipaddress.country}</Text>
+            <Text>{shipaddress.detailadd}</Text>
+            <Text mb="15px">{shipaddress.number}</Text>
 
             <Text mb="20px">Arriving: <span color="#0076bd">Arriving Oct 25, 2022</span></Text>
 

@@ -14,6 +14,7 @@ import {
 import React from 'react';
 import { IoIosArrowForward } from 'react-icons/io';
 import { GiHamburgerMenu } from 'react-icons/gi';
+import { Link } from 'react-router-dom';
 
 function DrawerExample() {
     const { isOpen, onOpen, onClose } = useDisclosure()
@@ -46,13 +47,13 @@ function DrawerExample() {
               </Flex>
               
               <Flex alignItems='center' mb='5'>
-              <Text>Women</Text>
+              <Link to="/womensclothing"><Text>Women</Text></Link>
               <Spacer/>
                 <IoIosArrowForward/>
               </Flex>
 
               <Flex alignItems='center' mb='5'>
-              <Text>Men</Text>
+              <Link to="/mensclothing"><Text>Men</Text></Link>
               <Spacer/>
                 <IoIosArrowForward/>
               </Flex>
