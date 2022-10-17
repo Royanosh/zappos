@@ -56,17 +56,57 @@ import PriceRange from "../components/PriceRange";
 import Colors from "../components/Colors";
 import Gender from "../components/Gender";
 import { NavLink, useParams } from "react-router-dom";
-import { useSelector } from "react-redux";
-const url = `http://localhost:3000`;
+import { useDispatch, useSelector } from "react-redux";
+import { brandfilter, genderfilter, pricefilter } from "../Redux/action";
+const url = `https://zappos-server.herokuapp.com`;
 
 const Products = () => {
   const { value, getCheckboxProps } = useCheckboxGroup();
   const [data, setData] = useState([]);
   const [priceRange, setPriceRange] = useState([]);
   const [loading, setLoading] = useState(false);
+  const dispatch = useDispatch();
+
   let { cat } = useParams();
-  const { genderarr, brandarr } = useSelector((state) => state);
-  console.log(genderarr, brandarr)
+  const [genderValue, setGenderValue] = useState(cat);
+  const { genderarr, brandarr, pricearr } = useSelector((state) => state);
+  console.log(pricearr);
+
+  const UpdatePriceRange = () => {
+    if (pricearr.length != 0) {
+      if (pricearr[pricearr.length - 1] == "$50.00 and Under") {
+        setPriceRange([0, 50]);
+      } else if (pricearr[pricearr.length - 1] == "$100.00 and Under") {
+        setPriceRange([0, 100]);
+      } else if (pricearr[pricearr.length - 1] == "$200.00 and Under") {
+        setPriceRange([0, 200]);
+      } else if (pricearr[pricearr.length - 1] == "$200.00 and Over") {
+        setPriceRange([200, 10000000000]);
+      }
+    } else {
+      setPriceRange([]);
+    }
+  };
+
+  const UpdateGender = () => {
+    console.log("Update GEnder");
+    if (genderarr.length == 2) {
+      setGenderValue("mix");
+    } else if (genderarr[0] == "Women") {
+      setGenderValue("womencloths");
+    } else if (genderarr[0] == "Men") {
+      setGenderValue("menscloths");
+    } else {
+      setGenderValue(cat);
+    }
+  };
+
+  useEffect(() => {
+    UpdateGender();
+    UpdatePriceRange();
+  }, [genderarr, pricearr]);
+
+  console.log(genderarr, brandarr);
   console.log("PriceRange", priceRange);
   const priceRangeUrl =
     priceRange[0] >= 0
@@ -75,6 +115,7 @@ const Products = () => {
   const [sortPrice, setSortPrice] = useState("");
   const [sortRatings, setSortRatings] = useState("");
   const [sortBrandName, setSortBrandName] = useState("");
+  const [brandFilterUrl, setBrandFilterUrl] = useState("");
 
   const sortPriceUrl =
     sortPrice === "" ? "" : `&_sort=price&_order=${sortPrice}`;
@@ -82,14 +123,42 @@ const Products = () => {
   const sortBrandNameUrl =
     sortBrandName === "" ? "" : `&_sort=brand&_order=asc`;
 
+  const UpdateBrand = () => {
+    console.log("Update Brand");
+    let newBrandURl = "&brand_like=";
+    for (var i = 0; i < brandarr.length; i++) {
+      if (i == brandarr.length - 1) {
+        newBrandURl += brandarr[i];
+      } else {
+        newBrandURl += brandarr[i] + "&brand_like=";
+      }
+    }
+    if (brandarr.length !== 0) {
+      setBrandFilterUrl(newBrandURl);
+    } else {
+      setBrandFilterUrl("");
+    }
+  };
+
+  useEffect(() => {
+    UpdateBrand();
+  }, [brandarr]);
+
   useEffect(() => {
     fetchData();
-  }, [sortPrice, priceRangeUrl, sortRatings, sortBrandName]);
+  }, [
+    sortPrice,
+    priceRangeUrl,
+    sortRatings,
+    sortBrandName,
+    genderValue,
+    brandFilterUrl,
+  ]);
   const fetchData = () => {
     setLoading(true);
-    const gender = cat;
+    const gender = genderValue;
     fetch(
-      `${url}/${gender}?_limit=100&_page=1${sortPriceUrl}${priceRangeUrl}${sortRatingsUrl}${sortBrandNameUrl}`
+      `${url}/${gender}?_limit=100&_page=1${sortPriceUrl}${priceRangeUrl}${sortRatingsUrl}${sortBrandNameUrl}${brandFilterUrl}`
     )
       .then((res) => res.json())
       .then((res) => {
@@ -150,16 +219,14 @@ const Products = () => {
     },
   };
 
-  
   // if(genderarr.length !== 0){
   //   let gender = "";
-    
 
   //   fetch(`${url}/mix`).then((res)=>res.json()).then((res1)=>{
 
   //   })
   // }
-
+  const suggestionValue = [...genderarr, ...pricearr, ...brandarr];
   return (
     <>
       <SimpleGrid
@@ -268,22 +335,96 @@ const Products = () => {
               }}
             >
               <HStack mt="10px" mb="10px">
-                {value.map((el, i) => (
-                  <Box>
-                    <Button
-                      key={Date.now() + Math.random() + el}
-                      alignItems="center"
-                      borderRadius={50}
-                      bg="#e5f1f8"
-                      color="#0076bd"
-                    >
-                      {el}
-                      <Center ml="4px" mt="4px">
-                        {/* <AiOutlineCloseCircle /> */}
-                      </Center>
-                    </Button>
-                  </Box>
-                ))}
+                {genderarr.map(
+                  (el, i) =>
+                    el != "" && (
+                      <Box>
+                        <Button
+                          key={Date.now() + Math.random() + el}
+                          alignItems="center"
+                          borderRadius={50}
+                          bg="#e5f1f8"
+                          color="#0076bd"
+                        >
+                          {el}
+                          <Center
+                            ml="4px"
+                            mt="4px"
+                            onClick={() =>
+                              dispatch(
+                                genderfilter({
+                                  checked: false,
+                                  value: el,
+                                })
+                              )
+                            }
+                          >
+                            <AiOutlineCloseCircle />
+                          </Center>
+                        </Button>
+                      </Box>
+                    )
+                )}
+                {pricearr.map(
+                  (el, i) =>
+                    el != "" && (
+                      <Box>
+                        <Button
+                          key={Date.now() + Math.random() + el}
+                          alignItems="center"
+                          borderRadius={50}
+                          bg="#e5f1f8"
+                          color="#0076bd"
+                        >
+                          {el}
+                          <Center
+                            ml="4px"
+                            mt="4px"
+                            onClick={() =>
+                              dispatch(
+                                pricefilter({
+                                  checked: false,
+                                  value: el,
+                                })
+                              )
+                            }
+                          >
+                            <AiOutlineCloseCircle />
+                          </Center>
+                        </Button>
+                      </Box>
+                    )
+                )}
+                {brandarr.map(
+                  (el, i) =>
+                    el != "" && (
+                      <Box>
+                        <Button
+                          key={Date.now() + Math.random() + el}
+                          alignItems="center"
+                          borderRadius={50}
+                          bg="#e5f1f8"
+                          color="#0076bd"
+                        >
+                          {el}
+                          <Center
+                            ml="4px"
+                            mt="4px"
+                            onClick={() =>
+                              dispatch(
+                                brandfilter({
+                                  checked: false,
+                                  value: el,
+                                })
+                              )
+                            }
+                          >
+                            <AiOutlineCloseCircle />
+                          </Center>
+                        </Button>
+                      </Box>
+                    )
+                )}
 
                 {/* <Button
                 alignItems="center"
@@ -354,7 +495,7 @@ const Products = () => {
               ) : (
                 <SimpleGrid minChildWidth="220px" spacing="10px" m={5}>
                   {data.map((elem, i) => (
-                    <NavLink to={`/category/${cat}/${elem.id}`}>
+                    <NavLink to={`/category/${genderValue}/${elem.id}`}>
                       <Product key={i} elem={elem} i={i} />
                     </NavLink>
                   ))}

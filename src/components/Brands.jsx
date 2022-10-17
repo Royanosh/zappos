@@ -14,9 +14,9 @@ import {
   useCheckboxGroup,
 } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { brandfilter } from "../Redux/action";
-const url = `http://localhost:3000/brands`;
+const url = `https://zappos-server.herokuapp.com/brands`;
 const Brands = (props) => {
   const [brands, setBrands] = useState([]);
   // const { value, getCheckboxProps } = useCheckboxGroup();
@@ -24,6 +24,7 @@ const Brands = (props) => {
   const { scrollStyle, getCheckboxProps } = props;
   const [searchBrand, setSearchBrand] = useState("");
   const dispatch = useDispatch();
+  const brandarr = useSelector((state) => state.brandarr);
   const searchBrandUrl = searchBrand === "" ? "" : `?name_like=${searchBrand}`;
   useEffect(() => {
     fetchData();
@@ -92,8 +93,15 @@ const Brands = (props) => {
                 <Checkbox
                   key={elem.name}
                   spacing="0.8rem"
-                  
-                  onChange={(e)=>{dispatch(brandfilter({checked:e.target.checked, value:elem.name}))}}
+                  isChecked={brandarr.includes(elem.name)}
+                  onChange={(e) => {
+                    dispatch(
+                      brandfilter({
+                        checked: e.target.checked,
+                        value: elem.name,
+                      })
+                    );
+                  }}
                   // {...getCheckboxProps({ value: elem.name })}
                 >
                   <Text fontSize={"sm"} fontWeight="500">
