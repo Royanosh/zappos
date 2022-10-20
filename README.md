@@ -1,70 +1,74 @@
-# Getting Started with Create React App
+# Zappos Clone
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Functionalities
 
-In the project directory, you can run:
+- Our website is fully responsive for small, medium and large screen.
 
-### `npm start`
+- Register and login functionality working, and all the logic written in redux to handle authentication status across website. Each and every error message like user exists already or not, password mismatch, etc. are working properly.
 
-Runs the app in the development mode.\
-Open [https://zappos-server.herokuapp.com](https://zappos-server.herokuapp.com) to view it in your browser.
+- User can be able to search products on our website using search bar.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Dynamic pages for men's and women's shopping
 
-### `npm test`
+- User can be able to filter products according to their need and all filters working with each other combinedly.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- User can be able to add products in their cart and also increase or decrease or remove product in cart, all these crud operations working and handled with redux so that state will be maintained across website.
 
-### `npm run build`
+- User can be able to checkout using credit card details on checkout page and we take care of all authentications required on this page.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- After checkout success message will be shown with your order details and address.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- User can be able to access their order history for order history page we are managing this page with redux.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- User can be able to logout by using logout button then we change user authentication state in redux as false.
 
-### `npm run eject`
+- All the data on our website is stored in JSON Server which we deployed on Heroku. So, by this way our whole website is dynamic in nature and many components of our website are reusable.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### `IDE and Tools`
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- VS Code
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- GitHub
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- Netlify
 
-## Learn More
+- Thunder Client
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- NPM
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Heroku
 
-### Code Splitting
+### `Technologies`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- React
 
-### Analyzing the Bundle Size
+- Chakra UI
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- Redux
 
-### Making a Progressive Web App
+- Redux Thunk
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- Redux middleware
 
-### Advanced Configuration
+- React Router
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- React Libraries
 
-### Deployment
+- JSON Server
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- NPM Packages
 
-### `npm run build` fails to minify
+- Flickity Carousel
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+# Deployed Links
+
+- [Netlify](https://zappos-official.netlify.app/)
+
+- [GitHub](https://github.com/Royanosh/zappos)
+
+- [Heroku Server](https://zappos-server.herokuapp.com/)
+
+- [Blog](https://gaurav1.hashnode.dev/zappos-clone)
+
